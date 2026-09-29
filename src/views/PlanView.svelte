@@ -1,5 +1,6 @@
 <script lang="ts">
   import {
+    ArrowLeftRight,
     CalendarPlus,
     CalendarRange,
     ChefHat,
@@ -7,7 +8,7 @@
     Plus,
     RotateCcw,
     ShoppingBasket,
-    Smartphone,
+    ScanLine,
     Sparkles,
     Trash2,
     Wand2,
@@ -86,6 +87,7 @@
         to batch-prep, what to buy, and how to cook it all in one go.
       </p>
       <button class="btn primary" onclick={() => (ui.periodSheet = 'new')}><CalendarPlus size={18} /> Plan a period</button>
+      <button class="btn ghost" onclick={() => (ui.scanOpen = true)}><ScanLine size={18} /> Scan a plan from another device</button>
     </section>
   {:else}
     <!-- ───── Period ───── -->
@@ -108,7 +110,7 @@
           <button class="btn icon ghost" aria-label="Edit period" title="Edit period" onclick={() => (ui.periodSheet = 'edit')}><Pencil size={18} /></button>
           <button class="btn sm" onclick={() => (ui.periodSheet = 'new')}><CalendarPlus size={14} /> New period</button>
           {#if app.menuCount}
-            <button class="btn sm primary" onclick={() => (ui.syncOpen = true)}><Smartphone size={14} /> Sync plan to phone</button>
+            <button class="btn sm primary" onclick={() => (ui.syncOpen = true)}><ArrowLeftRight size={14} /> Sync devices</button>
           {/if}
         </div>
       </div>
@@ -264,8 +266,8 @@
           <span><strong>Prep plan</strong><span class="tiny muted">Cook it all in one session</span></span>
         </button>
         <button class="card step" onclick={() => (ui.syncOpen = true)}>
-          <Smartphone size={22} />
-          <span><strong>Sync plan to phone</strong><span class="tiny muted">The whole period, offline</span></span>
+          <ArrowLeftRight size={22} />
+          <span><strong>Sync devices</strong><span class="tiny muted">Plan & checkmarks, both ways</span></span>
         </button>
       </section>
     {/if}

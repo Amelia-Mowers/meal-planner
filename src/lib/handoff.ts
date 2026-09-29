@@ -28,6 +28,10 @@ export interface HandoffPayload {
   a: [string, number][]
   /** Fallback shopping list: [aisle, [[name, amount], …]][] — only sent for private recipes. */
   s?: [string, [string, string][]][]
+  /** When the plan last changed (epoch seconds). */
+  u?: number
+  /** Checkmarks: [list ("c" cart, "h" have, "d" prep done), id, checked 0|1, changed-at epoch seconds or 0] */
+  k?: [string, string, 0 | 1, number][]
 }
 
 async function pipe(bytes: Uint8Array, stream: CompressionStream | DecompressionStream): Promise<Uint8Array> {

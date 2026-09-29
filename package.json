@@ -31,6 +31,7 @@
   "dependencies": {
     "@lucide/svelte": "^1.48.0",
     "dexie": "^4.4.6",
+    "jsqr": "^1.4.0",
     "qrcode": "^1.5.4"
   }
 }

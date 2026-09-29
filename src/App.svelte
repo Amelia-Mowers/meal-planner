@@ -3,7 +3,9 @@
     CalendarDays,
     ChefHat,
     Library as LibraryIcon,
+    QrCode,
     RefreshCw,
+    ScanLine,
     Settings,
     ShoppingBasket,
     Sparkles,
@@ -20,6 +22,7 @@
   import ComponentDetail from './ui/ComponentDetail.svelte'
   import ExtraPicker from './ui/ExtraPicker.svelte'
   import PeriodSheet from './ui/PeriodSheet.svelte'
+  import ScanSheet from './ui/ScanSheet.svelte'
   import Sheet from './ui/Sheet.svelte'
   import SyncSheet from './ui/SyncSheet.svelte'
   import Toasts from './ui/Toasts.svelte'
@@ -85,6 +88,10 @@
         </a>
       {/each}
     </nav>
+    <div class="side-actions">
+      <button class="btn sm" onclick={() => (ui.scanOpen = true)}><ScanLine size={16} /> Scan</button>
+      {#if app.period}<button class="btn sm" onclick={() => (ui.syncOpen = true)}><QrCode size={16} /> My code</button>{/if}
+    </div>
     <p class="tiny muted side-foot">Offline-ready · data stays on this device</p>
   </aside>
 
@@ -95,6 +102,7 @@
     </a>
     <span class="spacer"></span>
     {#if !online}<span class="badge" title="You're offline — everything still works"><WifiOff size={12} /> Offline</span>{/if}
+    <button class="btn sm ghost scan" onclick={() => (ui.scanOpen = true)} aria-label="Scan a plan from another device"><ScanLine size={18} /> Scan</button>
     <a class="btn icon ghost" href="#/settings" aria-label="Settings" aria-current={router.route === 'settings' ? 'page' : undefined}><Settings size={20} /></a>
   </header>
 
@@ -166,6 +174,7 @@
 <ComboBuilder />
 <ExtraPicker />
 <SyncSheet />
+<ScanSheet />
 <Toasts />
 
 <style>
@@ -317,8 +326,13 @@
       font-weight: 700;
       color: var(--muted);
     }
-    .side-foot {
+    .side-actions {
       margin-top: auto;
+      display: flex;
+      gap: 0.4rem;
+      padding: 0 0.25rem;
+    }
+    .side-foot {
       padding: 0 0.5rem;
     }
   }

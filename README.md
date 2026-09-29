@@ -11,8 +11,10 @@ or any number of days), pick bowl and wrap combos for it, and it:
   portion slider on the carb to hit it
 - builds a merged, aisle-grouped shopping list rounded up to store packages
 - lays out a batch-prep plan in parallel lanes (oven, rice cooker, stovetop, counter)
-- syncs the whole period plan to your phone with a QR code — the plan lives in the URL fragment
-  (nothing is uploaded), and the phone rebuilds the shopping list and prep plan offline
+- syncs the whole period between devices with QR codes — plan plus shopping/prep checkmarks, merged
+  both ways (newest plan wins; each checkmark keeps the latest change). Scan with the built-in
+  scanner (camera, photo, or pasted link) so iOS stays in the installed app. Nothing is uploaded:
+  the plan lives in the URL fragment
 
 Start a new period when one ends — blank, repeating the current plan, or repeating a past one.
 

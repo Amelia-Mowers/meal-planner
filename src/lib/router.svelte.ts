@@ -24,6 +24,14 @@ class Router {
     this.route = ROUTES.includes(r) ? r : 'plan'
   }
 
+  /** Open a sync payload scanned inside the app (no page navigation needed). */
+  openShared(frag: string) {
+    this.shared = frag
+    this.route = 'sync'
+    history.replaceState(null, '', `${location.pathname}#p=${frag}`)
+    window.scrollTo({ top: 0 })
+  }
+
   go(r: Route) {
     this.route = r
     if (location.hash !== `#/${r}`) location.hash = `/${r}`

@@ -1,3 +1,4 @@
+import { flushSync, untrack } from 'svelte'
 import foodsJson from '../data/foods.json'
 import libraryRaw from '../data/library.jsonld?raw'
 import { db, getKV, requestPersistence, setKV } from './db'
@@ -33,6 +34,10 @@ const DEFAULTS = {
   inCart: [] as string[],
   prepDone: [] as string[],
   history: [] as PastPeriod[],
+  /** When the plan (period, combos, adjustments, portions) last changed — newest wins on sync. */
+  planUpdatedAt: 0,
+  /** When each checkmark last changed, keyed "list|id" — newest wins per item on sync. */
+  markTimes: {} as Record<string, number>,
   targets: DEFAULT_TARGETS,
   tested: {} as Record<string, boolean>,
   onlyTested: false,
@@ -40,6 +45,8 @@ const DEFAULTS = {
 type Persisted = typeof DEFAULTS
 
 const MAX_HISTORY = 12
+export const MARK_LISTS = ['inCart', 'have', 'prepDone'] as const
+export type MarkList = (typeof MARK_LISTS)[number]
 
 class AppState {
   ready = $state(false)
@@ -51,6 +58,10 @@ class AppState {
   inCart = $state<string[]>([])
   prepDone = $state<string[]>([])
   history = $state<PastPeriod[]>([])
+  planUpdatedAt = $state(0)
+  markTimes = $state<Record<string, number>>({})
+  /** True while applying a sync, so the change-stamping effects don't re-stamp merged data. */
+  private suppressStamps = false
   targets = $state<Targets>(DEFAULT_TARGETS)
   tested = $state<Record<string, boolean>>({})
   onlyTested = $state(false)
@@ -131,6 +142,18 @@ class AppState {
     this.portions = from ? $state.snapshot(from.portions) : {}
     this.inCart = []
     this.prepDone = []
+    // Shopping and prep checkmarks belong to a period; pantry ("have") carries over.
+    this.markTimes = Object.fromEntries(Object.entries(this.markTimes).filter(([k]) => k.startsWith('have|')))
+  }
+
+  /** Apply changes without stamping them as local edits (used when merging a sync). */
+  withoutStamps(fn: () => void) {
+    this.suppressStamps = true
+    try {
+      flushSync(fn)
+    } finally {
+      this.suppressStamps = false
+    }
   }
 
   nextPeriodDraft(): Period {
@@ -150,6 +173,8 @@ class AppState {
     this.inCart = s.inCart
     this.prepDone = s.prepDone
     this.history = s.history
+    this.planUpdatedAt = s.planUpdatedAt
+    this.markTimes = s.markTimes
     this.targets = { ...DEFAULT_TARGETS, ...s.targets }
     this.tested = s.tested
     this.onlyTested = s.onlyTested
@@ -157,8 +182,27 @@ class AppState {
     this.ready = true
     this.persisted = await requestPersistence().catch(() => null)
 
-    // Persist each key whenever it changes.
+    // Persist each key whenever it changes, and stamp local edits for sync merging.
     $effect.root(() => {
+      let prevPlan = JSON.stringify($state.snapshot([this.period, this.menu, this.adjust, this.portions]))
+      $effect(() => {
+        const cur = JSON.stringify($state.snapshot([this.period, this.menu, this.adjust, this.portions]))
+        if (cur === prevPlan) return
+        prevPlan = cur
+        if (!this.suppressStamps) this.planUpdatedAt = Date.now()
+      })
+      for (const list of MARK_LISTS) {
+        let prev = new Set(this[list])
+        $effect(() => {
+          const cur = new Set($state.snapshot(this[list]))
+          const changed = [...cur].filter((x) => !prev.has(x)).concat([...prev].filter((x) => !cur.has(x)))
+          prev = cur
+          if (!changed.length || this.suppressStamps) return
+          const now = Date.now()
+          const times = untrack(() => this.markTimes)
+          this.markTimes = { ...times, ...Object.fromEntries(changed.map((id) => [`${list}|${id}`, now])) }
+        })
+      }
       for (const k of Object.keys(DEFAULTS) as (keyof Persisted)[]) {
         $effect(() => {
           const v = $state.snapshot(this[k])

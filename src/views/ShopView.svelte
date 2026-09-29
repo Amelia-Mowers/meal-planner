@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { Check, ClipboardCopy, House, RotateCcw, ShoppingBasket, Undo2 } from '@lucide/svelte'
+  import { ArrowLeftRight, Check, ClipboardCopy, House, RotateCcw, ShoppingBasket, Undo2 } from '@lucide/svelte'
   import { plural } from '../lib/format'
   import { periodTitle } from '../lib/period'
   import { router } from '../lib/router.svelte'
   import { aisleLabel, groupByAisle, listAsText, type ShoppingItem } from '../lib/shopping'
   import { app } from '../lib/store.svelte'
   import { toasts } from '../lib/toast.svelte'
+  import { ui } from '../lib/ui.svelte'
 
   let showHave = $state(false)
   const haveSet = $derived(new Set(app.have))
@@ -57,6 +58,9 @@
       <span class="spacer"></span>
       {#if done}<button class="btn sm ghost" onclick={resetChecks}><RotateCcw size={14} /> Uncheck all</button>{/if}
       <button class="btn sm" onclick={copyText}><ClipboardCopy size={14} /> Copy</button>
+      <button class="btn sm primary" onclick={() => (ui.syncOpen = true)} title="Share the plan and checkmarks with another device">
+        <ArrowLeftRight size={14} /> Sync
+      </button>
     </div>
 
     {#each groups as [aisle, items] (aisle)}
