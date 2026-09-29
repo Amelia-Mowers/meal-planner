@@ -77,10 +77,6 @@
         <label for="tol">Calorie tolerance · ±{Math.round(app.targets.tolerance * 100)}%</label>
         <input id="tol" type="range" min="0.05" max="0.25" step="0.01" bind:value={app.targets.tolerance} />
       </div>
-      <div class="field">
-        <label for="meals">Meals to plan per week</label>
-        <div class="unit"><input id="meals" class="input num" type="number" min="1" max="21" bind:value={app.mealsPerWeek} /><span>meals</span></div>
-      </div>
     </div>
     <p class="small muted">
       A combo is <strong>on target</strong> when it's within ±{Math.round(app.targets.tolerance * 100)}% of {app.targets.kcal} kcal and has at least

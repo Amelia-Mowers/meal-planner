@@ -1,14 +1,11 @@
 <script lang="ts">
-  import { Check, ClipboardCopy, House, QrCode, RotateCcw, ShoppingBasket, Undo2 } from '@lucide/svelte'
-  import type { HandoffPayload } from '../lib/handoff'
+  import { Check, ClipboardCopy, House, RotateCcw, ShoppingBasket, Undo2 } from '@lucide/svelte'
   import { plural } from '../lib/format'
+  import { periodTitle } from '../lib/period'
   import { router } from '../lib/router.svelte'
   import { aisleLabel, groupByAisle, listAsText, type ShoppingItem } from '../lib/shopping'
   import { app } from '../lib/store.svelte'
   import { toasts } from '../lib/toast.svelte'
-  import { ui } from '../lib/ui.svelte'
-  import QrShare from '../ui/QrShare.svelte'
-  import Sheet from '../ui/Sheet.svelte'
 
   let showHave = $state(false)
   const haveSet = $derived(new Set(app.have))
@@ -18,17 +15,8 @@
   const groups = $derived(groupByAisle(toBuy))
   const done = $derived(toBuy.filter((i) => cartSet.has(i.foodId)).length)
   const basis = $derived(
-    app.menuCount
-      ? `For ${plural(app.menuCount, 'meal')} planned this week`
-      : `One batch of each of your ${plural(app.prepSet.length, 'prep-set component')}`,
+    app.period ? `${periodTitle(app.period)} · ${plural(app.menuCount, 'meal')}, ${plural(app.prepSetIds.size, 'component')}` : '',
   )
-
-  const payload: HandoffPayload = $derived({
-    v: app.lib.version,
-    m: app.menu.map((m) => [m.comboId, m.servings] as [string, number]),
-    s: groups.map(([aisle, items]) => [aisle, items.map((i) => [i.name, i.buy] as [string, string])]),
-    t: new Date().toISOString().slice(0, 10),
-  })
 
   async function copyText() {
     await navigator.clipboard.writeText(listAsText(app.shopping, haveSet))
@@ -49,7 +37,7 @@
   <div class="page-head">
     <div>
       <h1>Shopping list</h1>
-      <p class="lede">{basis}. Grouped by aisle; amounts rounded up to what the store sells.</p>
+      <p class="lede">{basis}{basis ? '. ' : ''}Grouped by aisle; amounts rounded up to what the store sells.</p>
     </div>
   </div>
 
@@ -57,8 +45,8 @@
     <div class="card empty">
       <ShoppingBasket size={40} strokeWidth={1.5} />
       <h2>Your list is empty</h2>
-      <p>Pick a prep set (and optionally plan your week) to build a shopping list.</p>
-      <button class="btn primary" onclick={() => router.go('set')}>Pick a prep set</button>
+      <p>Add combos to your plan and the shopping list builds itself.</p>
+      <button class="btn primary" onclick={() => router.go('plan')}>Go to plan</button>
     </div>
   {:else}
     <div class="toolbar row wrap">
@@ -69,7 +57,6 @@
       <span class="spacer"></span>
       {#if done}<button class="btn sm ghost" onclick={resetChecks}><RotateCcw size={14} /> Uncheck all</button>{/if}
       <button class="btn sm" onclick={copyText}><ClipboardCopy size={14} /> Copy</button>
-      <button class="btn sm primary" onclick={() => (ui.qrOpen = true)}><QrCode size={14} /> Send to phone</button>
     </div>
 
     {#each groups as [aisle, items] (aisle)}
@@ -123,9 +110,6 @@
   {/if}
 </div>
 
-<Sheet bind:open={ui.qrOpen} title="Send list to your phone" subtitle="{toBuy.length} items · {basis}">
-  <QrShare {payload} />
-</Sheet>
 
 <style>
   .toolbar {

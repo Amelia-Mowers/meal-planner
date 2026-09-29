@@ -1,11 +1,11 @@
 import { readFragment } from './handoff'
 
-export type Route = 'set' | 'combos' | 'week' | 'shop' | 'prep' | 'library' | 'settings' | 'shared'
-const ROUTES: Route[] = ['set', 'combos', 'week', 'shop', 'prep', 'library', 'settings']
+export type Route = 'plan' | 'combos' | 'shop' | 'prep' | 'library' | 'settings' | 'sync'
+const ROUTES: Route[] = ['plan', 'combos', 'shop', 'prep', 'library', 'settings']
 
 class Router {
-  route = $state<Route>('set')
-  /** Base45 payload when opened from a QR code. */
+  route = $state<Route>('plan')
+  /** Base45 payload when opened from a sync QR code. */
   shared = $state<string | null>(null)
 
   constructor() {
@@ -17,14 +17,15 @@ class Router {
     const frag = readFragment(location.hash)
     if (frag) {
       this.shared = frag
-      this.route = 'shared'
+      this.route = 'sync'
       return
     }
     const r = location.hash.replace(/^#\/?/, '').split('/')[0] as Route
-    this.route = ROUTES.includes(r) ? r : 'set'
+    this.route = ROUTES.includes(r) ? r : 'plan'
   }
 
   go(r: Route) {
+    this.route = r
     if (location.hash !== `#/${r}`) location.hash = `/${r}`
     window.scrollTo({ top: 0 })
   }

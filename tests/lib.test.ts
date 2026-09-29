@@ -3,11 +3,13 @@ import foodsJson from '../src/data/foods.json'
 import libraryJson from '../src/data/library.jsonld?raw'
 import * as b45 from '../src/lib/base45'
 import { fitBasePortion, resolveCombo, sharedProfile, suggest } from '../src/lib/combos'
-import { decodePayload, encodePayload, readFragment } from '../src/lib/handoff'
+import { decodePayload, encodePayload, readFragment, type HandoffPayload } from '../src/lib/handoff'
 import { buildLibrary, isoMinutes, minutesIso } from '../src/lib/library'
 import { componentNutrition, partsNutrition, targetStatus } from '../src/lib/nutrition'
 import { eatOrder, prepPlan } from '../src/lib/prep'
 import { componentNeeds, shoppingList } from '../src/lib/shopping'
+import { endDate, mealsTarget, nextPeriod, periodStatus } from '../src/lib/period'
+import { distribute, STARTER_PLANS } from '../src/lib/starterSets'
 import type { Food, LibraryFile } from '../src/lib/types'
 import { convert, formatNumber, formatQty, humanize, normUnit, toGrams } from '../src/lib/units'
 
@@ -113,7 +115,7 @@ describe('shopping + prep', () => {
       { comboId: 'combo/gochujang-turkey-bowl', servings: 3 },
       { comboId: 'combo/kofta-couscous-bowl', servings: 2 },
     ]
-    const needs = componentNeeds(lib, menu, [])
+    const needs = componentNeeds(lib, menu)
     expect(needs.get('comp/turkey-taco')!.batches).toBeGreaterThanOrEqual(1)
     const items = shoppingList(lib, needs)
     const turkey = items.find((i) => i.foodId === 'food/ground-turkey-93')!
@@ -126,9 +128,19 @@ describe('shopping + prep', () => {
     expect(plan.estimateMin).toBeGreaterThan(0)
     expect(eatOrder(needs)[0].fridgeDays).toBeLessThanOrEqual(4)
   })
-  it('falls back to one batch per prep-set component', () => {
-    const needs = componentNeeds(lib, [], ['comp/rice-white', 'comp/tzatziki'])
-    expect([...needs.values()].every((n) => n.batches === 1)).toBe(true)
+  it('applies batch adjustments: override, skip, and extras', () => {
+    const menu = [{ comboId: 'combo/chipotle-chicken-bowl', servings: 4 }]
+    const auto = componentNeeds(lib, menu)
+    const rice = auto.get('comp/rice-white')!
+    expect(rice.adjusted).toBe(false)
+    const needs = componentNeeds(lib, menu, { 'comp/rice-white': 2, 'comp/black-beans': 0, 'comp/eggs-jammy': 1 })
+    expect(needs.get('comp/rice-white')).toMatchObject({ batches: 2, autoBatches: rice.autoBatches, adjusted: true })
+    expect(needs.get('comp/black-beans')!.batches).toBe(0)
+    expect(needs.get('comp/eggs-jammy')).toMatchObject({ batches: 1, servings: 0 })
+    const items = shoppingList(lib, needs)
+    expect(items.some((i) => i.foodId === 'food/black-beans-canned')).toBe(false)
+    expect(items.find((i) => i.foodId === 'food/egg')!.buy).toMatch(/12/)
+    expect(prepPlan(needs).tasks.some((t) => t.id === 'comp/black-beans')).toBe(false)
   })
 })
 
@@ -141,14 +153,34 @@ describe('handoff', () => {
     expect(new TextDecoder().decode(b45.decode('QED8WEX0'))).toBe('ietf!')
   })
   it('round-trips a payload through the URL fragment', async () => {
-    const p = {
+    const p: HandoffPayload = {
       v: lib.version,
-      m: [['combo/turkey-taco-wrap', 3]] as [string, number][],
-      s: [['produce', [['cucumber', '2'], ['limes', '3']]]] as [string, [string, string][]][],
+      p: ['abc123', '2026-09-29', 7, 2],
+      m: [['turkey-taco-wrap', 3], ['gen/bowl/rice-white+chicken-rotisserie+cucumber+sesame-soy', 2, [['rice-white', 1, 'cup']]]],
+      a: [['eggs-jammy', 1]],
+      s: [['produce', [['cucumber', '2'], ['limes', '3']]]],
     }
     const frag = await encodePayload(p)
     expect(frag).not.toMatch(/ /)
     expect(readFragment('#p=' + frag)).toBe(frag)
     expect(await decodePayload(frag)).toEqual(p)
+  })
+})
+
+describe('periods', () => {
+  it('computes ranges, next period and status', () => {
+    const p = { id: 'x', start: '2026-09-28', days: 4, mealsPerDay: 2 }
+    expect(mealsTarget(p)).toBe(8)
+    expect(endDate(p)).toBe('2026-10-01')
+    expect(periodStatus(p, '2026-09-29')).toEqual({ state: 'current', day: 2 })
+    expect(periodStatus(p, '2026-10-02').state).toBe('past')
+    expect(periodStatus(p, '2026-09-27').state).toBe('upcoming')
+    expect(nextPeriod(p).days).toBe(4)
+    expect(nextPeriod(p).id).not.toBe('x')
+  })
+  it('distributes starter plan servings to fill the period', () => {
+    expect(distribute([['a', 1], ['b', 1]], 7)).toEqual([['a', 4], ['b', 3]])
+    expect(distribute([['a', 1], ['b', 1], ['c', 1]], 2).map(([, n]) => n)).toEqual([1, 1, 1])
+    for (const s of STARTER_PLANS) for (const [id] of s.combos) expect(lib.combos.has(id), id).toBe(true)
   })
 })

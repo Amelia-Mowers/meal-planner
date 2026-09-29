@@ -4,7 +4,7 @@
   import { encodePayload, QR_SOFT_LIMIT, type HandoffPayload } from '../lib/handoff'
   import { toasts } from '../lib/toast.svelte'
 
-  let { payload }: { payload: HandoffPayload } = $props()
+  let { payload, title = 'Meal plan' }: { payload: HandoffPayload; title?: string } = $props()
 
   let svg = $state('')
   let url = $state('')
@@ -42,19 +42,15 @@
     toasts.show('Link copied')
   }
   async function share() {
-    await navigator.share?.({ title: 'Shopping list', url }).catch(() => {})
+    await navigator.share?.({ title, url }).catch(() => {})
   }
 </script>
 
 <div class="stack" style:--gap="1rem">
-  <p class="muted small">
-    Scan with your phone's camera to open this list there — it works offline once opened, and nothing is uploaded: the whole
-    list lives in the link.
-  </p>
   {#if error}
     <div class="callout"><TriangleAlert size={18} /> Couldn't build the QR code: {error}</div>
   {:else if svg}
-    <div class="qr" role="img" aria-label="QR code linking to the shopping list">{@html svg}</div>
+    <div class="qr" role="img" aria-label="QR code linking to {title}">{@html svg}</div>
     <div class="row small muted" style:justify-content="center">
       <span class="num">{size} characters</span>
       {#if size > QR_SOFT_LIMIT}

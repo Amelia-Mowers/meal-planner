@@ -2,7 +2,6 @@
   import {
     CalendarDays,
     ChefHat,
-    LayoutGrid,
     Library as LibraryIcon,
     RefreshCw,
     Settings,
@@ -16,30 +15,32 @@
   import { app } from './lib/store.svelte'
   import { toasts } from './lib/toast.svelte'
   import { ui } from './lib/ui.svelte'
+  import ComboBuilder from './ui/ComboBuilder.svelte'
   import ComboCard from './ui/ComboCard.svelte'
   import ComponentDetail from './ui/ComponentDetail.svelte'
+  import ExtraPicker from './ui/ExtraPicker.svelte'
+  import PeriodSheet from './ui/PeriodSheet.svelte'
   import Sheet from './ui/Sheet.svelte'
+  import SyncSheet from './ui/SyncSheet.svelte'
   import Toasts from './ui/Toasts.svelte'
   import CombosView from './views/CombosView.svelte'
   import LibraryView from './views/LibraryView.svelte'
+  import PlanView from './views/PlanView.svelte'
   import PrepView from './views/PrepView.svelte'
-  import SetView from './views/SetView.svelte'
   import SettingsView from './views/SettingsView.svelte'
-  import SharedView from './views/SharedView.svelte'
   import ShopView from './views/ShopView.svelte'
-  import WeekView from './views/WeekView.svelte'
+  import SyncView from './views/SyncView.svelte'
 
   const { needRefresh, updateServiceWorker } = useRegisterSW({
     onOfflineReady: () => toasts.show('Ready to work offline'),
   })
 
-  const NAV: { route: Route; label: string; icon: typeof LayoutGrid; mobile: boolean }[] = [
-    { route: 'set', label: 'Prep set', icon: LayoutGrid, mobile: true },
+  const NAV: { route: Route; label: string; icon: typeof CalendarDays; mobile: boolean }[] = [
+    { route: 'plan', label: 'Plan', icon: CalendarDays, mobile: true },
     { route: 'combos', label: 'Combos', icon: Sparkles, mobile: true },
-    { route: 'week', label: 'Week', icon: CalendarDays, mobile: true },
     { route: 'shop', label: 'Shop', icon: ShoppingBasket, mobile: true },
     { route: 'prep', label: 'Prep', icon: ChefHat, mobile: true },
-    { route: 'library', label: 'Library', icon: LibraryIcon, mobile: false },
+    { route: 'library', label: 'Library', icon: LibraryIcon, mobile: true },
     { route: 'settings', label: 'Settings', icon: Settings, mobile: false },
   ]
 
@@ -66,12 +67,12 @@
   })
 
   const badge = (r: Route) =>
-    r === 'set' ? app.prepSet.length : r === 'week' ? app.menuCount : r === 'shop' ? app.shopping.filter((i) => !app.have.includes(i.foodId) && !app.inCart.includes(i.foodId)).length : 0
+    r === 'plan' ? app.menuCount : r === 'shop' ? app.shopping.filter((i) => !app.have.includes(i.foodId) && !app.inCart.includes(i.foodId)).length : 0
 </script>
 
-<div class="shell" class:shared={router.route === 'shared'}>
+<div class="shell" class:shared={router.route === 'sync'}>
   <aside class="side">
-    <a class="brand" href="#/set">
+    <a class="brand" href="#/plan">
       <img src="{import.meta.env.BASE_URL}icon.svg" alt="" width="32" height="32" />
       <span>Bowl &amp; Wrap</span>
     </a>
@@ -88,27 +89,24 @@
   </aside>
 
   <header class="topbar">
-    <a class="brand" href="#/set">
+    <a class="brand" href="#/plan">
       <img src="{import.meta.env.BASE_URL}icon.svg" alt="" width="28" height="28" />
       <span>Bowl &amp; Wrap</span>
     </a>
     <span class="spacer"></span>
     {#if !online}<span class="badge" title="You're offline — everything still works"><WifiOff size={12} /> Offline</span>{/if}
-    <a class="btn icon ghost" href="#/library" aria-label="Library" aria-current={router.route === 'library' ? 'page' : undefined}><LibraryIcon size={20} /></a>
     <a class="btn icon ghost" href="#/settings" aria-label="Settings" aria-current={router.route === 'settings' ? 'page' : undefined}><Settings size={20} /></a>
   </header>
 
   <main>
     {#if !app.ready}
       <div class="page"><p class="muted">Loading…</p></div>
-    {:else if router.route === 'shared'}
-      <SharedView />
-    {:else if router.route === 'set'}
-      <SetView />
+    {:else if router.route === 'sync'}
+      <SyncView />
+    {:else if router.route === 'plan'}
+      <PlanView />
     {:else if router.route === 'combos'}
       <CombosView />
-    {:else if router.route === 'week'}
-      <WeekView />
     {:else if router.route === 'shop'}
       <ShopView />
     {:else if router.route === 'prep'}
@@ -141,7 +139,7 @@
   {@const n = partsNutrition(app.lib, detailCombo.parts).n}
   <Sheet bind:open={detailOpen} title={detailCombo.name} subtitle="{Math.round(n.kcal)} kcal · {Math.round(n.protein)} g protein" wide>
     <div class="stack">
-      <ComboCard combo={detailCombo} missing={detailCombo.parts.map((p) => p.componentId).filter((id) => !app.prepSetIds.has(id))} />
+      <ComboCard combo={detailCombo} />
       <label class="row small" style:gap=".45rem">
         <input
           type="checkbox"
@@ -164,6 +162,10 @@
   </div>
 {/if}
 
+<PeriodSheet />
+<ComboBuilder />
+<ExtraPicker />
+<SyncSheet />
 <Toasts />
 
 <style>

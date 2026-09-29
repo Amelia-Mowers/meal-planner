@@ -37,8 +37,8 @@
     <div class="card empty">
       <ChefHat size={40} strokeWidth={1.5} />
       <h2>Nothing to prep yet</h2>
-      <p>Your prep plan appears once you've picked a prep set.</p>
-      <button class="btn primary" onclick={() => router.go('set')}>Pick a prep set</button>
+      <p>Your prep plan appears once you've added combos to your plan.</p>
+      <button class="btn primary" onclick={() => router.go('plan')}>Go to plan</button>
     </div>
   {:else}
     <div class="summary card">

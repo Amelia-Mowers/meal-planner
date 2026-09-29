@@ -8,15 +8,26 @@
  */
 import * as b45 from './base45'
 
+/** [componentSlug, value, unit] */
+export type PortionTuple = [string, number, string]
+
+/**
+ * A whole plan period, compact. Combo and component IDs drop their "combo/" / "comp/" prefix.
+ * The phone rebuilds the prep set, shopping list and prep plan from its own copy of the
+ * library; `s` is a precomputed shopping list used only when that isn't possible (older
+ * library, private recipes the phone doesn't have).
+ */
 export interface HandoffPayload {
   /** Library version the sender used. */
   v: string
-  /** Menu: [comboId, servings]. */
-  m: [string, number][]
-  /** Precomputed shopping list: [aisle, [[name, amount], …]][] */
-  s: [string, [string, string][]][]
-  /** Optional title / date. */
-  t?: string
+  /** Period: [id, start, days, mealsPerDay, name?] */
+  p: [string, string, number, number, string?]
+  /** Menu: [comboId, servings, portion overrides?] */
+  m: [string, number, PortionTuple[]?][]
+  /** Batch adjustments: [componentSlug, batches] */
+  a: [string, number][]
+  /** Fallback shopping list: [aisle, [[name, amount], …]][] — only sent for private recipes. */
+  s?: [string, [string, string][]][]
 }
 
 async function pipe(bytes: Uint8Array, stream: CompressionStream | DecompressionStream): Promise<Uint8Array> {
@@ -35,7 +46,7 @@ export async function decodePayload(fragment: string): Promise<HandoffPayload> {
   const bytes = b45.decode(raw)
   const json = await pipe(bytes, new DecompressionStream('deflate-raw'))
   const p = JSON.parse(new TextDecoder().decode(json)) as HandoffPayload
-  if (typeof p !== 'object' || !p || !Array.isArray(p.s)) throw new Error('Not a meal-plan payload')
+  if (typeof p !== 'object' || !p || !Array.isArray(p.p) || !Array.isArray(p.m)) throw new Error('Not a meal-plan payload')
   return p
 }
 

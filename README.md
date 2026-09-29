@@ -1,14 +1,20 @@
 # Bowl & Wrap — meal prep planner
 
-A static, offline-first web app for component-based meal prep. Pick a small weekly **prep set**
-(proteins, bases, veg, sauces), and it:
+**▶ Live app: https://amelia-mowers.github.io/meal-planner/**
 
-- suggests bowl and wrap combos from that set (curated first, then generated and ranked by nutrition)
+A static, offline-first web app for component-based meal prep. Plan a period (a week, half a week,
+or any number of days), pick bowl and wrap combos for it, and it:
+
+- derives the **prep set** — which components to batch-cook and how much — with adjustable quantities
+- suggests combos that reuse what you're already prepping, or build your own
 - shows calories and protein per combo against a target (default 600 kcal, ≥40 g protein), with a
   portion slider on the carb to hit it
 - builds a merged, aisle-grouped shopping list rounded up to store packages
 - lays out a batch-prep plan in parallel lanes (oven, rice cooker, stovetop, counter)
-- sends the list to your phone as a QR code — the whole list lives in the URL fragment, nothing is uploaded
+- syncs the whole period plan to your phone with a QR code — the plan lives in the URL fragment
+  (nothing is uploaded), and the phone rebuilds the shopping list and prep plan offline
+
+Start a new period when one ends — blank, repeating the current plan, or repeating a past one.
 
 No backend and no accounts. Data lives in IndexedDB on each device. See [PLAN.md](PLAN.md) for the design.
 

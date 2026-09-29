@@ -37,51 +37,64 @@ function minBatches(c: Component): number {
 
 export interface ComponentNeed {
   component: Component
-  /** Amount needed, in the component's yield unit. */
+  /** Amount the planned combos use, in the component's yield unit. */
   amount: number
+  /** Batches to actually make (auto, or the user's adjustment). */
   batches: number
+  /** Batches the planned combos call for, before any adjustment. */
+  autoBatches: number
+  /** Servings of planned combos that use this component. */
   servings: number
+  /** True when the user set the batch count by hand. */
+  adjusted: boolean
 }
 
+export const batchStep = () => BATCH_STEP
+
 /**
- * How much of each component the menu needs. With an empty menu, falls back to one batch
- * of every component in the prep set.
+ * The prep set: how much of each component the planned combos need, rounded up to sensible
+ * batch sizes, then overridden by the user's per-component adjustments (absolute batch counts —
+ * 0 skips a component, and components not used by any combo can be added as extras).
  */
-export function componentNeeds(lib: Library, menu: MenuItem[], prepSet: string[]): Map<string, ComponentNeed> {
+export function componentNeeds(lib: Library, menu: MenuItem[], adjust: Record<string, number> = {}): Map<string, ComponentNeed> {
   const needs = new Map<string, ComponentNeed>()
   const bump = (c: Component, amount: number, servings: number) => {
-    const cur = needs.get(c.id) ?? { component: c, amount: 0, batches: 0, servings: 0 }
+    const cur = needs.get(c.id) ?? { component: c, amount: 0, batches: 0, autoBatches: 0, servings: 0, adjusted: false }
     cur.amount += amount
     cur.servings += servings
     needs.set(c.id, cur)
   }
-  const active = menu.filter((m) => m.servings > 0)
-  if (active.length) {
-    for (const item of active) {
-      const combo = resolveCombo(lib, item.comboId)
-      if (!combo) continue
-      for (const p of combo.parts) {
-        const c = lib.components.get(p.componentId)
-        if (!c) continue
-        const q = item.portions?.[c.id] ?? p.qty ?? c.portion
-        const perServing = ratio(q, c.yield)
-        if (perServing == null) continue
-        bump(c, perServing * c.yield.value * item.servings, item.servings)
-      }
-    }
-    for (const n of needs.values()) {
-      const exact = Math.ceil(n.amount / n.component.yield.value / BATCH_STEP - 1e-9) * BATCH_STEP
-      n.batches = Math.max(minBatches(n.component), exact)
-    }
-  } else {
-    for (const id of prepSet) {
-      const c = lib.components.get(id)
+  for (const item of menu) {
+    if (item.servings <= 0) continue
+    const combo = resolveCombo(lib, item.comboId)
+    if (!combo) continue
+    for (const p of combo.parts) {
+      const c = lib.components.get(p.componentId)
       if (!c) continue
-      needs.set(id, { component: c, amount: c.yield.value, batches: 1, servings: 0 })
+      const q = item.portions?.[c.id] ?? p.qty ?? c.portion
+      const perServing = ratio(q, c.yield)
+      if (perServing == null) continue
+      bump(c, perServing * c.yield.value * item.servings, item.servings)
     }
+  }
+  for (const n of needs.values()) {
+    const exact = Math.ceil(n.amount / n.component.yield.value / BATCH_STEP - 1e-9) * BATCH_STEP
+    n.autoBatches = n.batches = Math.max(minBatches(n.component), exact)
+  }
+  for (const [id, b] of Object.entries(adjust)) {
+    const c = lib.components.get(id)
+    if (!c) continue
+    const n = needs.get(id) ?? { component: c, amount: 0, batches: 0, autoBatches: 0, servings: 0, adjusted: false }
+    n.batches = Math.max(0, b)
+    n.adjusted = true
+    needs.set(id, n)
   }
   return needs
 }
+
+/** Needs that will actually be made/bought. */
+export const activeNeeds = (needs: Map<string, ComponentNeed>) =>
+  new Map([...needs].filter(([, n]) => n.batches > 0))
 
 export interface ShoppingItem {
   foodId: string
@@ -113,6 +126,7 @@ interface Acc {
 export function shoppingList(lib: Library, needs: Map<string, ComponentNeed>): ShoppingItem[] {
   const acc = new Map<string, Acc>()
   for (const { component: c, batches } of needs.values()) {
+    if (batches <= 0) continue
     for (const s of c.supplies) {
       const food = lib.foods.get(s.foodId)
       const a =

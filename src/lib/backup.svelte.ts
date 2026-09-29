@@ -3,7 +3,7 @@ import { MP_CONTEXT } from './library'
 import { app } from './store.svelte'
 import type { Food, LibraryFile, RecipeDoc } from './types'
 
-const STATE_KEYS = ['prepSet', 'menu', 'have', 'inCart', 'prepDone', 'targets', 'mealsPerWeek', 'tested', 'portions'] as const
+const STATE_KEYS = ['period', 'menu', 'adjust', 'portions', 'have', 'inCart', 'prepDone', 'history', 'targets', 'tested'] as const
 
 export function exportAll() {
   const state = Object.fromEntries(STATE_KEYS.map((k) => [k, $state.snapshot(app[k])]))

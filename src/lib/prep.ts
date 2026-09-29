@@ -1,6 +1,6 @@
 import type { ComponentNeed } from './shopping'
 import type { Component } from './types'
-import { formatQty, humanize, toGrams } from './units'
+import { formatNumber, formatQty, humanize, toGrams } from './units'
 
 export type Lane = 'oven' | 'stove' | 'rice' | 'micro' | 'counter'
 
@@ -50,16 +50,15 @@ function priority(c: Component, lane: Lane): number {
   return 4
 }
 
-const BATCH_WORDS: Record<number, string> = { 0.25: '¼ batch', 0.5: '½ batch', 0.75: '¾ batch', 1: '1 batch', 1.5: '1½ batches' }
-const batchText = (b: number) => BATCH_WORDS[b] ?? `${b} batches`
+export const batchText = (b: number) => (b === 1 ? '1 batch' : b < 1 ? `${formatNumber(b)} batch` : `${formatNumber(b)} batches`)
 
 export function prepPlan(needs: Map<string, ComponentNeed>): { tasks: PrepTask[]; byLane: [Lane, PrepTask[]][]; estimateMin: number } {
   const tasks: PrepTask[] = []
   const groups = new Map<string, ComponentNeed[]>()
   for (const n of needs.values()) {
     const c = n.component
-    // No-prep items (tortillas, pita, jarred things with 0 prep) don't need a task.
-    if (c.prepMin === 0 && c.cookMin === 0) continue
+    // Skipped components, and no-prep items (tortillas, jarred things) don't need a task.
+    if (n.batches <= 0 || (c.prepMin === 0 && c.cookMin === 0)) continue
     if (c.batchGroup) {
       groups.set(c.batchGroup, [...(groups.get(c.batchGroup) ?? []), n])
       continue
@@ -127,6 +126,7 @@ export function prepPlan(needs: Map<string, ComponentNeed>): { tasks: PrepTask[]
 /** Components ordered by how soon they should be eaten. */
 export function eatOrder(needs: Map<string, ComponentNeed>) {
   return [...needs.values()]
+    .filter((n) => n.batches > 0)
     .map((n) => n.component)
     .filter((c) => c.fridgeDays != null && c.fridgeDays < 7)
     .sort((a, b) => (a.fridgeDays ?? 99) - (b.fridgeDays ?? 99))

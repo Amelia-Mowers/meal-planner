@@ -4,12 +4,13 @@
   import { componentNutrition } from '../lib/nutrition'
   import { app } from '../lib/store.svelte'
   import type { Component } from '../lib/types'
-  import { formatQty } from '../lib/units'
+  import { formatNumber, formatQty } from '../lib/units'
   import MacroBar from './MacroBar.svelte'
   import RoleTag from './RoleTag.svelte'
 
   let { c }: { c: Component } = $props()
   const nut = $derived(componentNutrition(app.lib, c))
+  const need = $derived(app.needs.get(c.id))
   const inSet = $derived(app.prepSetIds.has(c.id))
   const tested = $derived(app.isTested(c.id))
   const labelFoods = $derived(
@@ -93,9 +94,11 @@
   </section>
 
   <div class="row wrap">
-    <button class="btn" class:primary={!inSet} onclick={() => app.toggleInSet(c.id)}>
-      {#if inSet}<Check size={16} /> In prep set{:else}<Plus size={16} /> Add to prep set{/if}
-    </button>
+    {#if inSet && need}
+      <span class="badge ok"><Check size={12} /> In your prep set · {formatNumber(need.batches)}× batch</span>
+    {:else}
+      <button class="btn primary" onclick={() => app.setBatches(c.id, 1)}><Plus size={16} /> Add to prep set</button>
+    {/if}
     <label class="row small tested">
       <input type="checkbox" checked={tested} onchange={() => (app.tested = { ...app.tested, [c.id]: !tested })} />
       I've made this and it works

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { CalendarPlus, Check, ChevronDown, Plus, SlidersHorizontal, Sparkles, Star, Target } from '@lucide/svelte'
+  import { Check, ChevronDown, Plus, Recycle, SlidersHorizontal, Sparkles, Star, Target, Wrench } from '@lucide/svelte'
   import { fitBasePortion, flexPart, nutritionOf, sliderStep } from '../lib/combos'
-  import { cuisineShort } from '../lib/format'
+  import { cuisineShort, plural } from '../lib/format'
   import { app } from '../lib/store.svelte'
   import { toasts } from '../lib/toast.svelte'
   import type { Combo } from '../lib/types'
@@ -11,7 +11,7 @@
   import Stepper from './Stepper.svelte'
   import TargetBadge from './TargetBadge.svelte'
 
-  let { combo, missing = [] }: { combo: Combo; missing?: string[] } = $props()
+  let { combo, compact = false }: { combo: Combo; compact?: boolean } = $props()
 
   const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
   let adjusting = $state(false)
@@ -29,9 +29,9 @@
       return { p, c, qty: overrides[p.componentId] ?? p.qty ?? c?.portion }
     }),
   )
-  const missingNames = $derived(missing.map((id) => app.lib.components.get(id)?.name ?? id))
-  /** Whole combo is outside the prep set (inspiration mode). */
-  const inspire = $derived(missing.length > 0 && missing.length === combo.parts.length)
+  /** Components not yet in this period's prep set. */
+  const fresh = $derived(combo.parts.filter((p) => !app.prepSetIds.has(p.componentId)).length)
+  const reused = $derived(combo.parts.length - fresh)
 
   function setBase(v: number) {
     if (!base) return
@@ -44,15 +44,9 @@
       toasts.show(`${base.shortName} set to ${formatQty(q)}`)
     }
   }
-  function addMissing() {
-    app.prepSet = [...app.prepSet, ...missing.filter((id) => !app.prepSetIds.has(id))]
-    toasts.show(inspire ? `Added ${combo.name} components to your prep set` : `Added ${missingNames.join(', ')} to your prep set`, {
-      action: () => (app.prepSet = app.prepSet.filter((id) => !missing.includes(id))),
-    })
-  }
   function add() {
-    app.setServings(combo.id, 1)
-    toasts.show(`Added ${combo.name} to your week`)
+    app.setServings(combo.id, 2)
+    toasts.show(`Added 2 × ${combo.name}`, { action: () => app.setServings(combo.id, 0) })
   }
 </script>
 
@@ -65,12 +59,23 @@
         {#if combo.curated}
           <span class="badge accent" title="Hand-picked combination"><Star size={11} /> Curated</span>
         {:else}
-          <span class="badge" title="Generated from your prep set"><Sparkles size={11} /> Suggested</span>
+          <span class="badge" title="Mix-and-match combo"><Sparkles size={11} /> Mix & match</span>
         {/if}
         {#if tested}<span class="badge ok"><Check size={11} /> Tested</span>{/if}
       </div>
       <h3>{combo.name}</h3>
-      {#if combo.description}<p class="muted small desc">{combo.description}</p>{/if}
+      {#if combo.description && !compact}<p class="muted small desc">{combo.description}</p>{/if}
+      {#if app.prepSetIds.size && servings === 0}
+        <p class="tiny reuse" class:all={fresh === 0}>
+          {#if fresh === 0}
+            <Recycle size={12} /> Uses only what you're already prepping
+          {:else if reused > 0}
+            <Recycle size={12} /> Reuses {reused} · adds {plural(fresh, 'new component')}
+          {:else}
+            <Wrench size={12} /> {plural(fresh, 'new component')}
+          {/if}
+        </p>
+      {/if}
     </div>
     <TargetBadge n={nut.n} targets={app.targets} />
   </header>
@@ -81,7 +86,8 @@
         <button
           class="part"
           style:--c="var(--role-{c?.role ?? 'veg'})"
-          class:missing={!inspire && missing.includes(p.componentId)}
+          class:reused={app.prepSetIds.has(p.componentId)}
+          title={app.prepSetIds.has(p.componentId) ? 'Already in your prep set' : undefined}
           onclick={() => (ui.detail = p.componentId)}
         >
           <span class="dot"></span>
@@ -125,27 +131,17 @@
   {/if}
 
   <footer>
-    {#if missing.length}
-      <span class="small muted need">
-        {inspire ? `Uses ${missing.length} components` : `Needs ${missingNames.join(', ')}`}
-      </span>
-      <button class="btn sm" class:primary={inspire} onclick={addMissing}>
-        <Plus size={14} />
-        {inspire ? 'Use these' : 'Add to set'}
+    {#if base?.portionRange}
+      <button class="btn sm ghost" aria-expanded={adjusting} onclick={() => (adjusting = !adjusting)}>
+        <SlidersHorizontal size={14} /> Portions <ChevronDown size={14} class={adjusting ? 'flip' : ''} />
       </button>
+    {/if}
+    <span class="spacer"></span>
+    {#if servings > 0}
+      <span class="small muted">Servings</span>
+      <Stepper value={servings} onchange={(v) => app.setServings(combo.id, v)} label="servings of {combo.name}" />
     {:else}
-      {#if base?.portionRange}
-        <button class="btn sm ghost" aria-expanded={adjusting} onclick={() => (adjusting = !adjusting)}>
-          <SlidersHorizontal size={14} /> Portions <ChevronDown size={14} class={adjusting ? 'flip' : ''} />
-        </button>
-      {/if}
-      <span class="spacer"></span>
-      {#if servings > 0}
-        <span class="small muted">This week</span>
-        <Stepper value={servings} onchange={(v) => app.setServings(combo.id, v)} label="servings of {combo.name}" />
-      {:else}
-        <button class="btn sm primary" onclick={add}><CalendarPlus size={14} /> Add to week</button>
-      {/if}
+      <button class="btn sm primary" onclick={add}><Plus size={14} /> Add to plan</button>
     {/if}
   </footer>
 </article>
@@ -221,10 +217,19 @@
     color: var(--muted);
     font-weight: 500;
   }
-  .part.missing {
-    border-style: dashed;
-    border-color: var(--warn);
-    background: var(--warn-soft);
+  .part.reused {
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+    background: var(--accent-soft);
+  }
+  .reuse {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .reuse.all {
+    color: var(--ok);
   }
   .adjust {
     display: flex;
@@ -245,10 +250,6 @@
     padding-top: 0.75rem;
     border-top: 1px solid var(--line);
     margin-top: auto;
-  }
-  .need {
-    flex: 1;
-    min-width: 0;
   }
   :global(.flip) {
     transform: rotate(180deg);
