@@ -1,6 +1,6 @@
 import type { ComponentNeed } from './shopping'
-import type { Component } from './types'
-import { formatNumber, formatQty, humanize, toGrams } from './units'
+import type { Component, Food, Library, Supply } from './types'
+import { dimOf, formatNumber, formatQty, humanize, toGrams, type Qty } from './units'
 
 export type Lane = 'oven' | 'stove' | 'rice' | 'micro' | 'counter'
 
@@ -21,11 +21,40 @@ export interface PrepTask {
   components: Component[]
   activeMin: number
   handsOffMin: number
+  /** Ingredients scaled to the batch count, optionally grouped under headings. */
+  ingredients: IngredientGroup[]
   steps: string[]
   /** Lower runs earlier within its lane. */
   priority: number
   fridgeDays: number | null
   freezable: boolean
+}
+
+export interface IngredientLine {
+  amount: string
+  name: string
+  note?: string
+}
+export interface IngredientGroup {
+  heading?: string
+  items: IngredientLine[]
+}
+
+/** Scale a recipe quantity and keep it readable (volumes re-unit, grams round). */
+export function scaleQty(q: Qty, factor: number): Qty {
+  const v = q.value * factor
+  const d = dimOf(q.unit)
+  if (d === 'volume') return humanize({ value: v, unit: q.unit })
+  if (q.unit === 'g') return { value: v >= 20 ? Math.round(v / 5) * 5 : Math.round(v), unit: 'g' }
+  return { value: v, unit: q.unit }
+}
+
+function lines(supplies: Supply[], factor: number, foods: Map<string, Food>): IngredientLine[] {
+  return supplies.map((s) => ({
+    amount: formatQty(scaleQty(s.qty, factor)),
+    name: foods.get(s.foodId)?.name ?? s.foodId,
+    note: s.description,
+  }))
 }
 
 function laneFor(c: Component): Lane {
@@ -52,9 +81,10 @@ function priority(c: Component, lane: Lane): number {
 
 export const batchText = (b: number) => (b === 1 ? '1 batch' : b < 1 ? `${formatNumber(b)} batch` : `${formatNumber(b)} batches`)
 
-export function prepPlan(needs: Map<string, ComponentNeed>): { tasks: PrepTask[]; byLane: [Lane, PrepTask[]][]; estimateMin: number } {
+export function prepPlan(needs: Map<string, ComponentNeed>, lib?: Library): { tasks: PrepTask[]; byLane: [Lane, PrepTask[]][]; estimateMin: number } {
   const tasks: PrepTask[] = []
   const groups = new Map<string, ComponentNeed[]>()
+  const foods = lib?.foods ?? new Map<string, Food>()
   for (const n of needs.values()) {
     const c = n.component
     // Skipped components, and no-prep items (tortillas, jarred things) don't need a task.
@@ -72,6 +102,7 @@ export function prepPlan(needs: Map<string, ComponentNeed>): { tasks: PrepTask[]
       components: [c],
       activeMin: c.prepMin,
       handsOffMin: c.cookMin,
+      ingredients: [{ items: lines(c.supplies, n.batches, foods) }],
       steps: c.steps,
       priority: priority(c, lane),
       fridgeDays: c.fridgeDays,
@@ -100,10 +131,31 @@ export function prepPlan(needs: Map<string, ComponentNeed>): { tasks: PrepTask[]
       components: cs,
       activeMin: Math.max(...cs.map((c) => c.prepMin)) + 5 * (cs.length - 1),
       handsOffMin: Math.max(...cs.map((c) => c.cookMin)) + 3 * (cs.length - 1),
+      ingredients: [
+        {
+          heading: 'Batch',
+          items: [
+            {
+              amount: formatQty(humanize({ value: grams, unit: 'g' })),
+              name: foods.get(shared.foodId)?.name ?? shared.foodId,
+              note: `${Math.round(grams / 5) * 5} g`,
+            },
+          ],
+        },
+        ...ns.map((n) => ({
+          heading: n.component.shortName,
+          items: lines(
+            n.component.supplies.filter((x) => x.foodId !== shared.foodId),
+            n.batches,
+            foods,
+          ),
+        })),
+      ],
       steps: [
         `Brown all the turkey in your largest skillet over medium-high heat, breaking it up, until no pink remains and it reaches 165°F / 74°C (about 10 minutes).`,
-        `Divide into ${cs.length} portions by weight.`,
-        ...cs.map((c) => `${c.name}: ${c.steps.slice(1).join(' ')}`),
+        ...(cs.length > 1
+          ? [`Divide into ${cs.length} portions by weight.`, ...cs.map((c) => `${c.name}: ${c.steps.slice(1).join(' ')}`)]
+          : cs[0].steps.slice(1)),
       ],
       priority: -99,
       fridgeDays: Math.min(...cs.map((c) => c.fridgeDays ?? 99)),

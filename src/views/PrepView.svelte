@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ChefHat, ChevronDown, Clock, CookingPot, Flame, Microwave, Refrigerator, ShieldCheck, Snowflake, Utensils, Check } from '@lucide/svelte'
-  import { minutes } from '../lib/format'
+  import { minutes, plural } from '../lib/format'
   import { eatOrder, LANES, prepPlan, type Lane } from '../lib/prep'
   import { router } from '../lib/router.svelte'
   import { SAFETY_TIPS } from '../lib/safety'
@@ -9,7 +9,7 @@
 
   const ICON = { oven: Flame, rice: CookingPot, stove: ChefHat, micro: Microwave, counter: Utensils } satisfies Record<Lane, unknown>
 
-  const plan = $derived(prepPlan(app.needs))
+  const plan = $derived(prepPlan(app.needs, app.lib))
   const doneSet = $derived(new Set(app.prepDone))
   const done = $derived(plan.tasks.filter((t) => doneSet.has(t.id)).length)
   const eat = $derived(eatOrder(app.needs))
@@ -79,7 +79,7 @@
                   </button>
                   <button class="t-main" aria-expanded={!!open[t.id]} onclick={() => (open = { ...open, [t.id]: !open[t.id] })}>
                     <span class="t-title">{t.title}</span>
-                    <span class="tiny muted">{t.detail}</span>
+                    <span class="tiny muted">{t.detail} · {plural(t.ingredients.reduce((n, g) => n + g.items.length, 0), 'ingredient')}</span>
                     <span class="tiny muted num">
                       {t.activeMin ? `${minutes(t.activeMin)} active` : ''}{t.activeMin && t.handsOffMin ? ' · ' : ''}{t.handsOffMin
                         ? `${minutes(t.handsOffMin)} cooking`
@@ -89,9 +89,25 @@
                   <ChevronDown size={16} class="chev {open[t.id] ? 'flip' : ''}" />
                 </div>
                 {#if open[t.id]}
-                  <ol class="steps small">
-                    {#each t.steps as s, i (i)}<li>{s}</li>{/each}
-                  </ol>
+                  <div class="body small">
+                    {#each t.ingredients as g, gi (gi)}
+                      {#if g.items.length}
+                        {#if g.heading}<h4 class="sub">{g.heading}</h4>{:else}<h4 class="sub">Ingredients</h4>{/if}
+                        <ul class="ing">
+                          {#each g.items as it, ii (ii)}
+                            <li>
+                              <span class="amt num">{it.amount}</span>
+                              <span>{it.name}{#if it.note}<span class="muted">, {it.note}</span>{/if}</span>
+                            </li>
+                          {/each}
+                        </ul>
+                      {/if}
+                    {/each}
+                    <h4 class="sub">Steps</h4>
+                    <ol class="steps">
+                      {#each t.steps as s, i (i)}<li>{s}</li>{/each}
+                    </ol>
+                  </div>
                 {/if}
               </li>
             {/each}
@@ -233,8 +249,39 @@
     flex: none;
     transition: transform 0.15s;
   }
+  .body {
+    margin: 0 1rem 0.9rem 3.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .sub {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-top: 0.35rem;
+  }
+  .ing {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.15rem;
+  }
+  .ing li {
+    display: grid;
+    grid-template-columns: 4.75rem 1fr;
+    gap: 0.5rem;
+    padding: 0.2rem 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .amt {
+    font-weight: 650;
+  }
   .steps {
-    margin: 0 1rem 0.8rem 3.1rem;
+    margin: 0;
     padding-left: 1rem;
     display: grid;
     gap: 0.35rem;
