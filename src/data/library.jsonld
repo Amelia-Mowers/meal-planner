@@ -3,7 +3,7 @@
     "@vocab": "https://schema.org/",
     "mp": "https://amelia-mowers.github.io/meal-planner/ns#"
   },
-  "mp:version": "c24540d1",
+  "mp:version": "2d8e323d",
   "@graph": [
     {
       "@type": "Recipe",
@@ -81,7 +81,7 @@
       "@id": "comp/chicken-sheetpan",
       "name": "Sheet-pan chicken breast",
       "alternateName": "Sheet-pan chicken",
-      "description": "Simply seasoned chicken breast roasted hot and fast, then sliced. Swap in boneless thighs if you like them juicier.",
+      "description": "Simply seasoned chicken breast roasted hot and fast, then sliced.",
       "recipeCategory": "protein",
       "recipeCuisine": [
         "neutral"
@@ -204,7 +204,7 @@
         },
         {
           "@type": "HowToStep",
-          "text": "Rest 5 minutes, then slice or dice. Cool before refrigerating."
+          "text": "Rest 5 minutes, then slice. Cool before refrigerating."
         }
       ],
       "prepTime": "PT10M",
@@ -337,10 +337,6 @@
         {
           "@type": "HowToStep",
           "text": "Add the spices and 3 tbsp water; stir 2 minutes until the water is absorbed."
-        },
-        {
-          "@type": "HowToStep",
-          "text": "Optional: stir in a handful of thawed, squeezed frozen spinach."
         }
       ],
       "prepTime": "PT5M",
@@ -704,7 +700,7 @@
         },
         {
           "@type": "HowToStep",
-          "text": "Boil 7 minutes for jammy, 10 for fully hard-boiled."
+          "text": "Boil for exactly 7 minutes."
         },
         {
           "@type": "HowToStep",
@@ -926,7 +922,7 @@
         },
         {
           "@type": "HowToStep",
-          "text": "Toss with cumin, lime juice and salt. Serve cold or warmed."
+          "text": "Toss with cumin, lime juice and salt."
         }
       ],
       "prepTime": "PT5M",
@@ -1059,7 +1055,7 @@
       "@type": "Recipe",
       "@id": "comp/rice-white",
       "name": "Steamed white rice",
-      "description": "Plain long-grain or jasmine rice from the rice cooker.",
+      "description": "Plain long-grain rice from the rice cooker.",
       "recipeCategory": "base",
       "recipeCuisine": [
         "neutral"
@@ -1121,7 +1117,7 @@
         },
         {
           "@type": "HowToStep",
-          "text": "Cook in a rice cooker with water to the line (or 2¼ cups water, covered, 18 minutes on low)."
+          "text": "Cook in the rice cooker with 2¼ cups water."
         },
         {
           "@type": "HowToStep",
@@ -1356,7 +1352,7 @@
       "recipeInstructions": [
         {
           "@type": "HowToStep",
-          "text": "Warm in a dry skillet or directly over a gas flame for 10–20 seconds per side just before wrapping."
+          "text": "Warm in a dry skillet for 15 seconds per side just before wrapping."
         }
       ],
       "prepTime": "PT1M",
@@ -1477,7 +1473,7 @@
       "recipeInstructions": [
         {
           "@type": "HowToStep",
-          "text": "Warm in a toaster or dry pan; cut open the pocket."
+          "text": "Warm in a dry skillet for 30 seconds per side; cut open the pocket."
         }
       ],
       "prepTime": "PT1M",
@@ -1583,7 +1579,7 @@
       "@type": "Recipe",
       "@id": "comp/rice-noodles",
       "name": "Rice noodles",
-      "description": "Flat rice noodles, soaked and rinsed. Serve cold or reheat with a splash of water.",
+      "description": "Flat rice noodles, boiled and rinsed.",
       "recipeCategory": "base",
       "recipeCuisine": [
         "east-asian"
@@ -1640,7 +1636,7 @@
       "recipeInstructions": [
         {
           "@type": "HowToStep",
-          "text": "Soak or boil per the package until just tender."
+          "text": "Boil per the package until just tender."
         },
         {
           "@type": "HowToStep",
@@ -1846,7 +1842,7 @@
       "@type": "Recipe",
       "@id": "comp/spinach-frozen",
       "name": "Frozen spinach, squeezed",
-      "description": "Thawed and squeezed dry — stir into proteins, rice or yogurt sauces for a stealth serving of greens.",
+      "description": "Thawed and squeezed dry — a stealth serving of greens.",
       "recipeCategory": "veg",
       "recipeCuisine": [
         "neutral"
@@ -2207,7 +2203,7 @@
       "@type": "Recipe",
       "@id": "comp/carrot-shredded",
       "name": "Shredded carrot",
-      "description": "Bagged matchstick carrots — open and use.",
+      "description": "Bagged shredded carrots — open and use.",
       "recipeCategory": "veg",
       "recipeCuisine": [
         "neutral"
@@ -2228,13 +2224,12 @@
         "unitCode": "G21"
       },
       "recipeIngredient": [
-        "10 oz shredded carrots, shredded or matchstick"
+        "10 oz shredded carrots"
       ],
       "supply": [
         {
           "@type": "HowToSupply",
           "name": "shredded carrots",
-          "description": "shredded or matchstick",
           "identifier": "food/carrot",
           "requiredQuantity": {
             "@type": "QuantitativeValue",
@@ -2363,7 +2358,7 @@
       "recipeInstructions": [
         {
           "@type": "HowToStep",
-          "text": "Halve the tomatoes. Store at cool room temperature if eating within 2 days, otherwise refrigerate."
+          "text": "Halve the tomatoes and refrigerate."
         }
       ],
       "prepTime": "PT5M",
@@ -2501,7 +2496,7 @@
       "recipeInstructions": [
         {
           "@type": "HowToStep",
-          "text": "Microwave or boil 3 minutes; drain, salt lightly and cool."
+          "text": "Microwave 3 minutes; drain, salt and cool."
         }
       ],
       "prepTime": "PT1M",
@@ -3255,11 +3250,11 @@
       "recipeInstructions": [
         {
           "@type": "HowToStep",
-          "text": "Mince the chipotles finely (or blend)."
+          "text": "Mince the chipotles finely."
         },
         {
           "@type": "HowToStep",
-          "text": "Stir into the yogurt with lime, garlic powder and salt. Thin with water if needed."
+          "text": "Stir into the yogurt with lime, garlic powder and salt."
         }
       ],
       "prepTime": "PT5M",
@@ -4278,7 +4273,7 @@
       "@id": "comp/honey-mustard",
       "name": "Yogurt honey mustard",
       "alternateName": "honey mustard",
-      "description": "Sweet-sharp honey mustard lightened with Greek yogurt instead of mayo.",
+      "description": "Sweet-sharp honey mustard made light with Greek yogurt — no mayo.",
       "recipeCategory": "sauce",
       "recipeCuisine": [
         "neutral"
@@ -4426,7 +4421,7 @@
       "recipeInstructions": [
         {
           "@type": "HowToStep",
-          "text": "Buy pre-crumbled or crumble a block."
+          "text": "Nothing to do — it comes crumbled."
         }
       ],
       "prepTime": "PT0M",
@@ -4488,7 +4483,7 @@
       "recipeInstructions": [
         {
           "@type": "HowToStep",
-          "text": "Crumble with your fingers or a fork."
+          "text": "Crumble with a fork."
         }
       ],
       "prepTime": "PT2M",
@@ -4618,7 +4613,7 @@
       "recipeInstructions": [
         {
           "@type": "HowToStep",
-          "text": "Use as is, or re-toast in a dry pan for 2 minutes."
+          "text": "Nothing to do — use as is."
         }
       ],
       "prepTime": "PT0M",

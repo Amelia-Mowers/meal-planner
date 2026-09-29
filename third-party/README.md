@@ -35,6 +35,10 @@ Rules for the conversion (PLAN.md §7):
 5. **Decompose** where a recipe is really protein + sauce: emit two components.
 6. **Provenance**: set `isBasedOn` to the book (title, author, page).
 7. **Exclusions**: no mushrooms, olives, capers or zucchini.
+8. **One canonical version**: no optional ingredients, no "or" alternatives, no "to taste".
+   Every ingredient a step mentions must be in `supply` with an amount, otherwise it never
+   reaches the shopping list or nutrition. Pick one method and one amount. (The validator
+   flags hedges like "optional", "swap", "instead", "(or …".)
 
 Then check and import:
 

@@ -28,6 +28,12 @@ const ALLOWED_LICENSES = [
 /** Never allowed anywhere in the library. "olive oil" is fine; olives are not. */
 const EXCLUDED = [/mushroom/i, /\bolives?\b(?! oil)/i, /\bcapers?\b/i, /zucchini|courgette/i]
 
+/**
+ * Recipes commit to one canonical version: no optional ingredients or alternative methods,
+ * because anything not in `supply` never reaches the shopping list or nutrition.
+ */
+const HEDGES = [/\boptional(ly)?\b/i, /\bif you (like|prefer|want)\b/i, /\bswap\b/i, /\binstead\b/i, /\(or\b/i, /\bto taste\b/i, /\botherwise\b/i]
+
 const errors: string[] = []
 const warnings: string[] = []
 const err = (m: string) => errors.push(m)
@@ -71,6 +77,10 @@ for (const d of docs) {
   }
   const text = [d.name, d.description, ...(d.recipeIngredient ?? [])].join(' ')
   for (const re of EXCLUDED) if (re.test(text)) err(`${d['@id']}: contains excluded ingredient (${re})`)
+  const prose = [d.description ?? '', ...(d.recipeInstructions ?? []).map((st) => st.text)]
+  for (const t of prose)
+    for (const re of HEDGES)
+      if (re.test(t)) (isPrivate ? warnings : errors).push(`${d['@id']}: not canonical (${re}) — "${t.slice(0, 80)}"`)
 }
 
 const lib = buildLibrary(foods, bundled, priv?.['@graph'] ?? [], priv?.foods ?? [])
