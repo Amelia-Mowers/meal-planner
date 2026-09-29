@@ -262,7 +262,7 @@ export const components: ComponentDef[] = [
   {
     slug: 'black-beans',
     name: 'Lime-cumin black beans',
-    shortName: 'Black bean',
+    shortName: 'Black beans',
     description: 'Canned black beans, rinsed and seasoned. A fiber-rich secondary protein.',
     role: 'protein',
     cuisines: ['mexican'],
@@ -286,7 +286,7 @@ export const components: ComponentDef[] = [
   {
     slug: 'chickpeas-lemon',
     name: 'Lemon-oregano chickpeas',
-    shortName: 'Chickpea',
+    shortName: 'Chickpeas',
     description: 'Marinated chickpeas that get better over a few days. A secondary protein.',
     role: 'protein',
     cuisines: ['mediterranean'],

@@ -26,7 +26,9 @@ dist-ssr
 # USDA dataset cache (downloaded by scripts/build-foods.ts)
 .cache/
 
-# Private cookbook conversions — NEVER commit (see PLAN.md §7)
-private-library.json
+# Third-party / private sources — NEVER commit (see PLAN.md §7).
+# Cookbook scans, conversions and private-library.json live in third-party/.
+third-party/*
+!third-party/README.md
+private-library*.json
 *.private.json
-cookbook/

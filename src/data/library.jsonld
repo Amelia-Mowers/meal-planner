@@ -3,7 +3,7 @@
     "@vocab": "https://schema.org/",
     "mp": "https://amelia-mowers.github.io/meal-planner/ns#"
   },
-  "mp:version": "1cac5ef5",
+  "mp:version": "c24540d1",
   "@graph": [
     {
       "@type": "Recipe",
@@ -846,7 +846,7 @@
       "@type": "Recipe",
       "@id": "comp/black-beans",
       "name": "Lime-cumin black beans",
-      "alternateName": "Black bean",
+      "alternateName": "Black beans",
       "description": "Canned black beans, rinsed and seasoned. A fiber-rich secondary protein.",
       "recipeCategory": "protein",
       "recipeCuisine": [
@@ -947,7 +947,7 @@
       "@type": "Recipe",
       "@id": "comp/chickpeas-lemon",
       "name": "Lemon-oregano chickpeas",
-      "alternateName": "Chickpea",
+      "alternateName": "Chickpeas",
       "description": "Marinated chickpeas that get better over a few days. A secondary protein.",
       "recipeCategory": "protein",
       "recipeCuisine": [

@@ -1,89 +1,340 @@
-<script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from './assets/vite.svg'
-  import heroImg from './assets/hero.png'
-  import Counter from './lib/Counter.svelte'
+<script lang="ts">
+  import {
+    CalendarDays,
+    ChefHat,
+    LayoutGrid,
+    Library as LibraryIcon,
+    RefreshCw,
+    Settings,
+    ShoppingBasket,
+    Sparkles,
+    WifiOff,
+  } from '@lucide/svelte'
+  import { useRegisterSW } from 'virtual:pwa-register/svelte'
+  import { partsNutrition } from './lib/nutrition'
+  import { router, type Route } from './lib/router.svelte'
+  import { app } from './lib/store.svelte'
+  import { toasts } from './lib/toast.svelte'
+  import { ui } from './lib/ui.svelte'
+  import ComboCard from './ui/ComboCard.svelte'
+  import ComponentDetail from './ui/ComponentDetail.svelte'
+  import Sheet from './ui/Sheet.svelte'
+  import Toasts from './ui/Toasts.svelte'
+  import CombosView from './views/CombosView.svelte'
+  import LibraryView from './views/LibraryView.svelte'
+  import PrepView from './views/PrepView.svelte'
+  import SetView from './views/SetView.svelte'
+  import SettingsView from './views/SettingsView.svelte'
+  import SharedView from './views/SharedView.svelte'
+  import ShopView from './views/ShopView.svelte'
+  import WeekView from './views/WeekView.svelte'
+
+  const { needRefresh, updateServiceWorker } = useRegisterSW({
+    onOfflineReady: () => toasts.show('Ready to work offline'),
+  })
+
+  const NAV: { route: Route; label: string; icon: typeof LayoutGrid; mobile: boolean }[] = [
+    { route: 'set', label: 'Prep set', icon: LayoutGrid, mobile: true },
+    { route: 'combos', label: 'Combos', icon: Sparkles, mobile: true },
+    { route: 'week', label: 'Week', icon: CalendarDays, mobile: true },
+    { route: 'shop', label: 'Shop', icon: ShoppingBasket, mobile: true },
+    { route: 'prep', label: 'Prep', icon: ChefHat, mobile: true },
+    { route: 'library', label: 'Library', icon: LibraryIcon, mobile: false },
+    { route: 'settings', label: 'Settings', icon: Settings, mobile: false },
+  ]
+
+  let online = $state(navigator.onLine)
+  $effect(() => {
+    const on = () => (online = true)
+    const off = () => (online = false)
+    addEventListener('online', on)
+    addEventListener('offline', off)
+    return () => {
+      removeEventListener('online', on)
+      removeEventListener('offline', off)
+    }
+  })
+
+  const detailComp = $derived(ui.detail ? app.lib.components.get(ui.detail) : undefined)
+  const detailCombo = $derived(ui.detail ? app.lib.combos.get(ui.detail) : undefined)
+  let detailOpen = $state(false)
+  $effect(() => {
+    detailOpen = !!ui.detail
+  })
+  $effect(() => {
+    if (!detailOpen) ui.detail = null
+  })
+
+  const badge = (r: Route) =>
+    r === 'set' ? app.prepSet.length : r === 'week' ? app.menuCount : r === 'shop' ? app.shopping.filter((i) => !app.have.includes(i.foodId) && !app.inCart.includes(i.foodId)).length : 0
 </script>
 
-<section id="center">
-  <div class="hero">
-    <img src={heroImg} class="base" width="170" height="179" alt="" />
-    <img src={svelteLogo} class="framework" alt="Svelte logo" />
-    <img src={viteLogo} class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/App.svelte</code> and save to test <code>HMR</code></p>
-  </div>
-  <Counter />
-</section>
+<div class="shell" class:shared={router.route === 'shared'}>
+  <aside class="side">
+    <a class="brand" href="#/set">
+      <img src="{import.meta.env.BASE_URL}icon.svg" alt="" width="32" height="32" />
+      <span>Bowl &amp; Wrap</span>
+    </a>
+    <nav aria-label="Main">
+      {#each NAV as n (n.route)}
+        <a href="#/{n.route}" class="navlink" aria-current={router.route === n.route ? 'page' : undefined}>
+          <n.icon size={18} />
+          <span>{n.label}</span>
+          {#if badge(n.route)}<span class="count num">{badge(n.route)}</span>{/if}
+        </a>
+      {/each}
+    </nav>
+    <p class="tiny muted side-foot">Offline-ready · data stays on this device</p>
+  </aside>
 
-<div class="ticks"></div>
+  <header class="topbar">
+    <a class="brand" href="#/set">
+      <img src="{import.meta.env.BASE_URL}icon.svg" alt="" width="28" height="28" />
+      <span>Bowl &amp; Wrap</span>
+    </a>
+    <span class="spacer"></span>
+    {#if !online}<span class="badge" title="You're offline — everything still works"><WifiOff size={12} /> Offline</span>{/if}
+    <a class="btn icon ghost" href="#/library" aria-label="Library" aria-current={router.route === 'library' ? 'page' : undefined}><LibraryIcon size={20} /></a>
+    <a class="btn icon ghost" href="#/settings" aria-label="Settings" aria-current={router.route === 'settings' ? 'page' : undefined}><Settings size={20} /></a>
+  </header>
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true">
-      <use href="/icons.svg#documentation-icon"></use>
-    </svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank" rel="noreferrer">
-          <img class="logo" src={viteLogo} alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://svelte.dev/" target="_blank" rel="noreferrer">
-          <img class="button-icon" src={svelteLogo} alt="" />
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true">
-      <use href="/icons.svg#social-icon"></use>
-    </svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li>
-        <a href="https://github.com/vitejs/vite" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#github-icon"></use>
-          </svg>
-          GitHub
-        </a>
-      </li>
-      <li>
-        <a href="https://chat.vite.dev/" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#discord-icon"></use>
-          </svg>
-          Discord
-        </a>
-      </li>
-      <li>
-        <a href="https://x.com/vite_js" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#x-icon"></use>
-          </svg>
-          X.com
-        </a>
-      </li>
-      <li>
-        <a href="https://bsky.app/profile/vite.dev" target="_blank" rel="noreferrer">
-          <svg class="button-icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#bluesky-icon"></use>
-          </svg>
-          Bluesky
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
+  <main>
+    {#if !app.ready}
+      <div class="page"><p class="muted">Loading…</p></div>
+    {:else if router.route === 'shared'}
+      <SharedView />
+    {:else if router.route === 'set'}
+      <SetView />
+    {:else if router.route === 'combos'}
+      <CombosView />
+    {:else if router.route === 'week'}
+      <WeekView />
+    {:else if router.route === 'shop'}
+      <ShopView />
+    {:else if router.route === 'prep'}
+      <PrepView />
+    {:else if router.route === 'library'}
+      <LibraryView />
+    {:else if router.route === 'settings'}
+      <SettingsView />
+    {/if}
+  </main>
 
-<div class="ticks"></div>
-<section id="spacer"></section>
+  <nav class="tabbar" aria-label="Main">
+    {#each NAV.filter((n) => n.mobile) as n (n.route)}
+      <a href="#/{n.route}" class="tab" aria-current={router.route === n.route ? 'page' : undefined}>
+        <span class="ic">
+          <n.icon size={22} />
+          {#if badge(n.route)}<span class="pip num">{badge(n.route)}</span>{/if}
+        </span>
+        <span class="lbl">{n.label}</span>
+      </a>
+    {/each}
+  </nav>
+</div>
+
+{#if detailComp}
+  <Sheet bind:open={detailOpen} title={detailComp.name} wide>
+    <ComponentDetail c={detailComp} />
+  </Sheet>
+{:else if detailCombo}
+  {@const n = partsNutrition(app.lib, detailCombo.parts).n}
+  <Sheet bind:open={detailOpen} title={detailCombo.name} subtitle="{Math.round(n.kcal)} kcal · {Math.round(n.protein)} g protein" wide>
+    <div class="stack">
+      <ComboCard combo={detailCombo} missing={detailCombo.parts.map((p) => p.componentId).filter((id) => !app.prepSetIds.has(id))} />
+      <label class="row small" style:gap=".45rem">
+        <input
+          type="checkbox"
+          checked={app.isTested(detailCombo.id)}
+          onchange={() => (app.tested = { ...app.tested, [detailCombo.id]: !app.isTested(detailCombo.id) })}
+        />
+        I've made this combo and it works
+      </label>
+      <p class="tiny muted">By {detailCombo.doc?.author?.name ?? 'unknown'} · <span class="mono">{detailCombo.id}</span></p>
+    </div>
+  </Sheet>
+{/if}
+
+{#if $needRefresh}
+  <div class="update card" role="alert">
+    <RefreshCw size={16} />
+    <span class="small">A new version is available.</span>
+    <button class="btn sm primary" onclick={() => updateServiceWorker(true)}>Reload</button>
+    <button class="btn sm ghost" onclick={() => needRefresh.set(false)}>Later</button>
+  </div>
+{/if}
+
+<Toasts />
+
+<style>
+  .shell {
+    min-height: 100dvh;
+  }
+  .side {
+    display: none;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 1.05rem;
+  }
+  .brand img {
+    border-radius: 8px;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    padding-top: calc(0.5rem + env(safe-area-inset-top, 0px));
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar a[aria-current='page'] {
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .tabbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: calc(var(--nav-h) + var(--safe-b));
+    padding-bottom: var(--safe-b);
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--line);
+  }
+  .tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 650;
+  }
+  .tab .ic {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 30px;
+    border-radius: 999px;
+    transition: background 0.15s;
+  }
+  .tab[aria-current='page'] {
+    color: var(--accent);
+  }
+  .tab[aria-current='page'] .ic {
+    background: var(--accent-soft);
+  }
+  .pip {
+    position: absolute;
+    top: -3px;
+    right: 6px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 0.65rem;
+    font-weight: 800;
+    display: grid;
+    place-items: center;
+    border: 2px solid var(--surface);
+  }
+  .shared .tabbar {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .shell {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+    }
+    .topbar,
+    .tabbar {
+      display: none;
+    }
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: sticky;
+      top: 0;
+      height: 100dvh;
+      padding: 1.25rem 0.9rem;
+      border-right: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .side .brand {
+      padding: 0.25rem 0.5rem;
+    }
+    .side nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .navlink {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 10px;
+      color: var(--ink-2);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .navlink:hover {
+      background: var(--surface-2);
+    }
+    .navlink[aria-current='page'] {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+    .count {
+      margin-left: auto;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .side-foot {
+      margin-top: auto;
+      padding: 0 0.5rem;
+    }
+  }
+  .update {
+    position: fixed;
+    top: 0.75rem;
+    left: 50%;
+    translate: -50% 0;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.9rem;
+    box-shadow: var(--shadow-2);
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+  }
+  .mono {
+    font-family: var(--mono);
+  }
+</style>

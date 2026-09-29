@@ -47,7 +47,7 @@ const priv: LibraryFile | null = privatePath ? read(privatePath) : null
 // ── Foods ──
 const foodIds = new Set<string>()
 for (const f of [...foods, ...(priv?.foods ?? [])]) {
-  if (!validateFood(f)) err(`${f.id}: ${ajv.errorsText(validateFood.errors)}`)
+  if (!validateFood(f as unknown)) err(`${f.id}: ${ajv.errorsText(validateFood.errors)}`)
   if (foodIds.has(f.id)) err(`${f.id}: duplicate food id`)
   foodIds.add(f.id)
   if (!AISLES[f.aisle]) err(`${f.id}: unknown aisle "${f.aisle}"`)
@@ -61,7 +61,7 @@ for (const f of [...foods, ...(priv?.foods ?? [])]) {
 const docs: RecipeDoc[] = [...bundled['@graph'], ...(priv?.['@graph'] ?? [])]
 const ids = new Set<string>()
 for (const d of docs) {
-  if (!validateRecipe(d)) err(`${d['@id']}: ${ajv.errorsText(validateRecipe.errors)}`)
+  if (!validateRecipe(d as unknown)) err(`${d['@id']}: ${ajv.errorsText(validateRecipe.errors)}`)
   if (ids.has(d['@id'])) err(`${d['@id']}: duplicate id`)
   ids.add(d['@id'])
   const isPrivate = !bundled['@graph'].includes(d)

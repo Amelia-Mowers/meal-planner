@@ -94,7 +94,10 @@ export function prepPlan(needs: Map<string, ComponentNeed>): { tasks: PrepTask[]
       id: `group/${group}`,
       lane,
       title,
-      detail: `${formatQty(humanize({ value: grams, unit: 'g' }))} total → split into ${cs.map((c) => c.name.toLowerCase()).join(', ')}`,
+      detail:
+        cs.length > 1
+          ? `${formatQty(humanize({ value: grams, unit: 'g' }))} total → split into ${cs.map((c) => c.shortName.toLowerCase()).join(', ')}`
+          : `${formatQty(humanize({ value: grams, unit: 'g' }))} → ${cs[0].name.toLowerCase()}`,
       components: cs,
       activeMin: Math.max(...cs.map((c) => c.prepMin)) + 5 * (cs.length - 1),
       handsOffMin: Math.max(...cs.map((c) => c.cookMin)) + 3 * (cs.length - 1),
