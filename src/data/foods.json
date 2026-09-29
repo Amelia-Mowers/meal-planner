@@ -1,0 +1,1980 @@
+{
+  "source": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+  "foods": [
+    {
+      "id": "food/rotisserie-chicken",
+      "name": "rotisserie chicken",
+      "aliases": [
+        "whole roasted chicken",
+        "store-bought rotisserie chicken"
+      ],
+      "fdcId": 172395,
+      "aisle": "deli",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 750
+      },
+      "note": "Meat-only yield of a ~2.5 lb store chicken, skin off.",
+      "per100g": {
+        "kcal": 167,
+        "protein": 25,
+        "fat": 6.6,
+        "carbs": 0,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Chicken, roasting, meat only, cooked, roasted",
+      "densityGPerMl": 0.592
+    },
+    {
+      "id": "food/chicken-breast",
+      "name": "chicken breast",
+      "aliases": [
+        "chicken breasts",
+        "boneless skinless chicken breast"
+      ],
+      "fdcId": 171077,
+      "aisle": "meat",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "lb"
+      },
+      "gramsPerUnit": {
+        "whole": 225
+      },
+      "note": "Raw weight. Roasting loses ~25% of weight as water.",
+      "per100g": {
+        "kcal": 120,
+        "protein": 22.5,
+        "fat": 2.6,
+        "carbs": 0,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/chicken-thigh",
+      "name": "chicken thighs",
+      "aliases": [
+        "boneless skinless chicken thighs",
+        "chicken thigh"
+      ],
+      "fdcId": 173627,
+      "aisle": "meat",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "lb"
+      },
+      "gramsPerUnit": {
+        "whole": 115
+      },
+      "note": "Raw weight. Roasting loses ~25-30% of weight as water.",
+      "per100g": {
+        "kcal": 121,
+        "protein": 19.7,
+        "fat": 4.1,
+        "carbs": 0,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Chicken, broilers or fryers, dark meat, thigh, meat only, raw",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/ground-turkey-93",
+      "name": "ground turkey, 93% lean",
+      "aliases": [
+        "93/7 ground turkey",
+        "lean ground turkey"
+      ],
+      "fdcId": 172850,
+      "aisle": "meat",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "lb"
+      },
+      "note": "Raw weight.",
+      "per100g": {
+        "kcal": 150,
+        "protein": 18.7,
+        "fat": 8.3,
+        "carbs": 0,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Turkey, ground, 93% lean, 7% fat, raw",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/egg",
+      "name": "eggs",
+      "aliases": [
+        "egg",
+        "large eggs",
+        "hard-boiled eggs"
+      ],
+      "fdcId": 173424,
+      "aisle": "dairy",
+      "buyUnit": {
+        "value": 12,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 50
+      },
+      "per100g": {
+        "kcal": 155,
+        "protein": 12.6,
+        "fat": 10.6,
+        "carbs": 1.1,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Egg, whole, cooked, hard-boiled",
+      "densityGPerMl": 0.575
+    },
+    {
+      "id": "food/tofu-extra-firm",
+      "name": "extra-firm tofu",
+      "aliases": [
+        "tofu",
+        "firm tofu"
+      ],
+      "fdcId": 174290,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "block"
+      },
+      "gramsPerUnit": {
+        "block": 397
+      },
+      "per100g": {
+        "kcal": 83,
+        "protein": 10,
+        "fat": 5.3,
+        "carbs": 1.2,
+        "fiber": 1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Tofu, extra firm, prepared with nigari",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/black-beans-canned",
+      "name": "black beans, canned",
+      "aliases": [
+        "black beans",
+        "canned black beans"
+      ],
+      "fdcId": 175238,
+      "aisle": "canned",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "can"
+      },
+      "gramsPerUnit": {
+        "can": 260
+      },
+      "note": "15 oz can, drained weight ~260 g.",
+      "per100g": {
+        "kcal": 91,
+        "protein": 6,
+        "fat": 0.3,
+        "carbs": 16.6,
+        "fiber": 6.9
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Beans, black, mature seeds, canned, low sodium",
+      "densityGPerMl": 1.014
+    },
+    {
+      "id": "food/chickpeas-canned",
+      "name": "chickpeas, canned",
+      "aliases": [
+        "chickpeas",
+        "garbanzo beans"
+      ],
+      "fdcId": 173801,
+      "aisle": "canned",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "can"
+      },
+      "gramsPerUnit": {
+        "can": 250
+      },
+      "note": "15 oz can, drained weight ~250 g.",
+      "per100g": {
+        "kcal": 138,
+        "protein": 7,
+        "fat": 2.5,
+        "carbs": 22.9,
+        "fiber": 6.3
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained, rinsed in tap water",
+      "densityGPerMl": 0.642
+    },
+    {
+      "id": "food/rice-white",
+      "name": "white rice, long-grain",
+      "aliases": [
+        "rice",
+        "jasmine rice",
+        "long-grain rice"
+      ],
+      "fdcId": 168877,
+      "aisle": "grains",
+      "buyUnit": {
+        "value": 2,
+        "unitText": "lb"
+      },
+      "per100g": {
+        "kcal": 365,
+        "protein": 7.1,
+        "fat": 0.7,
+        "carbs": 80,
+        "fiber": 1.3
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Rice, white, long-grain, regular, raw, enriched",
+      "densityGPerMl": 0.782
+    },
+    {
+      "id": "food/quinoa",
+      "name": "quinoa",
+      "aliases": [],
+      "fdcId": 168874,
+      "aisle": "grains",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "lb"
+      },
+      "per100g": {
+        "kcal": 368,
+        "protein": 14.1,
+        "fat": 6.1,
+        "carbs": 64.2,
+        "fiber": 7
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Quinoa, uncooked",
+      "densityGPerMl": 0.719
+    },
+    {
+      "id": "food/couscous",
+      "name": "couscous",
+      "aliases": [],
+      "fdcId": 169699,
+      "aisle": "grains",
+      "buyUnit": {
+        "value": 10,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 376,
+        "protein": 12.8,
+        "fat": 0.6,
+        "carbs": 77.4,
+        "fiber": 5
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Couscous, dry",
+      "densityGPerMl": 0.731
+    },
+    {
+      "id": "food/tortilla-whole-wheat",
+      "name": "whole-wheat tortillas",
+      "aliases": [
+        "tortillas",
+        "wraps"
+      ],
+      "fdcId": 174081,
+      "aisle": "bakery",
+      "buyUnit": {
+        "value": 8,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 49
+      },
+      "per100g": {
+        "kcal": 310,
+        "protein": 9.8,
+        "fat": 9.8,
+        "carbs": 45.9,
+        "fiber": 9.8
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Tortillas, ready-to-bake or -fry, whole wheat",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/tortilla-high-protein",
+      "name": "high-protein, high-fiber tortillas",
+      "aliases": [
+        "carb balance tortillas",
+        "protein wraps"
+      ],
+      "fdcId": null,
+      "nutritionSource": "label",
+      "needsReview": true,
+      "per100g": {
+        "kcal": 200,
+        "protein": 14,
+        "fat": 6,
+        "carbs": 42,
+        "fiber": 24
+      },
+      "aisle": "bakery",
+      "buyUnit": {
+        "value": 8,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 50
+      },
+      "note": "Typical label values vary by brand; check yours.",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/pita-whole-wheat",
+      "name": "whole-wheat pita",
+      "aliases": [
+        "pita",
+        "pita bread"
+      ],
+      "fdcId": 174916,
+      "aisle": "bakery",
+      "buyUnit": {
+        "value": 6,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 64
+      },
+      "per100g": {
+        "kcal": 262,
+        "protein": 9.8,
+        "fat": 1.7,
+        "carbs": 55.9,
+        "fiber": 6.1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Bread, pita, whole-wheat",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/soba-noodles",
+      "name": "soba noodles",
+      "aliases": [
+        "buckwheat noodles"
+      ],
+      "fdcId": 168906,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 8,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 336,
+        "protein": 14.4,
+        "fat": 0.7,
+        "carbs": 74.6,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Noodles, japanese, soba, dry",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/rice-noodles",
+      "name": "rice noodles",
+      "aliases": [
+        "rice vermicelli",
+        "pad thai noodles"
+      ],
+      "fdcId": 169742,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 14,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 364,
+        "protein": 6,
+        "fat": 0.6,
+        "carbs": 80.2,
+        "fiber": 1.6
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Rice noodles, dry",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/potatoes-red",
+      "name": "baby red potatoes",
+      "aliases": [
+        "potatoes",
+        "red potatoes"
+      ],
+      "fdcId": 170029,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1.5,
+        "unitText": "lb"
+      },
+      "gramsPerUnit": {
+        "whole": 70
+      },
+      "per100g": {
+        "kcal": 70,
+        "protein": 1.9,
+        "fat": 0.1,
+        "carbs": 15.9,
+        "fiber": 1.7
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Potatoes, red, flesh and skin, raw",
+      "densityGPerMl": 0.634
+    },
+    {
+      "id": "food/broccoli-florets",
+      "name": "broccoli florets, steam-in-bag",
+      "aliases": [
+        "broccoli",
+        "frozen broccoli"
+      ],
+      "fdcId": 169968,
+      "aisle": "frozen",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bag"
+      },
+      "gramsPerUnit": {
+        "bag": 340
+      },
+      "per100g": {
+        "kcal": 26,
+        "protein": 2.8,
+        "fat": 0.3,
+        "carbs": 4.8,
+        "fiber": 3
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Broccoli, frozen, chopped, unprepared",
+      "densityGPerMl": 0.659
+    },
+    {
+      "id": "food/spinach-frozen",
+      "name": "frozen chopped spinach",
+      "aliases": [
+        "spinach",
+        "frozen spinach"
+      ],
+      "fdcId": 169287,
+      "aisle": "frozen",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bag"
+      },
+      "gramsPerUnit": {
+        "bag": 340
+      },
+      "per100g": {
+        "kcal": 29,
+        "protein": 3.6,
+        "fat": 0.6,
+        "carbs": 4.2,
+        "fiber": 2.9
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spinach, frozen, chopped or leaf, unprepared (Includes foods for USDA's Food Distribution Program)",
+      "densityGPerMl": 0.659
+    },
+    {
+      "id": "food/broccoli-slaw",
+      "name": "broccoli slaw mix",
+      "aliases": [
+        "broccoli slaw"
+      ],
+      "fdcId": 170379,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bag"
+      },
+      "gramsPerUnit": {
+        "bag": 340
+      },
+      "densityGPerMl": 0.3,
+      "note": "Nutrition proxied by raw broccoli.",
+      "per100g": {
+        "kcal": 34,
+        "protein": 2.8,
+        "fat": 0.4,
+        "carbs": 6.6,
+        "fiber": 2.6
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Broccoli, raw"
+    },
+    {
+      "id": "food/cabbage-green",
+      "name": "green cabbage",
+      "aliases": [
+        "cabbage",
+        "coleslaw mix"
+      ],
+      "fdcId": 169975,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bag"
+      },
+      "gramsPerUnit": {
+        "bag": 397,
+        "whole": 900
+      },
+      "per100g": {
+        "kcal": 25,
+        "protein": 1.3,
+        "fat": 0.1,
+        "carbs": 5.8,
+        "fiber": 2.5
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Cabbage, raw",
+      "densityGPerMl": 0.376
+    },
+    {
+      "id": "food/cabbage-red",
+      "name": "red cabbage",
+      "aliases": [
+        "purple cabbage"
+      ],
+      "fdcId": 169977,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 900
+      },
+      "per100g": {
+        "kcal": 31,
+        "protein": 1.4,
+        "fat": 0.2,
+        "carbs": 7.4,
+        "fiber": 2.1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Cabbage, red, raw",
+      "densityGPerMl": 0.376
+    },
+    {
+      "id": "food/cucumber",
+      "name": "cucumber",
+      "aliases": [
+        "english cucumber",
+        "mini cucumbers"
+      ],
+      "fdcId": 168409,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 300
+      },
+      "per100g": {
+        "kcal": 15,
+        "protein": 0.7,
+        "fat": 0.1,
+        "carbs": 3.6,
+        "fiber": 0.5
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Cucumber, with peel, raw",
+      "densityGPerMl": 0.44
+    },
+    {
+      "id": "food/bell-pepper",
+      "name": "bell pepper",
+      "aliases": [
+        "red bell pepper",
+        "sweet pepper"
+      ],
+      "fdcId": 170108,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 119
+      },
+      "per100g": {
+        "kcal": 26,
+        "protein": 1,
+        "fat": 0.3,
+        "carbs": 6,
+        "fiber": 2.1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Peppers, sweet, red, raw",
+      "densityGPerMl": 0.63
+    },
+    {
+      "id": "food/carrot",
+      "name": "shredded carrots",
+      "aliases": [
+        "carrots",
+        "carrot"
+      ],
+      "fdcId": 170393,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 10,
+        "unitText": "oz"
+      },
+      "gramsPerUnit": {
+        "whole": 61
+      },
+      "per100g": {
+        "kcal": 41,
+        "protein": 0.9,
+        "fat": 0.2,
+        "carbs": 9.6,
+        "fiber": 2.8
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Carrots, raw",
+      "densityGPerMl": 0.541
+    },
+    {
+      "id": "food/radish",
+      "name": "radishes",
+      "aliases": [
+        "radish"
+      ],
+      "fdcId": 169276,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bunch"
+      },
+      "gramsPerUnit": {
+        "bunch": 200,
+        "whole": 5
+      },
+      "per100g": {
+        "kcal": 16,
+        "protein": 0.7,
+        "fat": 0.1,
+        "carbs": 3.4,
+        "fiber": 1.6
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Radishes, raw",
+      "densityGPerMl": 0.49
+    },
+    {
+      "id": "food/cherry-tomatoes",
+      "name": "cherry tomatoes",
+      "aliases": [
+        "grape tomatoes"
+      ],
+      "fdcId": 170457,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 10,
+        "unitText": "oz"
+      },
+      "gramsPerUnit": {
+        "whole": 17
+      },
+      "densityGPerMl": 0.63,
+      "per100g": {
+        "kcal": 18,
+        "protein": 0.9,
+        "fat": 0.2,
+        "carbs": 3.9,
+        "fiber": 1.2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Tomatoes, red, ripe, raw, year round average"
+    },
+    {
+      "id": "food/romaine",
+      "name": "romaine lettuce",
+      "aliases": [
+        "romaine",
+        "romaine hearts"
+      ],
+      "fdcId": 169247,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 280
+      },
+      "note": "Buy unit is one heart.",
+      "per100g": {
+        "kcal": 17,
+        "protein": 1.2,
+        "fat": 0.3,
+        "carbs": 3.3,
+        "fiber": 2.1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Lettuce, cos or romaine, raw",
+      "densityGPerMl": 0.199
+    },
+    {
+      "id": "food/edamame",
+      "name": "shelled edamame, frozen",
+      "aliases": [
+        "edamame"
+      ],
+      "fdcId": 168410,
+      "aisle": "frozen",
+      "buyUnit": {
+        "value": 12,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 109,
+        "protein": 11.2,
+        "fat": 4.7,
+        "carbs": 7.6,
+        "fiber": 4.8
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Edamame, frozen, unprepared",
+      "densityGPerMl": 0.499
+    },
+    {
+      "id": "food/corn-frozen",
+      "name": "frozen corn",
+      "aliases": [
+        "corn",
+        "sweet corn"
+      ],
+      "fdcId": 168398,
+      "aisle": "frozen",
+      "buyUnit": {
+        "value": 12,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 88,
+        "protein": 3,
+        "fat": 0.8,
+        "carbs": 20.7,
+        "fiber": 2.1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Corn, sweet, yellow, frozen, kernels cut off cob, unprepared (Includes foods for USDA's Food Distribution Program)",
+      "densityGPerMl": 0.575
+    },
+    {
+      "id": "food/red-onion",
+      "name": "red onion",
+      "aliases": [
+        "onion",
+        "red onions"
+      ],
+      "fdcId": 170000,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 150
+      },
+      "per100g": {
+        "kcal": 40,
+        "protein": 1.1,
+        "fat": 0.1,
+        "carbs": 9.3,
+        "fiber": 1.7
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Onions, raw",
+      "densityGPerMl": 0.676
+    },
+    {
+      "id": "food/scallions",
+      "name": "scallions",
+      "aliases": [
+        "green onions",
+        "spring onions"
+      ],
+      "fdcId": 170005,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bunch"
+      },
+      "gramsPerUnit": {
+        "bunch": 100,
+        "whole": 15
+      },
+      "per100g": {
+        "kcal": 32,
+        "protein": 1.8,
+        "fat": 0.2,
+        "carbs": 7.3,
+        "fiber": 2.6
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Onions, spring or scallions (includes tops and bulb), raw",
+      "densityGPerMl": 0.423
+    },
+    {
+      "id": "food/kimchi",
+      "name": "kimchi",
+      "aliases": [
+        "napa cabbage kimchi"
+      ],
+      "fdcId": 170392,
+      "aisle": "refrigerated",
+      "buyUnit": {
+        "value": 16,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 15,
+        "protein": 1.1,
+        "fat": 0.5,
+        "carbs": 2.4,
+        "fiber": 1.6
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Cabbage, kimchi",
+      "densityGPerMl": 0.634
+    },
+    {
+      "id": "food/jalapenos-pickled",
+      "name": "pickled jalapeños",
+      "aliases": [
+        "jalapeños",
+        "nacho jalapeños"
+      ],
+      "fdcId": 170080,
+      "aisle": "condiments",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 340
+      },
+      "per100g": {
+        "kcal": 27,
+        "protein": 0.9,
+        "fat": 0.9,
+        "carbs": 4.7,
+        "fiber": 2.6
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Peppers, jalapeno, canned, solids and liquids",
+      "densityGPerMl": 0.575
+    },
+    {
+      "id": "food/giardiniera",
+      "name": "giardiniera",
+      "aliases": [
+        "pickled vegetables"
+      ],
+      "fdcId": null,
+      "nutritionSource": "label",
+      "needsReview": true,
+      "per100g": {
+        "kcal": 20,
+        "protein": 1,
+        "fat": 0,
+        "carbs": 4,
+        "fiber": 1.5
+      },
+      "densityGPerMl": 0.6,
+      "aisle": "condiments",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 450
+      },
+      "note": "Vinegar-packed (not oil-packed); oil-packed is far higher in calories."
+    },
+    {
+      "id": "food/pepperoncini",
+      "name": "pepperoncini",
+      "aliases": [
+        "pickled peppers",
+        "banana peppers"
+      ],
+      "fdcId": 169766,
+      "aisle": "condiments",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 340,
+        "whole": 10
+      },
+      "note": "Nutrition proxied by USDA 'hot pickled peppers'.",
+      "per100g": {
+        "kcal": 22,
+        "protein": 0.8,
+        "fat": 0.4,
+        "carbs": 4.6,
+        "fiber": 2.6
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Peppers, hot pickled, canned",
+      "densityGPerMl": 0.575
+    },
+    {
+      "id": "food/jalapeno-fresh",
+      "name": "jalapeño",
+      "aliases": [
+        "fresh jalapeño"
+      ],
+      "fdcId": 168576,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 14
+      },
+      "per100g": {
+        "kcal": 29,
+        "protein": 0.9,
+        "fat": 0.4,
+        "carbs": 6.5,
+        "fiber": 2.8
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Peppers, jalapeno, raw",
+      "densityGPerMl": 0.38
+    },
+    {
+      "id": "food/tomatillos",
+      "name": "tomatillos",
+      "aliases": [
+        "tomatillo"
+      ],
+      "fdcId": 168566,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "lb"
+      },
+      "gramsPerUnit": {
+        "whole": 34
+      },
+      "per100g": {
+        "kcal": 32,
+        "protein": 1,
+        "fat": 1,
+        "carbs": 5.8,
+        "fiber": 1.9
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Tomatillos, raw",
+      "densityGPerMl": 0.558
+    },
+    {
+      "id": "food/greek-yogurt",
+      "name": "plain nonfat Greek yogurt",
+      "aliases": [
+        "greek yogurt",
+        "0% greek yogurt"
+      ],
+      "fdcId": 170894,
+      "densityGPerMl": 1.04,
+      "aisle": "dairy",
+      "buyUnit": {
+        "value": 32,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 59,
+        "protein": 10.2,
+        "fat": 0.4,
+        "carbs": 3.6,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)"
+    },
+    {
+      "id": "food/garlic",
+      "name": "garlic",
+      "aliases": [
+        "garlic cloves",
+        "garlic clove"
+      ],
+      "fdcId": 169230,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "head"
+      },
+      "gramsPerUnit": {
+        "clove": 3,
+        "head": 40
+      },
+      "per100g": {
+        "kcal": 149,
+        "protein": 6.4,
+        "fat": 0.5,
+        "carbs": 33.1,
+        "fiber": 2.1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Garlic, raw",
+      "densityGPerMl": 0.575
+    },
+    {
+      "id": "food/lemon-juice",
+      "name": "lemons",
+      "aliases": [
+        "lemon",
+        "lemon juice"
+      ],
+      "fdcId": 167747,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 48
+      },
+      "note": "Tracked as juice; one lemon ≈ 3 tbsp juice.",
+      "per100g": {
+        "kcal": 22,
+        "protein": 0.4,
+        "fat": 0.2,
+        "carbs": 6.9,
+        "fiber": 0.3
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Lemon juice, raw",
+      "densityGPerMl": 1.031
+    },
+    {
+      "id": "food/lime-juice",
+      "name": "limes",
+      "aliases": [
+        "lime",
+        "lime juice"
+      ],
+      "fdcId": 168156,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 31
+      },
+      "note": "Tracked as juice; one lime ≈ 2 tbsp juice.",
+      "per100g": {
+        "kcal": 25,
+        "protein": 0.4,
+        "fat": 0.1,
+        "carbs": 8.4,
+        "fiber": 0.4
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Lime juice, raw",
+      "densityGPerMl": 1.023
+    },
+    {
+      "id": "food/dill",
+      "name": "fresh dill",
+      "aliases": [
+        "dill"
+      ],
+      "fdcId": 172233,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bunch"
+      },
+      "gramsPerUnit": {
+        "bunch": 20
+      },
+      "per100g": {
+        "kcal": 43,
+        "protein": 3.5,
+        "fat": 1.1,
+        "carbs": 7,
+        "fiber": 2.1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Dill weed, fresh",
+      "densityGPerMl": 0.038
+    },
+    {
+      "id": "food/cilantro",
+      "name": "cilantro",
+      "aliases": [
+        "fresh cilantro",
+        "coriander leaves"
+      ],
+      "fdcId": 169997,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bunch"
+      },
+      "gramsPerUnit": {
+        "bunch": 60
+      },
+      "per100g": {
+        "kcal": 23,
+        "protein": 2.1,
+        "fat": 0.5,
+        "carbs": 3.7,
+        "fiber": 2.8
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Coriander (cilantro) leaves, raw",
+      "densityGPerMl": 0.068
+    },
+    {
+      "id": "food/parsley",
+      "name": "flat-leaf parsley",
+      "aliases": [
+        "parsley"
+      ],
+      "fdcId": 170416,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bunch"
+      },
+      "gramsPerUnit": {
+        "bunch": 60
+      },
+      "per100g": {
+        "kcal": 36,
+        "protein": 3,
+        "fat": 0.8,
+        "carbs": 6.3,
+        "fiber": 3.3
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Parsley, fresh",
+      "densityGPerMl": 0.254
+    },
+    {
+      "id": "food/ginger",
+      "name": "fresh ginger",
+      "aliases": [
+        "ginger",
+        "ginger root"
+      ],
+      "fdcId": 169231,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 3,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 80,
+        "protein": 1.8,
+        "fat": 0.8,
+        "carbs": 17.8,
+        "fiber": 2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Ginger root, raw",
+      "densityGPerMl": 0.406
+    },
+    {
+      "id": "food/chipotle-in-adobo",
+      "name": "chipotle peppers in adobo",
+      "aliases": [
+        "chipotles in adobo",
+        "chipotle"
+      ],
+      "fdcId": null,
+      "nutritionSource": "label",
+      "needsReview": true,
+      "per100g": {
+        "kcal": 70,
+        "protein": 2,
+        "fat": 2.5,
+        "carbs": 12,
+        "fiber": 4
+      },
+      "densityGPerMl": 1,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "can"
+      },
+      "gramsPerUnit": {
+        "can": 198,
+        "whole": 12
+      }
+    },
+    {
+      "id": "food/gochujang",
+      "name": "gochujang",
+      "aliases": [
+        "korean chili paste"
+      ],
+      "fdcId": null,
+      "nutritionSource": "label",
+      "needsReview": true,
+      "per100g": {
+        "kcal": 220,
+        "protein": 5,
+        "fat": 1.5,
+        "carbs": 48,
+        "fiber": 3
+      },
+      "densityGPerMl": 1.3,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "tub"
+      },
+      "gramsPerUnit": {
+        "tub": 500
+      }
+    },
+    {
+      "id": "food/tahini",
+      "name": "tahini",
+      "aliases": [
+        "sesame paste"
+      ],
+      "fdcId": 170189,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 16,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 595,
+        "protein": 17,
+        "fat": 53.8,
+        "carbs": 21.2,
+        "fiber": 9.3
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)",
+      "densityGPerMl": 1.014
+    },
+    {
+      "id": "food/olive-oil",
+      "name": "extra-virgin olive oil",
+      "aliases": [
+        "olive oil"
+      ],
+      "fdcId": 171413,
+      "aisle": "oils",
+      "buyUnit": {
+        "value": 500,
+        "unitCode": "MLT"
+      },
+      "per100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Oil, olive, salad or cooking",
+      "densityGPerMl": 0.913
+    },
+    {
+      "id": "food/neutral-oil",
+      "name": "neutral oil",
+      "aliases": [
+        "canola oil",
+        "vegetable oil"
+      ],
+      "fdcId": 172336,
+      "aisle": "oils",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bottle"
+      },
+      "gramsPerUnit": {
+        "bottle": 1330
+      },
+      "per100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Oil, canola",
+      "densityGPerMl": 0.921
+    },
+    {
+      "id": "food/sesame-oil",
+      "name": "toasted sesame oil",
+      "aliases": [
+        "sesame oil"
+      ],
+      "fdcId": 171016,
+      "aisle": "oils",
+      "buyUnit": {
+        "value": 250,
+        "unitCode": "MLT"
+      },
+      "per100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Oil, sesame, salad or cooking",
+      "densityGPerMl": 0.921
+    },
+    {
+      "id": "food/red-wine-vinegar",
+      "name": "red wine vinegar",
+      "aliases": [],
+      "fdcId": 172240,
+      "aisle": "condiments",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bottle"
+      },
+      "gramsPerUnit": {
+        "bottle": 500
+      },
+      "per100g": {
+        "kcal": 19,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0.3,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Vinegar, red wine",
+      "densityGPerMl": 1.01
+    },
+    {
+      "id": "food/rice-vinegar",
+      "name": "rice vinegar",
+      "aliases": [
+        "rice wine vinegar"
+      ],
+      "fdcId": 172237,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bottle"
+      },
+      "gramsPerUnit": {
+        "bottle": 355
+      },
+      "note": "Nutrition proxied by USDA distilled vinegar.",
+      "per100g": {
+        "kcal": 18,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Vinegar, distilled",
+      "densityGPerMl": 1.006
+    },
+    {
+      "id": "food/cider-vinegar",
+      "name": "apple cider vinegar",
+      "aliases": [
+        "cider vinegar"
+      ],
+      "fdcId": 173469,
+      "aisle": "condiments",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bottle"
+      },
+      "gramsPerUnit": {
+        "bottle": 473
+      },
+      "per100g": {
+        "kcal": 21,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0.9,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Vinegar, cider",
+      "densityGPerMl": 1.01
+    },
+    {
+      "id": "food/peanut-butter",
+      "name": "creamy peanut butter",
+      "aliases": [
+        "peanut butter"
+      ],
+      "fdcId": 174266,
+      "aisle": "condiments",
+      "buyUnit": {
+        "value": 16,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 598,
+        "protein": 22.2,
+        "fat": 51.4,
+        "carbs": 22.3,
+        "fiber": 5
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Peanut butter, smooth style, with salt (Includes foods for USDA's Food Distribution Program)",
+      "densityGPerMl": 1.091
+    },
+    {
+      "id": "food/soy-sauce",
+      "name": "soy sauce",
+      "aliases": [
+        "shoyu",
+        "low-sodium soy sauce"
+      ],
+      "fdcId": 174277,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bottle"
+      },
+      "gramsPerUnit": {
+        "bottle": 290
+      },
+      "per100g": {
+        "kcal": 53,
+        "protein": 8.1,
+        "fat": 0.6,
+        "carbs": 4.9,
+        "fiber": 0.8
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Soy sauce made from soy and wheat (shoyu)",
+      "densityGPerMl": 1.078
+    },
+    {
+      "id": "food/honey",
+      "name": "honey",
+      "aliases": [],
+      "fdcId": 169640,
+      "aisle": "condiments",
+      "buyUnit": {
+        "value": 12,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 304,
+        "protein": 0.3,
+        "fat": 0,
+        "carbs": 82.4,
+        "fiber": 0.2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Honey",
+      "densityGPerMl": 1.433
+    },
+    {
+      "id": "food/mustard-dijon",
+      "name": "Dijon mustard",
+      "aliases": [
+        "mustard",
+        "dijon"
+      ],
+      "fdcId": 172234,
+      "aisle": "condiments",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 340
+      },
+      "note": "Nutrition proxied by USDA prepared yellow mustard.",
+      "per100g": {
+        "kcal": 60,
+        "protein": 3.7,
+        "fat": 3.3,
+        "carbs": 5.8,
+        "fiber": 4
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Mustard, prepared, yellow",
+      "densityGPerMl": 1.052
+    },
+    {
+      "id": "food/sriracha",
+      "name": "sriracha",
+      "aliases": [
+        "hot chili sauce"
+      ],
+      "fdcId": 171186,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bottle"
+      },
+      "gramsPerUnit": {
+        "bottle": 480
+      },
+      "per100g": {
+        "kcal": 93,
+        "protein": 1.9,
+        "fat": 0.9,
+        "carbs": 19.2,
+        "fiber": 2.2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Sauce, hot chile, sriracha",
+      "densityGPerMl": 1.319
+    },
+    {
+      "id": "food/salt",
+      "name": "kosher salt",
+      "aliases": [
+        "salt"
+      ],
+      "fdcId": 173468,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "box"
+      },
+      "gramsPerUnit": {
+        "box": 1360
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 0,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Salt, table",
+      "densityGPerMl": 1.234
+    },
+    {
+      "id": "food/black-pepper",
+      "name": "black pepper",
+      "aliases": [
+        "pepper"
+      ],
+      "fdcId": 170931,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 50
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 251,
+        "protein": 10.4,
+        "fat": 3.3,
+        "carbs": 64,
+        "fiber": 25.3
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, pepper, black",
+      "densityGPerMl": 0.467
+    },
+    {
+      "id": "food/cumin",
+      "name": "ground cumin",
+      "aliases": [
+        "cumin"
+      ],
+      "fdcId": 170923,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 45
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 375,
+        "protein": 17.8,
+        "fat": 22.3,
+        "carbs": 44.2,
+        "fiber": 10.5
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, cumin seed",
+      "densityGPerMl": 0.406
+    },
+    {
+      "id": "food/chili-powder",
+      "name": "chili powder",
+      "aliases": [],
+      "fdcId": 171319,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 70
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 282,
+        "protein": 13.5,
+        "fat": 14.3,
+        "carbs": 49.7,
+        "fiber": 34.8
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, chili powder",
+      "densityGPerMl": 0.541
+    },
+    {
+      "id": "food/smoked-paprika",
+      "name": "smoked paprika",
+      "aliases": [
+        "paprika"
+      ],
+      "fdcId": 171329,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 50
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 282,
+        "protein": 14.1,
+        "fat": 12.9,
+        "carbs": 54,
+        "fiber": 34.9
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, paprika",
+      "densityGPerMl": 0.46
+    },
+    {
+      "id": "food/garlic-powder",
+      "name": "garlic powder",
+      "aliases": [],
+      "fdcId": 171325,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 75
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 331,
+        "protein": 16.6,
+        "fat": 0.7,
+        "carbs": 72.7,
+        "fiber": 9
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, garlic powder",
+      "densityGPerMl": 0.656
+    },
+    {
+      "id": "food/oregano",
+      "name": "dried oregano",
+      "aliases": [
+        "oregano"
+      ],
+      "fdcId": 171328,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 20
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 265,
+        "protein": 9,
+        "fat": 4.3,
+        "carbs": 68.9,
+        "fiber": 42.5
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, oregano, dried",
+      "densityGPerMl": 0.203
+    },
+    {
+      "id": "food/coriander-ground",
+      "name": "ground coriander",
+      "aliases": [
+        "coriander"
+      ],
+      "fdcId": 170922,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 40
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 298,
+        "protein": 12.4,
+        "fat": 17.8,
+        "carbs": 55,
+        "fiber": 41.9
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, coriander seed",
+      "densityGPerMl": 0.338
+    },
+    {
+      "id": "food/cinnamon",
+      "name": "ground cinnamon",
+      "aliases": [
+        "cinnamon"
+      ],
+      "fdcId": 171320,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 60
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 247,
+        "protein": 4,
+        "fat": 1.2,
+        "carbs": 80.6,
+        "fiber": 53.1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, cinnamon, ground",
+      "densityGPerMl": 0.527
+    },
+    {
+      "id": "food/sugar",
+      "name": "granulated sugar",
+      "aliases": [
+        "sugar"
+      ],
+      "fdcId": 168833,
+      "aisle": "baking",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bag"
+      },
+      "gramsPerUnit": {
+        "bag": 1814
+      },
+      "pantry": true,
+      "note": "Nutrition proxied by USDA brown sugar.",
+      "per100g": {
+        "kcal": 380,
+        "protein": 0.1,
+        "fat": 0,
+        "carbs": 98.1,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Sugars, brown",
+      "densityGPerMl": 0.93
+    },
+    {
+      "id": "food/feta",
+      "name": "feta cheese, crumbled",
+      "aliases": [
+        "feta"
+      ],
+      "fdcId": 173420,
+      "aisle": "dairy",
+      "buyUnit": {
+        "value": 6,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 265,
+        "protein": 14.2,
+        "fat": 21.5,
+        "carbs": 3.9,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Cheese, feta",
+      "densityGPerMl": 0.634
+    },
+    {
+      "id": "food/cotija",
+      "name": "cotija cheese",
+      "aliases": [
+        "cotija",
+        "queso cotija"
+      ],
+      "fdcId": 170898,
+      "aisle": "dairy",
+      "buyUnit": {
+        "value": 10,
+        "unitText": "oz"
+      },
+      "densityGPerMl": 0.47,
+      "per100g": {
+        "kcal": 366,
+        "protein": 20,
+        "fat": 30,
+        "carbs": 4,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Cheese, mexican, queso cotija"
+    },
+    {
+      "id": "food/sesame-seeds",
+      "name": "sesame seeds",
+      "aliases": [],
+      "fdcId": 170150,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 100
+      },
+      "per100g": {
+        "kcal": 573,
+        "protein": 17.7,
+        "fat": 49.7,
+        "carbs": 23.5,
+        "fiber": 11.8
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Seeds, sesame seeds, whole, dried",
+      "densityGPerMl": 0.609
+    },
+    {
+      "id": "food/pepitas",
+      "name": "roasted pepitas",
+      "aliases": [
+        "pumpkin seeds",
+        "pepitas"
+      ],
+      "fdcId": 170557,
+      "aisle": "snacks",
+      "buyUnit": {
+        "value": 8,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 574,
+        "protein": 29.8,
+        "fat": 49.1,
+        "carbs": 14.7,
+        "fiber": 6.5
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Seeds, pumpkin and squash seed kernels, roasted, without salt",
+      "densityGPerMl": 0.499
+    },
+    {
+      "id": "food/crispy-onions",
+      "name": "crispy fried onions",
+      "aliases": [
+        "french fried onions",
+        "fried shallots"
+      ],
+      "fdcId": null,
+      "nutritionSource": "label",
+      "needsReview": true,
+      "per100g": {
+        "kcal": 640,
+        "protein": 4,
+        "fat": 50,
+        "carbs": 43,
+        "fiber": 2
+      },
+      "densityGPerMl": 0.24,
+      "aisle": "canned",
+      "buyUnit": {
+        "value": 6,
+        "unitText": "oz"
+      }
+    },
+    {
+      "id": "food/furikake",
+      "name": "furikake",
+      "aliases": [
+        "rice seasoning"
+      ],
+      "fdcId": null,
+      "nutritionSource": "label",
+      "needsReview": true,
+      "per100g": {
+        "kcal": 380,
+        "protein": 17,
+        "fat": 20,
+        "carbs": 33,
+        "fiber": 7
+      },
+      "densityGPerMl": 0.5,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 50
+      }
+    }
+  ]
+}

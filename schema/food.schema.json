@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://amelia-mowers.github.io/meal-planner/schema/food.schema.json",
+  "title": "Canonical food",
+  "type": "object",
+  "required": ["id", "name", "per100g", "aisle", "buyUnit", "nutritionSource"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^food/[a-z0-9][a-z0-9-]*$" },
+    "name": { "type": "string" },
+    "aliases": { "type": "array", "items": { "type": "string" } },
+    "fdcId": { "type": ["integer", "null"] },
+    "fdcDescription": { "type": "string" },
+    "nutritionSource": { "type": "string" },
+    "per100g": {
+      "type": "object",
+      "required": ["kcal", "protein", "fat", "carbs", "fiber"],
+      "properties": {
+        "kcal": { "type": "number", "minimum": 0, "maximum": 900 },
+        "protein": { "type": "number", "minimum": 0, "maximum": 100 },
+        "fat": { "type": "number", "minimum": 0, "maximum": 100 },
+        "carbs": { "type": "number", "minimum": 0, "maximum": 100 },
+        "fiber": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "gramsPerUnit": { "type": "object", "additionalProperties": { "type": "number", "exclusiveMinimum": 0 } },
+    "densityGPerMl": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+    "aisle": { "type": "string" },
+    "buyUnit": { "$ref": "recipe.schema.json#/$defs/quantity" },
+    "pantry": { "type": "boolean" },
+    "needsReview": { "type": "boolean" },
+    "note": { "type": "string" }
+  }
+}

@@ -1,0 +1,5329 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "mp": "https://amelia-mowers.github.io/meal-planner/ns#"
+  },
+  "mp:version": "1cac5ef5",
+  "@graph": [
+    {
+      "@type": "Recipe",
+      "@id": "comp/chicken-rotisserie",
+      "name": "Shredded rotisserie chicken",
+      "alternateName": "Rotisserie chicken",
+      "description": "Store-bought rotisserie chicken, skin off, pulled into bite-size shreds. Zero cooking.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 150,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 100,
+        "maxValue": 200
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 750,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "1 rotisserie chicken, skin removed, shredded"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "rotisserie chicken",
+          "description": "skin removed, shredded",
+          "identifier": "food/rotisserie-chicken",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "whole"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "While still warm, pull off and discard the skin."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Shred the breast and thigh meat with two forks; discard bones and cartilage."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cool uncovered for 15 minutes, then refrigerate in a shallow container."
+        }
+      ],
+      "prepTime": "PT15M",
+      "totalTime": "PT15M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/chicken-sheetpan",
+      "name": "Sheet-pan chicken breast",
+      "alternateName": "Sheet-pan chicken",
+      "description": "Simply seasoned chicken breast roasted hot and fast, then sliced. Swap in boneless thighs if you like them juicier.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 150,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 100,
+        "maxValue": 200
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 750,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "1000 g chicken breast, boneless, skinless",
+        "1 tbsp extra-virgin olive oil",
+        "1 tsp garlic powder",
+        "1 tsp smoked paprika",
+        "1½ tsp kosher salt",
+        "½ tsp black pepper"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "chicken breast",
+          "description": "boneless, skinless",
+          "identifier": "food/chicken-breast",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1000,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "extra-virgin olive oil",
+          "identifier": "food/olive-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic powder",
+          "identifier": "food/garlic-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "smoked paprika",
+          "identifier": "food/smoked-paprika",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "black pepper",
+          "identifier": "food/black-pepper",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "oven"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "sheet pan"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "instant-read thermometer"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Heat the oven to 425°F / 220°C."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Pound thick breasts to an even thickness. Toss with oil and all seasonings on a sheet pan."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Roast 18–25 minutes, until the thickest part reads 165°F / 74°C."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Rest 5 minutes, then slice or dice. Cool before refrigerating."
+        }
+      ],
+      "prepTime": "PT10M",
+      "cookTime": "PT25M",
+      "totalTime": "PT35M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/turkey-taco",
+      "name": "Taco-spiced ground turkey",
+      "alternateName": "Taco turkey",
+      "description": "Lean turkey crumbles with chili, cumin and smoked paprika. One third of the big turkey batch.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "mexican"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 150,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 100,
+        "maxValue": 200
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 340,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "454 g ground turkey, 93% lean",
+        "1 tbsp chili powder",
+        "1 tsp ground cumin",
+        "½ tsp smoked paprika",
+        "½ tsp garlic powder",
+        "¾ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "ground turkey, 93% lean",
+          "identifier": "food/ground-turkey-93",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 454,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "chili powder",
+          "identifier": "food/chili-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "ground cumin",
+          "identifier": "food/cumin",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "smoked paprika",
+          "identifier": "food/smoked-paprika",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic powder",
+          "identifier": "food/garlic-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.75,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "instant-read thermometer"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Brown the turkey with the rest of the batch (see \"Brown the turkey batch\"), then move one third to a pan over medium heat."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add the spices and 3 tbsp water; stir 2 minutes until the water is absorbed."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Optional: stir in a handful of thawed, squeezed frozen spinach."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT12M",
+      "totalTime": "PT17M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot",
+      "mp:batchGroup": "ground-turkey"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/turkey-gochujang",
+      "name": "Gochujang ground turkey",
+      "alternateName": "Gochujang turkey",
+      "description": "Sweet-spicy Korean-style turkey crumbles with garlic, ginger and sesame. One third of the turkey batch.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 150,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 100,
+        "maxValue": 200
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 340,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "454 g ground turkey, 93% lean",
+        "2 tbsp gochujang",
+        "1 tbsp soy sauce",
+        "2 cloves garlic, grated",
+        "1 tsp fresh ginger, grated",
+        "1 tsp toasted sesame oil"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "ground turkey, 93% lean",
+          "identifier": "food/ground-turkey-93",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 454,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "gochujang",
+          "identifier": "food/gochujang",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "soy sauce",
+          "identifier": "food/soy-sauce",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "description": "grated",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "fresh ginger",
+          "description": "grated",
+          "identifier": "food/ginger",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "toasted sesame oil",
+          "identifier": "food/sesame-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "instant-read thermometer"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Brown the turkey with the rest of the batch, then move one third to a pan over medium heat."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add garlic and ginger; cook 1 minute."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Stir in gochujang, soy sauce and 2 tbsp water; cook 2 minutes until glossy. Finish with sesame oil."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT12M",
+      "totalTime": "PT17M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": true,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot",
+      "mp:batchGroup": "ground-turkey"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/turkey-kofta",
+      "name": "Kofta-spiced ground turkey",
+      "alternateName": "Kofta turkey",
+      "description": "Cumin, coriander, a pinch of cinnamon and lots of parsley — kofta flavor without shaping a single kebab.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "mediterranean"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 150,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 100,
+        "maxValue": 200
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 340,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "454 g ground turkey, 93% lean",
+        "2 cloves garlic, grated",
+        "1 tsp ground cumin",
+        "1 tsp ground coriander",
+        "¼ tsp ground cinnamon",
+        "10 g flat-leaf parsley, chopped",
+        "¾ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "ground turkey, 93% lean",
+          "identifier": "food/ground-turkey-93",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 454,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "description": "grated",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "ground cumin",
+          "identifier": "food/cumin",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "ground coriander",
+          "identifier": "food/coriander-ground",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "ground cinnamon",
+          "identifier": "food/cinnamon",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "flat-leaf parsley",
+          "description": "chopped",
+          "identifier": "food/parsley",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 10,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.75,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "instant-read thermometer"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Brown the turkey with the rest of the batch, then move one third to a pan over medium heat."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add garlic and spices; cook 1–2 minutes until fragrant."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Off the heat, stir in the parsley."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT12M",
+      "totalTime": "PT17M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "either",
+      "mp:batchGroup": "ground-turkey"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/eggs-jammy",
+      "name": "Jammy eggs",
+      "alternateName": "Jammy egg",
+      "description": "Soft-set 7-minute eggs. Good on their own or as a protein boost for any bowl.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitText": "whole"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 3
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 12,
+        "unitText": "whole"
+      },
+      "recipeIngredient": [
+        "12 eggs, large"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "eggs",
+          "description": "large",
+          "identifier": "food/egg",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 12,
+            "unitText": "whole"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Bring a pot of water to a rolling boil. Lower in cold eggs straight from the fridge."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Boil 7 minutes for jammy, 10 for fully hard-boiled."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Transfer to ice water for 5 minutes. Store unpeeled; peel as needed."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT12M",
+      "totalTime": "PT17M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "cold",
+      "mp:secondary": true
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/tofu-baked",
+      "name": "Baked soy tofu",
+      "alternateName": "Baked tofu",
+      "description": "Pressed, cubed and roasted until chewy at the edges. Keeps its texture all week.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "neutral",
+        "east-asian"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 200,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 150,
+        "maxValue": 250
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 600,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "2 blocks extra-firm tofu, pressed 15 min",
+        "2 tbsp soy sauce",
+        "1 tbsp neutral oil",
+        "½ tsp garlic powder"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "extra-firm tofu",
+          "description": "pressed 15 min",
+          "identifier": "food/tofu-extra-firm",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitText": "block"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "soy sauce",
+          "identifier": "food/soy-sauce",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "neutral oil",
+          "identifier": "food/neutral-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic powder",
+          "identifier": "food/garlic-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "oven"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "sheet pan"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Heat the oven to 425°F / 220°C. Press the tofu between towels under a heavy pan for 15 minutes."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cut into ¾-inch cubes; toss with soy sauce, oil and garlic powder."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Spread on a lined sheet pan and bake 25–30 minutes, flipping once, until browned."
+        }
+      ],
+      "prepTime": "PT20M",
+      "cookTime": "PT30M",
+      "totalTime": "PT50M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/black-beans",
+      "name": "Lime-cumin black beans",
+      "alternateName": "Black bean",
+      "description": "Canned black beans, rinsed and seasoned. A fiber-rich secondary protein.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "mexican"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 130,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 65,
+        "maxValue": 195
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 520,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "2 cans black beans, canned, drained and rinsed",
+        "½ tsp ground cumin",
+        "1 tbsp limes",
+        "½ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "black beans, canned",
+          "description": "drained and rinsed",
+          "identifier": "food/black-beans-canned",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitText": "can"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "ground cumin",
+          "identifier": "food/cumin",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "limes",
+          "identifier": "food/lime-juice",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Drain and rinse the beans."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Toss with cumin, lime juice and salt. Serve cold or warmed."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": true,
+      "mp:serve": "either",
+      "mp:secondary": true
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/chickpeas-lemon",
+      "name": "Lemon-oregano chickpeas",
+      "alternateName": "Chickpea",
+      "description": "Marinated chickpeas that get better over a few days. A secondary protein.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "mediterranean"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 125,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 60,
+        "maxValue": 190
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 500,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "2 cans chickpeas, canned, drained and rinsed",
+        "1 tbsp extra-virgin olive oil",
+        "2 tbsp lemons",
+        "½ tsp dried oregano",
+        "½ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "chickpeas, canned",
+          "description": "drained and rinsed",
+          "identifier": "food/chickpeas-canned",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitText": "can"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "extra-virgin olive oil",
+          "identifier": "food/olive-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "lemons",
+          "identifier": "food/lemon-juice",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "dried oregano",
+          "identifier": "food/oregano",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Drain, rinse and pat the chickpeas dry."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Toss with oil, lemon juice, oregano and salt."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "cold",
+      "mp:secondary": true
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/rice-white",
+      "name": "Steamed white rice",
+      "description": "Plain long-grain or jasmine rice from the rice cooker.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.75,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.5,
+        "maxValue": 1
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 4.5,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1½ cups white rice, long-grain, rinsed",
+        "½ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "white rice, long-grain",
+          "description": "rinsed",
+          "identifier": "food/rice-white",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "rice cooker"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Rinse the rice until the water runs mostly clear."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cook in a rice cooker with water to the line (or 2¼ cups water, covered, 18 minutes on low)."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Spread on a tray to cool quickly; refrigerate within 1 hour."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT30M",
+      "totalTime": "PT35M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": true,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/quinoa",
+      "name": "Fluffy quinoa",
+      "description": "Rinsed quinoa cooked like pasta, drained and steamed dry.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.75,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.5,
+        "maxValue": 1
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 4.5,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1½ cups quinoa, rinsed",
+        "½ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "quinoa",
+          "description": "rinsed",
+          "identifier": "food/quinoa",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Rinse the quinoa well in a fine sieve."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Boil in plenty of salted water for 12 minutes; drain."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Return to the pot, cover, and let steam off the heat for 10 minutes. Fluff."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT25M",
+      "totalTime": "PT30M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/couscous",
+      "name": "Five-minute couscous",
+      "description": "Just boiling water and a lid.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "neutral",
+        "mediterranean"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.75,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.5,
+        "maxValue": 1
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1½ cups couscous",
+        "½ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "couscous",
+          "identifier": "food/couscous",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Pour 1½ cups boiling salted water over the couscous."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cover for 5 minutes, then fluff with a fork."
+        }
+      ],
+      "prepTime": "PT2M",
+      "cookTime": "PT5M",
+      "totalTime": "PT7M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/tortilla-high-protein",
+      "name": "High-protein tortilla",
+      "description": "Large high-fiber, high-protein tortilla — the best calorie budget for wraps. Warm in a dry pan for 20 seconds.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitText": "whole"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 2
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 8,
+        "unitText": "whole"
+      },
+      "recipeIngredient": [
+        "8 high-protein, high-fiber tortillas"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "high-protein, high-fiber tortillas",
+          "identifier": "food/tortilla-high-protein",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 8,
+            "unitText": "whole"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Warm in a dry skillet or directly over a gas flame for 10–20 seconds per side just before wrapping."
+        }
+      ],
+      "prepTime": "PT1M",
+      "totalTime": "PT1M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": true,
+      "mp:fridgeDays": null,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/tortilla-whole-wheat",
+      "name": "Whole-wheat tortilla",
+      "description": "Standard 8-inch whole-wheat tortilla.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitText": "whole"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 2
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 8,
+        "unitText": "whole"
+      },
+      "recipeIngredient": [
+        "8 whole-wheat tortillas"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "whole-wheat tortillas",
+          "identifier": "food/tortilla-whole-wheat",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 8,
+            "unitText": "whole"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Warm in a dry skillet for 10–20 seconds per side just before wrapping."
+        }
+      ],
+      "prepTime": "PT1M",
+      "totalTime": "PT1M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": null,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/pita",
+      "name": "Whole-wheat pita",
+      "description": "Pocket pita, warmed and split.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "neutral",
+        "mediterranean"
+      ],
+      "mp:formats": [
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitText": "whole"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 2
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 6,
+        "unitText": "whole"
+      },
+      "recipeIngredient": [
+        "6 whole-wheat pita"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "whole-wheat pita",
+          "identifier": "food/pita-whole-wheat",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 6,
+            "unitText": "whole"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Warm in a toaster or dry pan; cut open the pocket."
+        }
+      ],
+      "prepTime": "PT1M",
+      "totalTime": "PT1M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": null,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/soba",
+      "name": "Chilled soba noodles",
+      "description": "Buckwheat noodles rinsed cold so they stay separate all week.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.75,
+        "maxValue": 1.5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 5,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "8 oz soba noodles",
+        "1 tsp toasted sesame oil"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "soba noodles",
+          "identifier": "food/soba-noodles",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 8,
+            "unitCode": "ONZ"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "toasted sesame oil",
+          "identifier": "food/sesame-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Boil soba 4–5 minutes (check the package)."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Drain and rinse under cold water, rubbing to remove starch."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Toss with sesame oil so they don’t stick."
+        }
+      ],
+      "prepTime": "PT3M",
+      "cookTime": "PT12M",
+      "totalTime": "PT15M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 3,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/rice-noodles",
+      "name": "Rice noodles",
+      "description": "Flat rice noodles, soaked and rinsed. Serve cold or reheat with a splash of water.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.75,
+        "maxValue": 1.5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "8 oz rice noodles",
+        "1 tsp neutral oil"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "rice noodles",
+          "identifier": "food/rice-noodles",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 8,
+            "unitCode": "ONZ"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "neutral oil",
+          "identifier": "food/neutral-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Soak or boil per the package until just tender."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Rinse under cold water, drain well and toss with oil."
+        }
+      ],
+      "prepTime": "PT3M",
+      "cookTime": "PT10M",
+      "totalTime": "PT13M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 3,
+      "mp:freezable": false,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/potatoes-roast",
+      "name": "Crispy roast potatoes",
+      "description": "Halved baby potatoes roasted on the same sheet-pan run as the chicken.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 150,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 100,
+        "maxValue": 225
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 560,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "1½ lb baby red potatoes, halved",
+        "1 tbsp extra-virgin olive oil",
+        "½ tsp garlic powder",
+        "1 tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "baby red potatoes",
+          "description": "halved",
+          "identifier": "food/potatoes-red",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1.5,
+            "unitCode": "LBR"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "extra-virgin olive oil",
+          "identifier": "food/olive-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic powder",
+          "identifier": "food/garlic-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "oven"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "sheet pan"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Heat the oven to 425°F / 220°C."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Toss halved potatoes with oil, garlic powder and salt; spread cut-side down on a sheet pan."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Roast 30–35 minutes until browned and tender."
+        }
+      ],
+      "prepTime": "PT10M",
+      "cookTime": "PT35M",
+      "totalTime": "PT45M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": false,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/broccoli-steamed",
+      "name": "Steamed broccoli",
+      "description": "Steam-in-bag frozen florets. Microwave, cool, done.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "cooked",
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 6,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "2 bags broccoli florets, steam-in-bag"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "broccoli florets, steam-in-bag",
+          "identifier": "food/broccoli-florets",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitText": "bag"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "microwave"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Microwave each bag per the package (about 5 minutes)."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cool uncovered, then refrigerate."
+        }
+      ],
+      "prepTime": "PT2M",
+      "cookTime": "PT10M",
+      "totalTime": "PT12M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": false,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/spinach-frozen",
+      "name": "Frozen spinach, squeezed",
+      "description": "Thawed and squeezed dry — stir into proteins, rice or yogurt sauces for a stealth serving of greens.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "cooked",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.25,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1.5,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 bag frozen chopped spinach"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "frozen chopped spinach",
+          "identifier": "food/spinach-frozen",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "bag"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "microwave"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Thaw in the microwave (3–4 minutes)."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Squeeze out as much water as you can in a clean towel."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT4M",
+      "totalTime": "PT9M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/broccoli-slaw",
+      "name": "Crunchy broccoli slaw",
+      "description": "Bagged broccoli slaw with a splash of rice vinegar.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "raw",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 5,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 bag broccoli slaw mix",
+        "1 tbsp rice vinegar",
+        "¼ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "broccoli slaw mix",
+          "identifier": "food/broccoli-slaw",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "bag"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "rice vinegar",
+          "identifier": "food/rice-vinegar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Toss the slaw with vinegar and salt. Store dressed; it stays crunchy for days."
+        }
+      ],
+      "prepTime": "PT2M",
+      "totalTime": "PT2M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/cabbage-slaw",
+      "name": "Tangy cabbage slaw",
+      "description": "Shredded cabbage lightly pickled in cider vinegar. No mayo.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "raw",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 5,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 bag green cabbage, shredded coleslaw mix",
+        "2 tbsp apple cider vinegar",
+        "1 tsp granulated sugar",
+        "½ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "green cabbage",
+          "description": "shredded coleslaw mix",
+          "identifier": "food/cabbage-green",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "bag"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "apple cider vinegar",
+          "identifier": "food/cider-vinegar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "granulated sugar",
+          "identifier": "food/sugar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Toss the cabbage with vinegar, sugar and salt."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Let sit 20 minutes, then squeeze lightly and store."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/cucumber",
+      "name": "Sliced cucumber",
+      "description": "Cool, crunchy half-moons.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "raw",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.75,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "2 cucumber"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "cucumber",
+          "identifier": "food/cucumber",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitText": "whole"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Slice into half-moons. Store with a paper towel to absorb moisture."
+        }
+      ],
+      "prepTime": "PT3M",
+      "totalTime": "PT3M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/bell-pepper",
+      "name": "Sliced bell pepper",
+      "description": "Sweet, crunchy strips.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "raw",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.5,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 3,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "3 bell pepper"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "bell pepper",
+          "identifier": "food/bell-pepper",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 3,
+            "unitText": "whole"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Core, seed and slice into thin strips."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/carrot-shredded",
+      "name": "Shredded carrot",
+      "description": "Bagged matchstick carrots — open and use.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "raw",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.5,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2.5,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "10 oz shredded carrots, shredded or matchstick"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "shredded carrots",
+          "description": "shredded or matchstick",
+          "identifier": "food/carrot",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 10,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Nothing to do — keep the bag sealed."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/radish",
+      "name": "Sliced radishes",
+      "description": "Peppery, crisp coins.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "raw",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.25,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1.75,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 bunch radishes"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "radishes",
+          "identifier": "food/radish",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "bunch"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Trim and thinly slice. Store in a container with a damp paper towel."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/cherry-tomatoes",
+      "name": "Halved cherry tomatoes",
+      "description": "Halve just a few days’ worth at a time for the best texture.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "mediterranean",
+        "mexican"
+      ],
+      "keywords": "raw",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.5,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1.9,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "10 oz cherry tomatoes"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "cherry tomatoes",
+          "identifier": "food/cherry-tomatoes",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 10,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Halve the tomatoes. Store at cool room temperature if eating within 2 days, otherwise refrigerate."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/romaine",
+      "name": "Chopped romaine",
+      "description": "Crisp romaine hearts, washed and spun dry.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "raw",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1.5,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 12,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "2 romaine lettuce, hearts"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "romaine lettuce",
+          "description": "hearts",
+          "identifier": "food/romaine",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitText": "whole"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Chop, wash and spin completely dry."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Store loosely packed with a paper towel."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/edamame",
+      "name": "Shelled edamame",
+      "description": "Frozen edamame, thawed. Adds about 9 g protein per half cup.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "keywords": "cooked",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.5,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2.75,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "12 oz shelled edamame, frozen",
+        "¼ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "shelled edamame, frozen",
+          "identifier": "food/edamame",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 12,
+            "unitCode": "ONZ"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "microwave"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Microwave or boil 3 minutes; drain, salt lightly and cool."
+        }
+      ],
+      "prepTime": "PT1M",
+      "cookTime": "PT4M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/corn",
+      "name": "Charred corn",
+      "description": "Frozen corn blistered in a dry skillet.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "mexican"
+      ],
+      "keywords": "cooked",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.5,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2.5,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "12 oz frozen corn",
+        "¼ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "frozen corn",
+          "identifier": "food/corn-frozen",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 12,
+            "unitCode": "ONZ"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Heat a skillet over high heat. Add the frozen corn in one layer and leave it 4 minutes to char."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Stir and cook 3 more minutes; salt."
+        }
+      ],
+      "prepTime": "PT1M",
+      "cookTime": "PT8M",
+      "totalTime": "PT9M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/pickled-red-onion",
+      "name": "Pickled red onion",
+      "description": "Bright pink, tangy and crunchy. Makes almost anything taste finished.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "pickled",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G24"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "2 red onion, thinly sliced",
+        "½ cup apple cider vinegar",
+        "1 tbsp granulated sugar",
+        "1 tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "red onion",
+          "description": "thinly sliced",
+          "identifier": "food/red-onion",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitText": "whole"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "apple cider vinegar",
+          "identifier": "food/cider-vinegar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "granulated sugar",
+          "identifier": "food/sugar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Pack sliced onion into a jar."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Warm ½ cup water with the vinegar, sugar and salt until dissolved; pour over the onions."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Ready in 30 minutes; best after a day."
+        }
+      ],
+      "prepTime": "PT10M",
+      "totalTime": "PT10M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 14,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/pickled-cucumber",
+      "name": "Quick-pickled cucumber",
+      "description": "Sweet-sour rice vinegar cucumbers, ready in 15 minutes.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "pickled",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.25,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 cucumber, thinly sliced",
+        "¼ cup rice vinegar",
+        "1 tsp granulated sugar",
+        "½ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "cucumber",
+          "description": "thinly sliced",
+          "identifier": "food/cucumber",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "whole"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "rice vinegar",
+          "identifier": "food/rice-vinegar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "granulated sugar",
+          "identifier": "food/sugar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Toss sliced cucumber with salt; wait 10 minutes and pour off the liquid."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add vinegar and sugar; stir."
+        }
+      ],
+      "prepTime": "PT15M",
+      "totalTime": "PT15M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/kimchi",
+      "name": "Kimchi",
+      "description": "Store-bought napa cabbage kimchi.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "keywords": "pickled",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.25,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 3,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "16 oz kimchi"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "kimchi",
+          "identifier": "food/kimchi",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 16,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Open the jar. Snip larger pieces with scissors."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 30,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/pickled-jalapenos",
+      "name": "Pickled jalapeños",
+      "description": "Jarred nacho-style jalapeño slices for medium heat.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "mexican"
+      ],
+      "keywords": "pickled",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G24"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 jar pickled jalapeños"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "pickled jalapeños",
+          "identifier": "food/jalapenos-pickled",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "jar"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Open the jar."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 60,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/giardiniera",
+      "name": "Giardiniera",
+      "description": "Vinegar-packed Italian pickled vegetables, chopped small.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "mediterranean"
+      ],
+      "keywords": "pickled",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.25,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 3,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 jar giardiniera, vinegar-packed, drained"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "giardiniera",
+          "description": "vinegar-packed, drained",
+          "identifier": "food/giardiniera",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "jar"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Drain and roughly chop."
+        }
+      ],
+      "prepTime": "PT3M",
+      "totalTime": "PT3M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": true,
+      "mp:fridgeDays": 30,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/pepperoncini",
+      "name": "Sliced pepperoncini",
+      "description": "Mild, tangy pickled peppers.",
+      "recipeCategory": "veg",
+      "recipeCuisine": [
+        "mediterranean"
+      ],
+      "keywords": "pickled",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G24"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2.5,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 jar pepperoncini"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "pepperoncini",
+          "identifier": "food/pepperoncini",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "jar"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Drain and slice into rings, discarding the stems."
+        }
+      ],
+      "prepTime": "PT3M",
+      "totalTime": "PT3M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 30,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/tzatziki",
+      "name": "Tzatziki",
+      "alternateName": "tzatziki",
+      "description": "Greek yogurt, grated cucumber, garlic, lemon and dill. High-protein and light.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "mediterranean"
+      ],
+      "keywords": "yogurt",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 3,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 2,
+        "maxValue": 5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1.75,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 cup plain nonfat Greek yogurt",
+        "½ cucumber, grated and squeezed",
+        "1 clove garlic, grated",
+        "1 tbsp lemons",
+        "5 g fresh dill, chopped",
+        "1 tsp extra-virgin olive oil",
+        "½ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "plain nonfat Greek yogurt",
+          "identifier": "food/greek-yogurt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "cucumber",
+          "description": "grated and squeezed",
+          "identifier": "food/cucumber",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitText": "whole"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "description": "grated",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "lemons",
+          "identifier": "food/lemon-juice",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "fresh dill",
+          "description": "chopped",
+          "identifier": "food/dill",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 5,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "extra-virgin olive oil",
+          "identifier": "food/olive-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Grate the cucumber, salt it lightly and squeeze dry in a towel."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Stir everything together. Taste for salt and lemon."
+        }
+      ],
+      "prepTime": "PT10M",
+      "totalTime": "PT10M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/yogurt-chipotle-crema",
+      "name": "Yogurt chipotle crema",
+      "alternateName": "chipotle crema",
+      "description": "Smoky, medium-hot and creamy — a sour-cream stand-in with 3× the protein.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "mexican"
+      ],
+      "keywords": "yogurt",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 3,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 2,
+        "maxValue": 5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1.25,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 cup plain nonfat Greek yogurt",
+        "40 g chipotle peppers in adobo, 2 peppers plus 1 tbsp adobo sauce",
+        "1 tbsp limes",
+        "¼ tsp garlic powder",
+        "¼ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "plain nonfat Greek yogurt",
+          "identifier": "food/greek-yogurt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "chipotle peppers in adobo",
+          "description": "2 peppers plus 1 tbsp adobo sauce",
+          "identifier": "food/chipotle-in-adobo",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 40,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "limes",
+          "identifier": "food/lime-juice",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic powder",
+          "identifier": "food/garlic-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Mince the chipotles finely (or blend)."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Stir into the yogurt with lime, garlic powder and salt. Thin with water if needed."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": true,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/yogurt-lime-crema",
+      "name": "Yogurt-lime crema",
+      "alternateName": "lime crema",
+      "description": "Cool, zesty and herby. Balances spicy fillings.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "mexican"
+      ],
+      "keywords": "yogurt",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 3,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 2,
+        "maxValue": 5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1.25,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 cup plain nonfat Greek yogurt",
+        "2 tbsp limes",
+        "10 g cilantro, finely chopped",
+        "1 clove garlic, grated",
+        "¼ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "plain nonfat Greek yogurt",
+          "identifier": "food/greek-yogurt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "limes",
+          "identifier": "food/lime-juice",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "cilantro",
+          "description": "finely chopped",
+          "identifier": "food/cilantro",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 10,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "description": "grated",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Stir everything together; thin with a spoonful of water to drizzle."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 5,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/salsa-verde",
+      "name": "Roasted salsa verde",
+      "alternateName": "salsa verde",
+      "description": "Broiled tomatillos and jalapeño blended with cilantro and lime.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "mexican"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 2,
+        "maxValue": 6
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 lb tomatillos, husked and rinsed",
+        "1 jalapeño",
+        "¼ red onion",
+        "1 clove garlic",
+        "20 g cilantro",
+        "1 tbsp limes",
+        "¾ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "tomatillos",
+          "description": "husked and rinsed",
+          "identifier": "food/tomatillos",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "LBR"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "jalapeño",
+          "identifier": "food/jalapeno-fresh",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "whole"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "red onion",
+          "identifier": "food/red-onion",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitText": "whole"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "cilantro",
+          "identifier": "food/cilantro",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 20,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "limes",
+          "identifier": "food/lime-juice",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.75,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "oven"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "sheet pan"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "blender"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Broil the tomatillos, jalapeño, onion and garlic on a sheet pan 8–10 minutes until blackened in spots."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Blend with cilantro, lime and salt until mostly smooth."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT10M",
+      "totalTime": "PT15M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": true,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/lemon-tahini",
+      "name": "Lemon-tahini sauce",
+      "alternateName": "lemon-tahini",
+      "description": "Nutty, tangy and pourable. Calorie-dense, so the default portion is small.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "mediterranean"
+      ],
+      "keywords": "calorie-dense",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 3
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "½ cup tahini",
+        "¼ cup lemons",
+        "1 clove garlic, grated",
+        "½ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "tahini",
+          "identifier": "food/tahini",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "lemons",
+          "identifier": "food/lemon-juice",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "description": "grated",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Whisk tahini, lemon juice, garlic and salt — it will seize up."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Whisk in cold water a tablespoon at a time (about ¼ cup) until smooth and pourable."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/lemon-oregano-vinaigrette",
+      "name": "Lemon-oregano vinaigrette",
+      "alternateName": "lemon-oregano vinaigrette",
+      "description": "Classic Greek-diner dressing.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "mediterranean"
+      ],
+      "keywords": "calorie-dense",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1.5,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 2
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "½ cup extra-virgin olive oil",
+        "¼ cup lemons",
+        "2 tbsp red wine vinegar",
+        "1 tsp Dijon mustard",
+        "1 tsp honey",
+        "1 tsp dried oregano",
+        "1 clove garlic, grated",
+        "½ tsp kosher salt",
+        "¼ tsp black pepper"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "extra-virgin olive oil",
+          "identifier": "food/olive-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "lemons",
+          "identifier": "food/lemon-juice",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "red wine vinegar",
+          "identifier": "food/red-wine-vinegar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "Dijon mustard",
+          "identifier": "food/mustard-dijon",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "honey",
+          "identifier": "food/honey",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "dried oregano",
+          "identifier": "food/oregano",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "description": "grated",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "black pepper",
+          "identifier": "food/black-pepper",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Shake everything in a jar until emulsified. Shake again before each use."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/peanut-lime",
+      "name": "Peanut-lime sauce",
+      "alternateName": "peanut-lime sauce",
+      "description": "Creamy, tangy and a little spicy. Calorie-dense, so portioned small.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "keywords": "calorie-dense",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 3
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1.25,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "½ cup creamy peanut butter",
+        "3 tbsp limes",
+        "2 tbsp soy sauce",
+        "1 tbsp honey",
+        "1 tsp sriracha",
+        "1 clove garlic, grated",
+        "1 tsp fresh ginger, grated"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "creamy peanut butter",
+          "identifier": "food/peanut-butter",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "limes",
+          "identifier": "food/lime-juice",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 3,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "soy sauce",
+          "identifier": "food/soy-sauce",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "honey",
+          "identifier": "food/honey",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "sriracha",
+          "identifier": "food/sriracha",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "description": "grated",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "fresh ginger",
+          "description": "grated",
+          "identifier": "food/ginger",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Whisk everything with ¼ cup warm water until smooth. It thickens in the fridge; loosen with water."
+        }
+      ],
+      "prepTime": "PT5M",
+      "totalTime": "PT5M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/gochujang-honey",
+      "name": "Gochujang-honey sauce",
+      "alternateName": "gochujang-honey",
+      "description": "Sweet, spicy, glossy. Medium heat.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1.5,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 2.5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 0.6,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "¼ cup gochujang",
+        "2 tbsp honey",
+        "1 tbsp soy sauce",
+        "1 tbsp rice vinegar",
+        "1 tsp toasted sesame oil",
+        "1 clove garlic, grated"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "gochujang",
+          "identifier": "food/gochujang",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "honey",
+          "identifier": "food/honey",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "soy sauce",
+          "identifier": "food/soy-sauce",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "rice vinegar",
+          "identifier": "food/rice-vinegar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "toasted sesame oil",
+          "identifier": "food/sesame-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "description": "grated",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "clove"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Whisk everything together. Add a splash of water to drizzle."
+        }
+      ],
+      "prepTime": "PT3M",
+      "totalTime": "PT3M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": true,
+      "mp:fridgeDays": 14,
+      "mp:freezable": false,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/ginger-scallion",
+      "name": "Ginger-scallion sauce",
+      "alternateName": "ginger-scallion",
+      "description": "Hot oil poured over scallions and ginger. Intensely savory; a little goes a long way.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "keywords": "calorie-dense",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1.5,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 2
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 bunch scallions, finely sliced",
+        "30 g fresh ginger, minced",
+        "⅓ cup neutral oil",
+        "1 tsp kosher salt",
+        "1 tsp soy sauce"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "scallions",
+          "description": "finely sliced",
+          "identifier": "food/scallions",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "bunch"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "fresh ginger",
+          "description": "minced",
+          "identifier": "food/ginger",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 30,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "neutral oil",
+          "identifier": "food/neutral-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.33,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "soy sauce",
+          "identifier": "food/soy-sauce",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Put scallions, ginger and salt in a heatproof bowl."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Heat the oil until shimmering and carefully pour it over — it will sizzle. Stir in soy sauce."
+        }
+      ],
+      "prepTime": "PT10M",
+      "cookTime": "PT3M",
+      "totalTime": "PT13M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": false,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/sesame-soy",
+      "name": "Sesame-soy dressing",
+      "alternateName": "sesame-soy",
+      "description": "Thin, savory, all-purpose Asian dressing.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1.5,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 2.5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 0.6,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "3 tbsp soy sauce",
+        "2 tbsp rice vinegar",
+        "1 tbsp toasted sesame oil",
+        "1 tbsp honey",
+        "1 clove garlic, grated",
+        "1 tsp fresh ginger, grated"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "soy sauce",
+          "identifier": "food/soy-sauce",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 3,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "rice vinegar",
+          "identifier": "food/rice-vinegar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "toasted sesame oil",
+          "identifier": "food/sesame-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "honey",
+          "identifier": "food/honey",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "description": "grated",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "fresh ginger",
+          "description": "grated",
+          "identifier": "food/ginger",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Shake everything in a jar."
+        }
+      ],
+      "prepTime": "PT3M",
+      "totalTime": "PT3M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 14,
+      "mp:freezable": false,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/honey-mustard",
+      "name": "Yogurt honey mustard",
+      "alternateName": "honey mustard",
+      "description": "Sweet-sharp honey mustard lightened with Greek yogurt instead of mayo.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "yogurt",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 3
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 0.6,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "¼ cup Dijon mustard",
+        "2 tbsp honey",
+        "¼ cup plain nonfat Greek yogurt",
+        "1 tsp apple cider vinegar",
+        "⅛ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "Dijon mustard",
+          "identifier": "food/mustard-dijon",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "honey",
+          "identifier": "food/honey",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "plain nonfat Greek yogurt",
+          "identifier": "food/greek-yogurt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "apple cider vinegar",
+          "identifier": "food/cider-vinegar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.125,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Whisk everything together."
+        }
+      ],
+      "prepTime": "PT3M",
+      "totalTime": "PT3M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/feta",
+      "name": "Crumbled feta",
+      "description": "Salty, creamy crumbles.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "mediterranean"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 20,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 10,
+        "maxValue": 30
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 170,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "6 oz feta cheese, crumbled, crumbled"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "feta cheese, crumbled",
+          "description": "crumbled",
+          "identifier": "food/feta",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 6,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Buy pre-crumbled or crumble a block."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/cotija",
+      "name": "Cotija",
+      "description": "Dry, salty Mexican cheese — a little adds a lot.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "mexican"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 3
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 40,
+        "unitCode": "G24"
+      },
+      "recipeIngredient": [
+        "10 oz cotija cheese, crumbled"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "cotija cheese",
+          "description": "crumbled",
+          "identifier": "food/cotija",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 10,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Crumble with your fingers or a fork."
+        }
+      ],
+      "prepTime": "PT2M",
+      "totalTime": "PT2M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 14,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/sesame-seeds",
+      "name": "Toasted sesame seeds",
+      "description": "Nutty crunch.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G25"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 3
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 33,
+        "unitCode": "G25"
+      },
+      "recipeIngredient": [
+        "1 jar sesame seeds"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "sesame seeds",
+          "identifier": "food/sesame-seeds",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "jar"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Toast in a dry skillet over medium heat 2–3 minutes, shaking, until golden. Cool."
+        }
+      ],
+      "prepTime": "PT1M",
+      "cookTime": "PT3M",
+      "totalTime": "PT4M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": null,
+      "mp:freezable": false,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/pepitas",
+      "name": "Roasted pepitas",
+      "description": "Crunchy pumpkin seeds with a surprising protein boost.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "mexican",
+        "mediterranean"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 2
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 30,
+        "unitCode": "G24"
+      },
+      "recipeIngredient": [
+        "8 oz roasted pepitas"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "roasted pepitas",
+          "identifier": "food/pepitas",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 8,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Use as is, or re-toast in a dry pan for 2 minutes."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": null,
+      "mp:freezable": false,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/crispy-onions",
+      "name": "Crispy fried onions",
+      "description": "Crunchy, savory, store-bought.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "keywords": "calorie-dense",
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 2
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 48,
+        "unitCode": "G24"
+      },
+      "recipeIngredient": [
+        "6 oz crispy fried onions"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "crispy fried onions",
+          "identifier": "food/crispy-onions",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 6,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Keep sealed; add at serving time so they stay crisp."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": true,
+      "mp:fridgeDays": null,
+      "mp:freezable": false,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/furikake",
+      "name": "Furikake",
+      "description": "Japanese seaweed-sesame rice seasoning.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "east-asian"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G25"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 3
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 20,
+        "unitCode": "G25"
+      },
+      "recipeIngredient": [
+        "1 jar furikake"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "furikake",
+          "identifier": "food/furikake",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "jar"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Sprinkle at serving time."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": true,
+      "mp:fridgeDays": null,
+      "mp:freezable": false,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/cilantro",
+      "name": "Chopped cilantro",
+      "description": "Fresh and bright. Keep stems in water in the fridge.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "mexican",
+        "east-asian"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 1,
+        "maxValue": 4
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 16,
+        "unitCode": "G24"
+      },
+      "recipeIngredient": [
+        "1 bunch cilantro"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "cilantro",
+          "identifier": "food/cilantro",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "bunch"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Stand the bunch in a glass of water in the fridge, loosely covered. Chop as needed."
+        }
+      ],
+      "prepTime": "PT2M",
+      "totalTime": "PT2M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/chipotle-chicken-bowl",
+      "name": "Chipotle Chicken Bowl",
+      "description": "Burrito-bowl energy: smoky crema, black beans and tangy onions over rice.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "mexican",
+      "mp:format": "bowl",
+      "recipeIngredient": [
+        "Sheet-pan chicken breast",
+        "Steamed white rice",
+        "Lime-cumin black beans",
+        "Crunchy broccoli slaw",
+        "Pickled red onion",
+        "Yogurt chipotle crema"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/chicken-sheetpan"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/rice-white",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.75,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/black-beans",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 65,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/broccoli-slaw"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/pickled-red-onion"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/yogurt-chipotle-crema"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/turkey-taco-wrap",
+      "name": "Turkey Taco Wrap",
+      "description": "Spiced turkey, crunchy romaine and cabbage, jalapeños and lime crema in a high-protein tortilla.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "mexican",
+      "mp:format": "wrap",
+      "recipeIngredient": [
+        "High-protein tortilla",
+        "Taco-spiced ground turkey",
+        "Lime-cumin black beans",
+        "Chopped romaine",
+        "Tangy cabbage slaw",
+        "Pickled jalapeños",
+        "Yogurt-lime crema",
+        "Cotija"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/tortilla-high-protein"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/turkey-taco"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/black-beans",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 65,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/romaine",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.75,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cabbage-slaw",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/pickled-jalapenos"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/yogurt-lime-crema"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cotija",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/chicken-pita-tzatziki",
+      "name": "Chicken Pita with Tzatziki",
+      "description": "Gyro-style pita stuffed with chicken, cucumber, tomato and a generous spoon of tzatziki.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "mediterranean",
+      "mp:format": "wrap",
+      "recipeIngredient": [
+        "Whole-wheat pita",
+        "Shredded rotisserie chicken",
+        "Sliced cucumber",
+        "Halved cherry tomatoes",
+        "Pickled red onion",
+        "Tzatziki",
+        "Crumbled feta"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/pita"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/chicken-rotisserie"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cucumber",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cherry-tomatoes"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/pickled-red-onion"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/tzatziki",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 4,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/feta",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 15,
+            "unitCode": "GRM"
+          }
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/chickpea-grain-bowl",
+      "name": "Chickpea Grain Bowl with Lemon-Tahini",
+      "description": "Quinoa, marinated chickpeas and jammy eggs with crunchy veg and tahini.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "mediterranean",
+      "mp:format": "bowl",
+      "recipeIngredient": [
+        "Fluffy quinoa",
+        "Lemon-oregano chickpeas",
+        "Jammy eggs",
+        "Sliced cucumber",
+        "Halved cherry tomatoes",
+        "Sliced pepperoncini",
+        "Lemon-tahini sauce"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/quinoa"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/chickpeas-lemon"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/eggs-jammy"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cucumber"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cherry-tomatoes"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/pepperoncini"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/lemon-tahini"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/gochujang-turkey-bowl",
+      "name": "Gochujang Turkey Bowl with Kimchi & Egg",
+      "description": "Bibimbap-inspired: sweet-spicy turkey, kimchi, cucumber and a jammy egg over rice.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "east-asian",
+      "mp:format": "bowl",
+      "recipeIngredient": [
+        "Steamed white rice",
+        "Gochujang ground turkey",
+        "Jammy eggs",
+        "Kimchi",
+        "Quick-pickled cucumber",
+        "Frozen spinach, squeezed",
+        "Gochujang-honey sauce",
+        "Toasted sesame seeds"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/rice-white",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/turkey-gochujang"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/eggs-jammy",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "whole"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/kimchi"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/pickled-cucumber"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/spinach-frozen",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/gochujang-honey",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/sesame-seeds"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/peanut-soba-tofu",
+      "name": "Peanut Soba with Tofu",
+      "description": "Cold soba, baked tofu, edamame and broccoli slaw tossed in peanut-lime sauce.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "east-asian",
+      "mp:format": "bowl",
+      "recipeIngredient": [
+        "Chilled soba noodles",
+        "Baked soy tofu",
+        "Shelled edamame",
+        "Crunchy broccoli slaw",
+        "Shredded carrot",
+        "Peanut-lime sauce",
+        "Chopped cilantro"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/soba"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/tofu-baked"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/edamame"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/broccoli-slaw"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/carrot-shredded",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/peanut-lime"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cilantro",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/kofta-couscous-bowl",
+      "name": "Turkey Kofta Couscous Bowl",
+      "description": "Warm-spiced turkey over couscous with cucumber, tomato, tzatziki and feta.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "mediterranean",
+      "mp:format": "bowl",
+      "recipeIngredient": [
+        "Five-minute couscous",
+        "Kofta-spiced ground turkey",
+        "Sliced cucumber",
+        "Halved cherry tomatoes",
+        "Pickled red onion",
+        "Tzatziki",
+        "Crumbled feta"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/couscous"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/turkey-kofta"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cucumber"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cherry-tomatoes"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/pickled-red-onion"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/tzatziki"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/feta"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/ginger-scallion-chicken-bowl",
+      "name": "Ginger-Scallion Chicken Rice",
+      "description": "Hainanese-inspired: shredded chicken, rice, cucumber and steamed broccoli with ginger-scallion sauce.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "east-asian",
+      "mp:format": "bowl",
+      "recipeIngredient": [
+        "Shredded rotisserie chicken",
+        "Steamed white rice",
+        "Quick-pickled cucumber",
+        "Steamed broccoli",
+        "Ginger-scallion sauce"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/chicken-rotisserie"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/rice-white"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/pickled-cucumber"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/broccoli-steamed"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/ginger-scallion",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    }
+  ]
+}
