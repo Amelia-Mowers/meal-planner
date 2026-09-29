@@ -188,6 +188,8 @@ describe('periods', () => {
     expect(periodStatus(p, '2026-10-02').state).toBe('past')
     expect(periodStatus(p, '2026-09-27').state).toBe('upcoming')
     expect(nextPeriod(p).days).toBe(4)
+    expect(mealsTarget({ ...p, people: 3 })).toBe(24)
+    expect(nextPeriod({ ...p, people: 3 }).people).toBe(3)
     expect(nextPeriod(p).id).not.toBe('x')
   })
   it('distributes starter plan servings to fill the period', () => {

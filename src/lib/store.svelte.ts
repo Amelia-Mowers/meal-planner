@@ -3,7 +3,7 @@ import foodsJson from '../data/foods.json'
 import libraryRaw from '../data/library.jsonld?raw'
 import { db, getKV, requestPersistence, setKV } from './db'
 import { buildLibrary } from './library'
-import { newPeriod, nextPeriod, type Period } from './period'
+import { mealsTarget, newPeriod, nextPeriod, type Period } from './period'
 import { componentNeeds, shoppingList } from './shopping'
 import { distribute, type StarterPlan } from './starterSets'
 import type { Food, Library, LibraryFile, MenuItem, RecipeDoc, Targets } from './types'
@@ -80,6 +80,11 @@ class AppState {
 
   isTested = (id: string) => this.tested[id] ?? this.lib.components.get(id)?.tested ?? this.lib.combos.get(id)?.tested ?? false
 
+  /** Servings a newly added combo starts with: one meal for everyone, or 2 when cooking for one. */
+  get defaultServings() {
+    const people = this.period?.people ?? 1
+    return people > 1 ? people : 2
+  }
   servingsOf(comboId: string) {
     return this.menu.find((m) => m.comboId === comboId)?.servings ?? 0
   }
@@ -113,7 +118,7 @@ class AppState {
   /** Add a starter plan's combos, spread over the meals still unplanned. */
   applyStarter(plan: StarterPlan) {
     if (!this.period) this.period = newPeriod()
-    const target = this.period ? this.period.days * this.period.mealsPerDay : 7
+    const target = this.period ? mealsTarget(this.period) : 7
     const remaining = Math.max(plan.combos.length, target - this.menuCount)
     for (const [id, n] of distribute(plan.combos, remaining)) this.setServings(id, this.servingsOf(id) + n)
   }

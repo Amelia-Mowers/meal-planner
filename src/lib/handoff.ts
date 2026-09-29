@@ -20,8 +20,8 @@ export type PortionTuple = [string, number, string]
 export interface HandoffPayload {
   /** Library version the sender used. */
   v: string
-  /** Period: [id, start, days, mealsPerDay, name?] */
-  p: [string, string, number, number, string?]
+  /** Period: [id, start, days, mealsPerDay, name?, people?] */
+  p: [string, string, number, number, string?, number?]
   /** Menu: [comboId, servings, portion overrides?] */
   m: [string, number, PortionTuple[]?][]
   /** Batch adjustments: [componentSlug, batches] */

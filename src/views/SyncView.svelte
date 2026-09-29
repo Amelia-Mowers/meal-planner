@@ -5,7 +5,7 @@
   import { plural } from '../lib/format'
   import { decodePayload, type HandoffPayload } from '../lib/handoff'
   import { fnv1a } from '../lib/library'
-  import { periodTitle, rangeLabel } from '../lib/period'
+  import { peopleOf, periodTitle, rangeLabel, servingWord } from '../lib/period'
   import { router } from '../lib/router.svelte'
   import { aisleLabel } from '../lib/shopping'
   import { app } from '../lib/store.svelte'
@@ -77,7 +77,7 @@
       <span class="badge accent"><Smartphone size={12} /> From another device</span>
       {#if plan}
         <h1 style:margin-top=".4rem">{periodTitle(plan.period)}</h1>
-        <p class="lede">{rangeLabel(plan.period)} · {plural(meals, 'meal')} · {plural(plan.menu.length, 'combo')}</p>
+        <p class="lede">{rangeLabel(plan.period)} · {plural(meals, servingWord(plan.period))} · {plural(plan.menu.length, 'combo')}{peopleOf(plan.period) > 1 ? ` · ${peopleOf(plan.period)} people` : ''}</p>
       {:else}
         <h1 style:margin-top=".4rem">Opening…</h1>
       {/if}

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ArrowLeftRight, Check, ClipboardCopy, House, RotateCcw, ShoppingBasket, Undo2 } from '@lucide/svelte'
   import { plural } from '../lib/format'
-  import { periodTitle } from '../lib/period'
+  import { periodTitle, servingWord } from '../lib/period'
   import { router } from '../lib/router.svelte'
   import { aisleLabel, groupByAisle, listAsText, type ShoppingItem } from '../lib/shopping'
   import { app } from '../lib/store.svelte'
@@ -16,7 +16,7 @@
   const groups = $derived(groupByAisle(toBuy))
   const done = $derived(toBuy.filter((i) => cartSet.has(i.foodId)).length)
   const basis = $derived(
-    app.period ? `${periodTitle(app.period)} · ${plural(app.menuCount, 'meal')}, ${plural(app.prepSetIds.size, 'component')}` : '',
+    app.period ? `${periodTitle(app.period)} · ${plural(app.menuCount, servingWord(app.period))}, ${plural(app.prepSetIds.size, 'component')}` : '',
   )
 
   async function copyText() {

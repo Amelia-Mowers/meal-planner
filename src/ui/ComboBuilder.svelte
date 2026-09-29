@@ -19,6 +19,9 @@
   let format = $state<Format>('bowl')
   let picks = $state<Record<Role, string[]>>({ base: [], protein: [], veg: [], sauce: [], topper: [] })
   let servings = $state(2)
+  $effect(() => {
+    if (ui.builderOpen) servings = app.defaultServings
+  })
 
   const all = $derived([...app.lib.components.values()].filter((c) => !app.onlyTested || app.isTested(c.id)))
   const chosen = $derived(ROLES.flatMap((r) => picks[r]).map((id) => app.lib.components.get(id)!).filter(Boolean))

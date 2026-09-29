@@ -3,7 +3,7 @@
 **▶ Live app: https://amelia-mowers.github.io/meal-planner/**
 
 A static, offline-first web app for component-based meal prep. Plan a period (a week, half a week,
-or any number of days), pick bowl and wrap combos for it, and it:
+or any number of days, for however many people), pick bowl and wrap combos for it, and it:
 
 - derives the **prep set** — which components to batch-cook and how much — with adjustable quantities
 - suggests combos that reuse what you're already prepping, or build your own

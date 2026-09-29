@@ -16,7 +16,7 @@
   import { nutritionOf, resolveCombo } from '../lib/combos'
   import { plural, ROLE_PLURAL } from '../lib/format'
   import { add, scale, ZERO } from '../lib/nutrition'
-  import { mealsTarget, periodStatus, periodTitle, rangeLabel } from '../lib/period'
+  import { mealsTarget, peopleOf, periodStatus, periodTitle, rangeLabel, servingWord } from '../lib/period'
   import { batchText } from '../lib/prep'
   import { router } from '../lib/router.svelte'
   import { batchStep, type ComponentNeed } from '../lib/shopping'
@@ -32,6 +32,7 @@
 
   const p = $derived(app.period)
   const target = $derived(p ? mealsTarget(p) : 0)
+  const word = $derived(servingWord(p))
   const status = $derived(p ? periodStatus(p) : null)
   const remaining = $derived(target - app.menuCount)
 
@@ -117,7 +118,7 @@
 
       <div class="meals">
         <div class="row">
-          <span><strong class="big num">{app.menuCount}</strong> <span class="muted">of {target} meals planned</span></span>
+          <span><strong class="big num">{app.menuCount}</strong> <span class="muted">of {target} {word}s planned</span></span>
           <span class="spacer"></span>
           {#if app.menuCount}<TargetBadge n={avg} targets={app.targets} />{/if}
         </div>
@@ -125,8 +126,8 @@
           <div class:over={app.menuCount > target} style:width="{Math.min(100, (app.menuCount / Math.max(1, target)) * 100)}%"></div>
         </div>
         <p class="tiny muted">
-          {p.days} days × {plural(p.mealsPerDay, 'meal')} a day ·
-          {#if remaining > 0}{plural(remaining, 'meal')} to go{:else if remaining === 0}all meals covered{:else}{-remaining} extra{/if}
+          {p.days} days × {plural(p.mealsPerDay, 'meal')} a day{#if peopleOf(p) > 1}{' '}× {peopleOf(p)} people{/if} ·
+          {#if remaining > 0}{plural(remaining, word)} to go{:else if remaining === 0}all covered{:else}{-remaining} extra{/if}
         </p>
       </div>
 
@@ -147,7 +148,7 @@
 
       {#if !rows.length}
         <div class="card empty-meals">
-          <p class="muted small">Start from a themed plan — it fills your {target} meals — or pick combos yourself.</p>
+          <p class="muted small">Start from a themed plan — it fills your {target} {word}s — or pick combos yourself.</p>
           <div class="starters">
             {#each STARTER_PLANS as s (s.id)}
               <button class="starter" onclick={() => app.applyStarter(s)}>
@@ -225,7 +226,7 @@
                         {:else}
                           Makes {formatQty(humanize({ value: c.yield.value * n.batches, unit: c.yield.unit }))} · ~{formatNumber(portions(n), false)} portions
                         {/if}
-                        {#if n.servings}· used in {plural(n.servings, 'meal')}{:else}· extra{/if}
+                        {#if n.servings}· used in {plural(n.servings, word)}{:else}· extra{/if}
                       </span>
                     </button>
                     {#if n.adjusted}

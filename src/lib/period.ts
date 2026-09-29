@@ -5,6 +5,8 @@ export interface Period {
   start: string
   days: number
   mealsPerDay: number
+  /** People eating from the prep (defaults to 1). */
+  people?: number
   name?: string
 }
 
@@ -35,17 +37,28 @@ export function addDays(iso: string, n: number): string {
 export const randomId = () => Math.random().toString(36).slice(2, 10)
 
 export function newPeriod(opts: Partial<Omit<Period, 'id'>> = {}): Period {
-  return { id: randomId(), start: opts.start ?? isoDate(new Date()), days: opts.days ?? 7, mealsPerDay: opts.mealsPerDay ?? 1, name: opts.name }
+  return {
+    id: randomId(),
+    start: opts.start ?? isoDate(new Date()),
+    days: opts.days ?? 7,
+    mealsPerDay: opts.mealsPerDay ?? 1,
+    people: opts.people ?? 1,
+    name: opts.name,
+  }
 }
 
 /** The period that follows `p` with the same shape. */
 export function nextPeriod(p: Period): Period {
   const end = addDays(p.start, p.days)
   const today = isoDate(new Date())
-  return newPeriod({ start: end > today ? end : today, days: p.days, mealsPerDay: p.mealsPerDay })
+  return newPeriod({ start: end > today ? end : today, days: p.days, mealsPerDay: p.mealsPerDay, people: peopleOf(p) })
 }
 
-export const mealsTarget = (p: Period) => p.days * p.mealsPerDay
+export const peopleOf = (p: Period) => Math.max(1, p.people ?? 1)
+/** Servings to plan: days × meals a day × people. */
+export const mealsTarget = (p: Period) => p.days * p.mealsPerDay * peopleOf(p)
+/** "meal" for one person, "serving" when feeding several. */
+export const servingWord = (p: Period | null) => (p && peopleOf(p) > 1 ? 'serving' : 'meal')
 export const endDate = (p: Period) => addDays(p.start, p.days - 1)
 
 const fmt = (iso: string, opts: Intl.DateTimeFormatOptions) => parseDate(iso).toLocaleDateString(undefined, opts)

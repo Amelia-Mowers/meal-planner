@@ -46,7 +46,7 @@ export function buildPayload(): HandoffPayload | null {
 
   return {
     v: app.lib.version,
-    p: p.name ? [p.id, p.start, p.days, p.mealsPerDay, p.name] : [p.id, p.start, p.days, p.mealsPerDay],
+    p: periodTuple(p),
     m: app.menu.map((m) => {
       const ov = Object.entries(app.portions[m.comboId] ?? {}).map(([c, q]) => [shortComp(c), q.value, q.unit] as [string, number, string])
       return ov.length ? [shortCombo(m.comboId), m.servings, ov] : [shortCombo(m.comboId), m.servings]
@@ -64,6 +64,12 @@ export function buildPayload(): HandoffPayload | null {
   }
 }
 
+function periodTuple(p: Period): HandoffPayload['p'] {
+  const people = p.people ?? 1
+  if (people > 1) return [p.id, p.start, p.days, p.mealsPerDay, p.name ?? '', people]
+  return p.name ? [p.id, p.start, p.days, p.mealsPerDay, p.name] : [p.id, p.start, p.days, p.mealsPerDay]
+}
+
 export interface IncomingSync {
   plan: PastPeriod
   /** ms */
@@ -72,8 +78,8 @@ export interface IncomingSync {
 }
 
 export function decodeIncoming(x: HandoffPayload): IncomingSync {
-  const [id, start, days, mealsPerDay, name] = x.p
-  const period: Period = { id, start, days, mealsPerDay, ...(name ? { name } : {}) }
+  const [id, start, days, mealsPerDay, name, people] = x.p
+  const period: Period = { id, start, days, mealsPerDay, people: people ?? 1, ...(name ? { name } : {}) }
   const portions: Record<string, Record<string, Qty>> = {}
   const menu = x.m.map(([c, servings, ov]) => {
     const comboId = longCombo(c)

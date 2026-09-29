@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ScanLine } from '@lucide/svelte'
   import { plural } from '../lib/format'
-  import { periodTitle } from '../lib/period'
+  import { periodTitle, servingWord } from '../lib/period'
   import { app } from '../lib/store.svelte'
   import { buildPayload } from '../lib/sync.svelte'
   import { ui } from '../lib/ui.svelte'
@@ -17,7 +17,7 @@
   }
 </script>
 
-<Sheet bind:open={ui.syncOpen} title="Sync with another device" subtitle="{title} · {plural(app.menuCount, 'meal')}">
+<Sheet bind:open={ui.syncOpen} title="Sync with another device" subtitle="{title} · {plural(app.menuCount, servingWord(app.period))}">
   {#if payload}
     <div class="stack" style:--gap="1rem">
       <ol class="steps small">

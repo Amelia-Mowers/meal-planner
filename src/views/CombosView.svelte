@@ -3,7 +3,7 @@
   import { nutritionOf, suggest } from '../lib/combos'
   import { CUISINE_LABEL, plural } from '../lib/format'
   import { hitsTarget } from '../lib/nutrition'
-  import { mealsTarget, periodTitle } from '../lib/period'
+  import { mealsTarget, periodTitle, servingWord } from '../lib/period'
   import { router } from '../lib/router.svelte'
   import { STARTER_PLANS } from '../lib/starterSets'
   import { app } from '../lib/store.svelte'
@@ -112,7 +112,7 @@
   <div class="cta">
     <div class="cta-inner card">
       <div class="stack" style:--gap="0">
-        <strong>{plural(app.menuCount, 'meal')} planned</strong>
+        <strong>{plural(app.menuCount, servingWord(app.period))} planned</strong>
         <span class="small muted">
           {#if target}{target - app.menuCount > 0 ? `${target - app.menuCount} to go` : 'All meals covered'} · {/if}{plural(app.prepSetIds.size, 'component')}
         </span>

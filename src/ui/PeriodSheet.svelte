@@ -2,11 +2,12 @@
   import { History, Repeat, Sparkles } from '@lucide/svelte'
   import { untrack } from 'svelte'
   import { plural } from '../lib/format'
-  import { LENGTH_PRESETS, mealsTarget, newPeriod, periodTitle, rangeLabel, type Period } from '../lib/period'
+  import { LENGTH_PRESETS, mealsTarget, newPeriod, peopleOf, periodTitle, rangeLabel, servingWord, type Period } from '../lib/period'
   import { app, type PastPeriod } from '../lib/store.svelte'
   import { toasts } from '../lib/toast.svelte'
   import { ui } from '../lib/ui.svelte'
   import Sheet from './Sheet.svelte'
+  import Stepper from './Stepper.svelte'
 
   const mode = $derived(ui.periodSheet)
   let open = $state(false)
@@ -38,7 +39,7 @@
 
   function save() {
     const days = Math.max(1, Math.min(31, Math.round(draft.days)))
-    const p: Period = { ...draft, days, name: draft.name?.trim() || undefined }
+    const p: Period = { ...draft, days, people: peopleOf(draft), name: draft.name?.trim() || undefined }
     if (mode === 'edit' && app.period) {
       app.period = p
       toasts.show('Period updated')
@@ -93,6 +94,22 @@
       </div>
     </div>
 
+    <div class="field">
+      <span class="label" id="people-label">People eating</span>
+      <div class="row">
+        <Stepper
+          value={draft.people ?? 1}
+          min={1}
+          max={12}
+          size="md"
+          format={(v) => (v === 1 ? 'Just me' : `${v} people`)}
+          onchange={(v) => (draft.people = v)}
+          label="number of people"
+        />
+        <span class="small muted">Every meal is cooked for everyone.</span>
+      </div>
+    </div>
+
     <div class="grid2">
       <div class="field">
         <label for="p-start">Starts</label>
@@ -134,7 +151,9 @@
     {/if}
 
     <p class="small muted">
-      {rangeLabel({ ...draft, days: Math.max(1, draft.days || 1) })} · plan for <strong>{plural(mealsTarget(draft) || 0, 'meal')}</strong>
+      {rangeLabel({ ...draft, days: Math.max(1, draft.days || 1) })} · plan for
+      <strong>{plural(mealsTarget(draft) || 0, servingWord(draft))}</strong>
+      {#if peopleOf(draft) > 1}<span class="muted">({draft.days} days × {draft.mealsPerDay} a day × {peopleOf(draft)} people)</span>{/if}
     </p>
   </div>
 

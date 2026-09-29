@@ -45,8 +45,9 @@
     }
   }
   function add() {
-    app.setServings(combo.id, 2)
-    toasts.show(`Added 2 × ${combo.name}`, { action: () => app.setServings(combo.id, 0) })
+    const n = app.defaultServings
+    app.setServings(combo.id, n)
+    toasts.show(`Added ${n} × ${combo.name}`, { action: () => app.setServings(combo.id, 0) })
   }
 </script>
 
