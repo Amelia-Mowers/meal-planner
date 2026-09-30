@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Check, ChevronDown, Plus, Recycle, SlidersHorizontal, Sparkles, Star, Target, Wrench } from '@lucide/svelte'
+  import { Check, ChevronDown, Plus, Recycle, SlidersHorizontal, Sparkles, Star, Target, Trash2, Wrench } from '@lucide/svelte'
   import { fitBasePortion, flexPart, nutritionOf, sliderStep } from '../lib/combos'
   import { cuisineShort, plural } from '../lib/format'
   import { app } from '../lib/store.svelte'
@@ -11,7 +11,7 @@
   import Stepper from './Stepper.svelte'
   import TargetBadge from './TargetBadge.svelte'
 
-  let { combo, compact = false }: { combo: Combo; compact?: boolean } = $props()
+  let { combo, compact = false, onremove }: { combo: Combo; compact?: boolean; onremove?: () => void } = $props()
 
   const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1)
   let adjusting = $state(false)
@@ -140,7 +140,12 @@
     <span class="spacer"></span>
     {#if servings > 0}
       <span class="small muted">Servings</span>
-      <Stepper value={servings} onchange={(v) => app.setServings(combo.id, v)} label="servings of {combo.name}" />
+      <Stepper value={servings} min={onremove ? 1 : 0} onchange={(v) => app.setServings(combo.id, v)} label="servings of {combo.name}" />
+      {#if onremove}
+        <button class="btn icon sm ghost" aria-label="Remove {combo.name} from plan" title="Remove from plan" onclick={onremove}>
+          <Trash2 size={15} />
+        </button>
+      {/if}
     {:else}
       <button class="btn sm primary" onclick={add}><Plus size={14} /> Add to plan</button>
     {/if}

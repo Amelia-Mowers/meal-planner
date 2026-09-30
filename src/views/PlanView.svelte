@@ -26,6 +26,7 @@
   import { ROLES, type Role } from '../lib/types'
   import { ui } from '../lib/ui.svelte'
   import { formatNumber, formatQty, humanize, ratio } from '../lib/units'
+  import ComboCard from '../ui/ComboCard.svelte'
   import MacroBar from '../ui/MacroBar.svelte'
   import Stepper from '../ui/Stepper.svelte'
   import TargetBadge from '../ui/TargetBadge.svelte'
@@ -164,23 +165,11 @@
           </div>
         </div>
       {:else}
-        <ul class="card list">
-          {#each rows as { m, combo, nut } (m.comboId)}
-            <li>
-              <button class="info" onclick={() => (ui.detail = combo.id)}>
-                <span class="nm">{combo.name}</span>
-                <span class="tiny muted num">
-                  {combo.format === 'bowl' ? 'Bowl' : 'Wrap'} · {Math.round(nut.n.kcal)} kcal · {Math.round(nut.n.protein)} g protein
-                </span>
-              </button>
-              <TargetBadge n={nut.n} targets={app.targets} />
-              <Stepper value={m.servings} min={1} onchange={(v) => app.setServings(m.comboId, v)} label="servings of {combo.name}" />
-              <button class="btn icon sm ghost" aria-label="Remove {combo.name}" onclick={() => remove(m.comboId, combo.name)}>
-                <Trash2 size={15} />
-              </button>
-            </li>
+        <div class="combos">
+          {#each rows as { m, combo } (m.comboId)}
+            <ComboCard {combo} onremove={() => remove(m.comboId, combo.name)} />
           {/each}
-        </ul>
+        </div>
         {#if missing.length}
           <p class="callout small">
             {plural(missing.length, 'planned combo')} use recipes this device doesn't have (private recipes from another device?). They're
@@ -370,23 +359,12 @@
   .st-name {
     font-weight: 700;
   }
-  .list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  .combos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+    gap: 0.75rem;
+    align-items: stretch;
   }
-  .list li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.55rem 0.5rem 0.55rem 0.9rem;
-    flex-wrap: wrap;
-  }
-  .list li + li {
-    border-top: 1px solid var(--line);
-  }
-  .info,
   .c-info {
     flex: 1;
     min-width: 160px;
