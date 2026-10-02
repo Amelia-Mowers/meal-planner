@@ -30,6 +30,10 @@
         <button class="btn" onclick={scanTheirs}><ScanLine size={16} /> Scan the other device</button>
       </div>
       <p class="tiny muted" style:text-align="center">Nothing is uploaded — the plan travels inside the code.</p>
+      <p class="tiny muted" style:text-align="center">
+        On iPhone, the home-screen app and Safari keep separate data. Scan with the app's own <strong>Scan</strong> button so the plan lands
+        in the app.
+      </p>
     </div>
   {:else}
     <p class="muted">Plan a period first.</p>

@@ -139,7 +139,7 @@
     {/if}
     <span class="spacer"></span>
     {#if servings > 0}
-      <span class="small muted">Servings</span>
+      <span class="small muted srv-label">Servings</span>
       <Stepper value={servings} min={onremove ? 1 : 0} onchange={(v) => app.setServings(combo.id, v)} label="servings of {combo.name}" />
       {#if onremove}
         <button class="btn icon sm ghost" aria-label="Remove {combo.name} from plan" title="Remove from plan" onclick={onremove}>
@@ -247,6 +247,11 @@
   }
   .strong {
     font-weight: 700;
+  }
+  @media (max-width: 420px) {
+    .srv-label {
+      display: none;
+    }
   }
   footer {
     display: flex;

@@ -14,12 +14,17 @@ const bundledFoods = foodsJson.foods as Food[]
 
 export const DEFAULT_TARGETS: Targets = { kcal: 600, protein: 40, tolerance: 0.1 }
 
-/** A finished (archived) period, kept so it can be repeated later. */
+/** An archived period, kept so it can be restored or repeated later. */
 export interface PastPeriod {
   period: Period
   menu: MenuItem[]
   adjust: Record<string, number>
   portions: Record<string, Record<string, Qty>>
+  /** Shopping/prep checkmarks at the time it was archived (restored with the period). */
+  inCart?: string[]
+  prepDone?: string[]
+  /** When it was archived (ms). */
+  archivedAt?: number
 }
 
 /** Persisted keys and their defaults. */
@@ -130,6 +135,8 @@ class AppState {
       menu: $state.snapshot(this.menu),
       adjust: $state.snapshot(this.adjust),
       portions: $state.snapshot(this.portions),
+      inCart: $state.snapshot(this.inCart),
+      prepDone: $state.snapshot(this.prepDone),
     }
   }
 
@@ -137,16 +144,18 @@ class AppState {
    * Archive the current period and start a new one. `from` pre-fills the new period's plan
    * (repeat this period, or a past one); otherwise it starts empty.
    */
-  startPeriod(period: Period, from?: PastPeriod | null) {
+  startPeriod(period: Period, from?: PastPeriod | null, opts: { restoreMarks?: boolean } = {}) {
     const snap = this.snapshot()
-    if (snap && (snap.menu.length || Object.keys(snap.adjust).length))
-      this.history = [snap, ...this.history.filter((h) => h.period.id !== snap.period.id)].slice(0, MAX_HISTORY)
+    const keep = this.history.filter((h) => h.period.id !== period.id && h.period.id !== snap?.period.id)
+    this.history = snap && (snap.menu.length || Object.keys(snap.adjust).length)
+      ? [{ ...snap, archivedAt: Date.now() }, ...keep].slice(0, MAX_HISTORY)
+      : keep
     this.period = period
     this.menu = from ? $state.snapshot(from.menu) : []
     this.adjust = from ? $state.snapshot(from.adjust) : {}
     this.portions = from ? $state.snapshot(from.portions) : {}
-    this.inCart = []
-    this.prepDone = []
+    this.inCart = opts.restoreMarks && from?.inCart ? [...from.inCart] : []
+    this.prepDone = opts.restoreMarks && from?.prepDone ? [...from.prepDone] : []
     // Shopping and prep checkmarks belong to a period; pantry ("have") carries over.
     this.markTimes = Object.fromEntries(Object.entries(this.markTimes).filter(([k]) => k.startsWith('have|')))
   }
@@ -159,6 +168,21 @@ class AppState {
     } finally {
       this.suppressStamps = false
     }
+  }
+
+  /** Make a past period current again (the current one is archived in its place). */
+  restorePeriod(h: PastPeriod) {
+    this.startPeriod($state.snapshot(h.period), h, { restoreMarks: true })
+  }
+
+  /** Repeat a past period's plan as a new period starting today (or after the current one). */
+  repeatPeriod(h: PastPeriod) {
+    const base = nextPeriod(this.period ?? h.period)
+    this.startPeriod({ ...base, days: h.period.days, mealsPerDay: h.period.mealsPerDay, people: h.period.people, name: undefined }, h)
+  }
+
+  deletePast(id: string) {
+    this.history = this.history.filter((h) => h.period.id !== id)
   }
 
   nextPeriodDraft(): Period {

@@ -27,6 +27,7 @@
   import { ui } from '../lib/ui.svelte'
   import { formatNumber, formatQty, humanize, ratio } from '../lib/units'
   import ComboCard from '../ui/ComboCard.svelte'
+  import PastPeriods from '../ui/PastPeriods.svelte'
   import MacroBar from '../ui/MacroBar.svelte'
   import Stepper from '../ui/Stepper.svelte'
   import TargetBadge from '../ui/TargetBadge.svelte'
@@ -134,7 +135,8 @@
 
       {#if status?.state === 'past'}
         <div class="callout info small">
-          This period has ended. <button class="btn sm" onclick={() => (ui.periodSheet = 'new')}>Start the next one</button>
+          This period has ended — the plan stays here until you start a new one, and then it's kept under Past periods.
+          <button class="btn sm" onclick={() => (ui.periodSheet = 'new')}>Start the next one</button>
         </div>
       {/if}
     </section>
@@ -262,6 +264,8 @@
       </section>
     {/if}
   {/if}
+
+  <PastPeriods />
 </div>
 
 <style>
