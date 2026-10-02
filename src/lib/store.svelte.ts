@@ -145,7 +145,12 @@ class AppState {
    * (repeat this period, or a past one); otherwise it starts empty.
    */
   startPeriod(period: Period, from?: PastPeriod | null, opts: { restoreMarks?: boolean } = {}) {
-    const snap = this.snapshot()
+    let snap = this.snapshot()
+    // Never drop combos just because they had no period (e.g. saved by an older version).
+    if (!snap && this.menu.length) {
+      this.period = newPeriod({ name: 'Earlier plan' })
+      snap = this.snapshot()
+    }
     const keep = this.history.filter((h) => h.period.id !== period.id && h.period.id !== snap?.period.id)
     this.history = snap && (snap.menu.length || Object.keys(snap.adjust).length)
       ? [{ ...snap, archivedAt: Date.now() }, ...keep].slice(0, MAX_HISTORY)
@@ -189,11 +194,14 @@ class AppState {
     return this.period ? nextPeriod(this.period) : newPeriod()
   }
 
-  async init() {
+  private async readAll(): Promise<Persisted> {
     const entries = await Promise.all(
       (Object.keys(DEFAULTS) as (keyof Persisted)[]).map(async (k) => [k, await getKV(k, DEFAULTS[k])] as const),
     )
-    const s = Object.fromEntries(entries) as Persisted
+    return Object.fromEntries(entries) as Persisted
+  }
+
+  private apply(s: Persisted) {
     this.period = s.period
     this.menu = s.menu
     this.adjust = s.adjust
@@ -207,9 +215,53 @@ class AppState {
     this.targets = { ...DEFAULT_TARGETS, ...s.targets }
     this.tested = s.tested
     this.onlyTested = s.onlyTested
+    // Combos saved before periods existed: give them a period instead of hiding them.
+    if (!this.period && this.menu.length) this.period = newPeriod({ name: 'Earlier plan' })
+  }
+
+  /** True while loading state written by another copy of the app — don't write it back. */
+  private hydrating = false
+  /** Last value written (or loaded) per key, to skip redundant writes. */
+  private written: Partial<Record<keyof Persisted, string>> = {}
+
+  private hydrate(fn: () => void) {
+    this.hydrating = true
+    this.suppressStamps = true
+    try {
+      flushSync(fn)
+    } finally {
+      this.hydrating = false
+      this.suppressStamps = false
+    }
+  }
+
+  /**
+   * Re-read everything from IndexedDB. Android shares storage between the installed app and
+   * Chrome, and keeps old instances alive in the background — without this, a stale copy
+   * would overwrite newer data (e.g. past periods) the next time it saved.
+   */
+  async refreshFromDb() {
+    const s = await this.readAll()
+    this.hydrate(() => this.apply(s))
+  }
+
+  async init() {
+    this.apply(await this.readAll())
     await this.loadPrivate()
     this.ready = true
     this.persisted = await requestPersistence().catch(() => null)
+
+    const channel = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('meal-planner-state') : null
+    channel?.addEventListener('message', (e: MessageEvent<{ key: keyof Persisted; value: unknown }>) => {
+      const { key, value } = e.data
+      if (!(key in DEFAULTS)) return
+      this.hydrate(() => {
+        ;(this as unknown as Record<string, unknown>)[key] = key === 'have' && value == null ? this.have : value
+      })
+    })
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') this.refreshFromDb()
+    })
 
     // Persist each key whenever it changes, and stamp local edits for sync merging.
     $effect.root(() => {
@@ -235,7 +287,15 @@ class AppState {
       for (const k of Object.keys(DEFAULTS) as (keyof Persisted)[]) {
         $effect(() => {
           const v = $state.snapshot(this[k])
+          const json = JSON.stringify(v)
+          // First run (just loaded), unchanged, or loaded from another copy: nothing to write.
+          if (this.written[k] === undefined || this.hydrating || json === this.written[k]) {
+            this.written[k] = json
+            return
+          }
+          this.written[k] = json
           setKV(k, v)
+          channel?.postMessage({ key: k, value: v })
         })
       }
     })
