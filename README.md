@@ -31,6 +31,20 @@ npm run validate     # schema, references, units, flavors, licensing, exclusions
 npm run build        # production build to dist/ (PWA)
 ```
 
+### Android end-to-end tests
+
+Real Chrome on Android (emulator or a USB phone with debugging on), driven by Playwright over adb:
+persistence across Chrome being killed, past periods, a stale second tab, a laptop ↔ phone sync
+handshake, and opening offline.
+
+```sh
+./e2e/android-emulator.sh                 # one-time SDK download via Nix (needs KVM), boots headless
+export PATH="$(readlink -f ~/.cache/meal-planner-android/sdk)/bin:$PATH"
+npm run build && npx vite preview --port 4173 &
+CHROME_PATH=$(command -v chromium) npm run test:android
+adb emu kill                              # stop the emulator
+```
+
 Stack: Vite, Svelte 5, TypeScript, Dexie (IndexedDB), vite-plugin-pwa, qrcode.
 
 ## Data
