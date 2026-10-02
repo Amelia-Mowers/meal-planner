@@ -151,7 +151,7 @@
       <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0</a>. Recipes use schema.org JSON-LD, so
       they import into Tandoor or Mealie.
     </p>
-    <p>Library version <code>{app.lib.version}</code></p>
+    <p>App build <code>{__BUILD__}</code> · library <code>{app.lib.version}</code></p>
   </section>
 </div>
 

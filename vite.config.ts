@@ -4,9 +4,12 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // GitHub Pages serves the project at /<repo>/; BASE_PATH is set by the deploy workflow.
 const base = process.env.BASE_PATH ?? '/'
+// Shown in Settings so you can tell which build a device is running.
+const build = `${(process.env.GITHUB_SHA ?? 'dev').slice(0, 7)} · ${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC`
 
 export default defineConfig({
   base,
+  define: { __BUILD__: JSON.stringify(build) },
   plugins: [
     svelte(),
     VitePWA({

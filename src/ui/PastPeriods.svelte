@@ -36,13 +36,16 @@
   }
 </script>
 
-{#if past.length}
-  <section class="stack" style:--gap=".6rem">
+<section class="stack" style:--gap=".6rem">
     <button class="section-title toggle" aria-expanded={open} onclick={() => (open = !open)}>
       <History size={14} /> Past periods · {past.length}
       <ChevronDown size={14} class={open ? 'flip' : ''} />
     </button>
-    {#if open}
+    {#if open && !past.length}
+      <p class="small muted">
+        No past periods yet. When you start a new period, the current plan is saved here so you can restore or repeat it.
+      </p>
+    {:else if open}
       <p class="small muted">Plans are kept here when you start a new period. Restore one to make it current again, or repeat it as a new period.</p>
       <ul class="card list">
         {#each past as h (h.period.id)}
@@ -63,8 +66,7 @@
         {/each}
       </ul>
     {/if}
-  </section>
-{/if}
+</section>
 
 <style>
   .toggle {

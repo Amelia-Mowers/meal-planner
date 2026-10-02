@@ -36,6 +36,13 @@
 
   const { needRefresh, updateServiceWorker } = useRegisterSW({
     onOfflineReady: () => toasts.show('Ready to work offline'),
+    // Installed apps can stay open for days; check for a new version whenever the app comes back.
+    onRegisteredSW: (_url, reg) => {
+      if (!reg) return
+      const check = () => document.visibilityState === 'visible' && navigator.onLine && reg.update().catch(() => {})
+      document.addEventListener('visibilitychange', check)
+      setInterval(check, 60 * 60 * 1000)
+    },
   })
 
   const NAV: { route: Route; label: string; icon: typeof CalendarDays; mobile: boolean }[] = [
