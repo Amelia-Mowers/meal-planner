@@ -140,6 +140,19 @@ describe('shopping + prep', () => {
     expect(kofta.items.find((i) => i.name === 'garlic')!.amount).toBe('4 cloves')
     expect(kofta.items.some((i) => i.name.includes('turkey'))).toBe(false)
   })
+  it('roasts all sheet-pan chicken flavors as one batch', () => {
+    const menu = [
+      { comboId: 'combo/chipotle-chicken-bowl', servings: 4 },
+      { comboId: 'combo/chicken-alfredo', servings: 4 },
+    ]
+    const plan = prepPlan(componentNeeds(lib, menu), lib)
+    const chicken = plan.tasks.find((t) => t.id === 'group/sheet-pan-chicken')!
+    expect(chicken.lane).toBe('oven')
+    expect(chicken.components.map((c) => c.id).sort()).toEqual(['comp/chicken-sheetpan', 'comp/chicken-sheetpan-herb'])
+    expect(chicken.steps.some((st) => st.startsWith('Divide by weight'))).toBe(true)
+    expect(chicken.ingredients.map((g) => g.heading)).toEqual(['Batch', 'Smoky chicken', 'Herb chicken'])
+    expect(plan.tasks.some((t) => t.id === 'comp/chicken-sheetpan')).toBe(false)
+  })
   it('applies batch adjustments: override, skip, and extras', () => {
     const menu = [{ comboId: 'combo/chipotle-chicken-bowl', servings: 4 }]
     const auto = componentNeeds(lib, menu)

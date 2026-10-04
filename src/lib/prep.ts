@@ -14,6 +14,31 @@ export const LANES: Record<Lane, { label: string; hint: string }> = {
 const LANE_ORDER: Lane[] = ['oven', 'rice', 'stove', 'micro', 'counter']
 const STOVE_BURNERS = 3
 
+/**
+ * Standard cooks shared by several flavor variants (components with the same `mp:batchGroup`).
+ * Each variant's first step points here; its remaining steps are the flavor-specific finish.
+ */
+const BATCH_GROUPS: Record<string, { title: string; steps: (x: { total: string; split: string; n: number }) => string[] }> = {
+  'ground-turkey': {
+    title: 'Brown the turkey batch',
+    steps: ({ total, split, n }) => [
+      `Brown all ${total} of turkey in your largest skillet over medium-high heat, breaking it up, until no pink remains and it reaches 165°F / 74°C (about 10 minutes).`,
+      ...(n > 1 ? [`Divide by weight: ${split}.`] : []),
+    ],
+  },
+  'sheet-pan-chicken': {
+    title: 'Roast the chicken batch',
+    steps: ({ total, split, n }) => [
+      'Heat the oven to 425°F / 220°C.',
+      `Pound ${total} of chicken breasts to an even thickness.`,
+      n > 1
+        ? `Divide by weight (${split}). Toss each share with its oil and seasonings and lay them in separate rows on lined sheet pans.`
+        : 'Toss with the oil and seasonings on a lined sheet pan.',
+      'Roast 18–25 minutes, until the thickest piece reads 165°F / 74°C.',
+    ],
+  },
+}
+
 export interface PrepTask {
   id: string
   lane: Lane
@@ -111,37 +136,34 @@ export function prepPlan(needs: Map<string, ComponentNeed>, lib?: Library): { ta
     })
   }
 
-  // Batch groups (e.g. one big pan of ground turkey split into flavors).
+  // Batch groups: one standard cook (browned turkey, sheet-pan chicken) split into flavors.
   for (const [group, ns] of groups) {
     const cs = ns.map((n) => n.component)
     const lane = laneFor(cs[0])
-    const title = group === 'ground-turkey' ? 'Brown the turkey batch' : `Batch: ${group}`
+    const def = BATCH_GROUPS[group]
     const shared = cs[0].supplies[0]
-    const grams = ns.reduce((sum, n) => {
+    const shareOf = (n: ComponentNeed) => {
       const sup = n.component.supplies.find((x) => x.foodId === shared.foodId)
-      return sum + (sup ? (toGrams(sup.qty) ?? 0) * n.batches : 0)
-    }, 0)
+      return sup ? (toGrams(sup.qty) ?? 0) * n.batches : 0
+    }
+    const grams = ns.reduce((sum, n) => sum + shareOf(n), 0)
+    const amount = (g: number) => formatQty(humanize({ value: g, unit: 'g' }))
+    const split = ns.map((n) => `${amount(shareOf(n))} for ${n.component.shortName.toLowerCase()}`).join(', ')
     tasks.push({
       id: `group/${group}`,
       lane,
-      title,
+      title: def?.title ?? `Batch: ${group}`,
       detail:
         cs.length > 1
-          ? `${formatQty(humanize({ value: grams, unit: 'g' }))} total → split into ${cs.map((c) => c.shortName.toLowerCase()).join(', ')}`
-          : `${formatQty(humanize({ value: grams, unit: 'g' }))} → ${cs[0].name.toLowerCase()}`,
+          ? `${amount(grams)} total → split into ${cs.map((c) => c.shortName.toLowerCase()).join(', ')}`
+          : `${amount(grams)} → ${cs[0].name.toLowerCase()}`,
       components: cs,
       activeMin: Math.max(...cs.map((c) => c.prepMin)) + 5 * (cs.length - 1),
       handsOffMin: Math.max(...cs.map((c) => c.cookMin)) + 3 * (cs.length - 1),
       ingredients: [
         {
           heading: 'Batch',
-          items: [
-            {
-              amount: formatQty(humanize({ value: grams, unit: 'g' })),
-              name: foods.get(shared.foodId)?.name ?? shared.foodId,
-              note: `${Math.round(grams / 5) * 5} g`,
-            },
-          ],
+          items: [{ amount: amount(grams), name: foods.get(shared.foodId)?.name ?? shared.foodId, note: `${Math.round(grams / 5) * 5} g` }],
         },
         ...ns.map((n) => ({
           heading: n.component.shortName,
@@ -153,10 +175,8 @@ export function prepPlan(needs: Map<string, ComponentNeed>, lib?: Library): { ta
         })),
       ],
       steps: [
-        `Brown all the turkey in your largest skillet over medium-high heat, breaking it up, until no pink remains and it reaches 165°F / 74°C (about 10 minutes).`,
-        ...(cs.length > 1
-          ? [`Divide into ${cs.length} portions by weight.`, ...cs.map((c) => `${c.name}: ${c.steps.slice(1).join(' ')}`)]
-          : cs[0].steps.slice(1)),
+        ...(def?.steps({ total: amount(grams), split, n: cs.length }) ?? []),
+        ...(cs.length > 1 ? cs.map((c) => `${c.name}: ${c.steps.slice(1).join(' ')}`) : cs[0].steps.slice(1)),
       ],
       priority: -99,
       fridgeDays: Math.min(...cs.map((c) => c.fridgeDays ?? 99)),

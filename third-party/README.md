@@ -39,6 +39,12 @@ Rules for the conversion (PLAN.md §7):
    Every ingredient a step mentions must be in `supply` with an amount, otherwise it never
    reaches the shopping list or nutrition. Pick one method and one amount. (The validator
    flags hedges like "optional", "swap", "instead", "(or …".)
+9. **Reuse the standard bases.** A recipe's protein should be a flavor of an existing batch,
+   not a new cooking method: ground meat → a new `ground-turkey` flavor (93% turkey, browned
+   with the batch, then seasoned); chicken breast → a new `sheet-pan-chicken` flavor (roasted
+   with the batch at 425°F). Give the component `"mp:batchGroup"` and make its first step point
+   at the batch, like `comp/turkey-taco` or `comp/chicken-sheetpan-herb`. Reuse existing bases,
+   veg and sauces (e.g. `comp/rice-white`, `comp/broccoli-steamed`) instead of near-duplicates.
 
 Then check and import:
 

@@ -2074,31 +2074,6 @@
       "densityGPerMl": 0.385
     },
     {
-      "id": "food/ground-turkey-99",
-      "name": "ground turkey breast, 99% lean",
-      "aliases": [
-        "99/1 ground turkey",
-        "extra-lean ground turkey"
-      ],
-      "fdcId": 172847,
-      "aisle": "meat",
-      "buyUnit": {
-        "value": 1,
-        "unitText": "lb"
-      },
-      "note": "Raw weight.",
-      "per100g": {
-        "kcal": 112,
-        "protein": 23.6,
-        "fat": 2,
-        "carbs": 0,
-        "fiber": 0
-      },
-      "nutritionSource": "usda-sr-legacy",
-      "fdcDescription": "Turkey, ground, fat free, raw",
-      "densityGPerMl": null
-    },
-    {
       "id": "food/cottage-cheese",
       "name": "low-fat cottage cheese",
       "aliases": [

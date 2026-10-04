@@ -84,7 +84,6 @@
     { "id": "food/mustard-powder", "name": "mustard powder", "aliases": ["dry mustard", "ground mustard"], "fdcId": 170929, "aisle": "spices", "buyUnit": { "value": 1, "unitText": "jar" }, "gramsPerUnit": { "jar": 50 }, "pantry": true },
     { "id": "food/nutmeg", "name": "ground nutmeg", "aliases": ["nutmeg"], "fdcId": 171326, "aisle": "spices", "buyUnit": { "value": 1, "unitText": "jar" }, "gramsPerUnit": { "jar": 30 }, "pantry": true },
     { "id": "food/pasta-dry", "name": "dry pasta", "aliases": ["penne", "elbow macaroni", "macaroni", "fettuccine", "spaghetti"], "fdcId": 169736, "aisle": "grains", "buyUnit": { "value": 1, "unitText": "lb" } },
-    { "id": "food/ground-turkey-99", "name": "ground turkey breast, 99% lean", "aliases": ["99/1 ground turkey", "extra-lean ground turkey"], "fdcId": 172847, "aisle": "meat", "buyUnit": { "value": 1, "unitText": "lb" }, "note": "Raw weight." },
     { "id": "food/cottage-cheese", "name": "low-fat cottage cheese", "aliases": ["cottage cheese", "2% cottage cheese"], "fdcId": 172182, "densityGPerMl": 0.95, "aisle": "dairy", "buyUnit": { "value": 16, "unitText": "oz" } },
     { "id": "food/cheddar", "name": "extra-sharp cheddar", "aliases": ["cheddar", "sharp cheddar"], "fdcId": 173414, "aisle": "dairy", "buyUnit": { "value": 8, "unitText": "oz" } },
     { "id": "food/milk", "name": "2% milk", "aliases": ["milk"], "fdcId": 171267, "aisle": "dairy", "buyUnit": { "value": 1, "unitText": "quart" }, "gramsPerUnit": { "quart": 976 } },
