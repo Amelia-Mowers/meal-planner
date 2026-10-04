@@ -30,6 +30,7 @@
   --cz-mexican: #d0492b;
   --cz-mediterranean: #2a7ab0;
   --cz-east-asian: #c43c6c;
+  --cz-italian: #5d7f1e;
   --cz-neutral: #8a8f8b;
 
   --radius: 14px;
@@ -84,6 +85,7 @@
     --cz-mexican: #f07a5c;
     --cz-mediterranean: #6cb1e0;
     --cz-east-asian: #ef7aa2;
+    --cz-italian: #a3c562;
     --cz-neutral: #9aa39d;
     --shadow-1: 0 1px 2px rgb(0 0 0 / 0.4);
     --shadow-2: 0 8px 24px rgb(0 0 0 / 0.45);

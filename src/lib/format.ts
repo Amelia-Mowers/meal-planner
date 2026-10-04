@@ -18,6 +18,7 @@ export const CUISINE_LABEL: Record<string, string> = {
   mexican: 'Mexican',
   mediterranean: 'Mediterranean',
   'east-asian': 'East Asian',
+  italian: 'Italian',
   neutral: 'Goes with anything',
 }
 export const cuisineShort = (c: string) => (c === 'neutral' ? 'Neutral' : (CUISINE_LABEL[c] ?? c))

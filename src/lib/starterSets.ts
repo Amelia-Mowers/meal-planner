@@ -39,6 +39,17 @@ export const STARTER_PLANS: StarterPlan[] = [
     ],
   },
   {
+    id: 'pasta',
+    name: 'Pasta night',
+    blurb: 'Turkey marinara, cheeseburger mac & chicken Alfredo',
+    emoji: '🍝',
+    combos: [
+      ['combo/turkey-marinara-bowl', 1],
+      ['combo/cheeseburger-mac', 1],
+      ['combo/chicken-alfredo', 1],
+    ],
+  },
+  {
     id: 'tour',
     name: 'World tour',
     blurb: 'One Mexican, one Greek, one Asian',

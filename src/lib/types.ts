@@ -6,7 +6,7 @@ export type Serve = 'hot' | 'cold' | 'either'
 export type Source = 'bundled' | 'private'
 
 export const ROLES: Role[] = ['protein', 'base', 'veg', 'sauce', 'topper']
-export const CUISINES = ['mexican', 'mediterranean', 'east-asian', 'neutral'] as const
+export const CUISINES = ['mexican', 'mediterranean', 'east-asian', 'italian', 'neutral'] as const
 
 export interface Nutrients {
   kcal: number

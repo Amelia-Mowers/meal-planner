@@ -3,7 +3,7 @@
     "@vocab": "https://schema.org/",
     "mp": "https://amelia-mowers.github.io/meal-planner/ns#"
   },
-  "mp:version": "2d8e323d",
+  "mp:version": "88b08e79",
   "@graph": [
     {
       "@type": "Recipe",
@@ -4815,6 +4815,932 @@
     },
     {
       "@type": "Recipe",
+      "@id": "comp/marinara",
+      "name": "Marinara",
+      "alternateName": "marinara",
+      "description": "A simple, lightly spicy tomato sauce — about 60 calories per half cup.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "italian"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.5,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.25,
+        "maxValue": 1
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 tbsp extra-virgin olive oil",
+        "1 yellow onion, finely diced",
+        "4 cloves garlic, minced",
+        "2 tbsp tomato paste",
+        "1 can crushed tomatoes, 28 oz",
+        "1 tsp dried oregano",
+        "1 tsp dried basil",
+        "½ tsp red pepper flakes",
+        "½ tsp kosher salt",
+        "¼ tsp black pepper"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "extra-virgin olive oil",
+          "identifier": "food/olive-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "yellow onion",
+          "description": "finely diced",
+          "identifier": "food/onion",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "whole"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "description": "minced",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 4,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "tomato paste",
+          "identifier": "food/tomato-paste",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "crushed tomatoes",
+          "description": "28 oz",
+          "identifier": "food/crushed-tomatoes",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "can"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "dried oregano",
+          "identifier": "food/oregano",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "dried basil",
+          "identifier": "food/basil-dried",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "red pepper flakes",
+          "identifier": "food/red-pepper-flakes",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "black pepper",
+          "identifier": "food/black-pepper",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Heat the oil in a saucepan over medium heat. Cook the onion until soft and translucent, about 6 minutes."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add the garlic and tomato paste. Stir for 1–2 minutes until the paste darkens slightly."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add the crushed tomatoes, oregano, basil, pepper flakes, salt and pepper."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Simmer on low, partly covered, for 25 minutes, stirring now and then."
+        }
+      ],
+      "prepTime": "PT10M",
+      "cookTime": "PT35M",
+      "totalTime": "PT45M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/turkey-garlic",
+      "name": "Garlic ground turkey",
+      "alternateName": "Turkey",
+      "description": "Plain garlicky turkey crumbles — simmer them in marinara when you reheat. One flavor of the turkey batch.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 130,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 100,
+        "maxValue": 200
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 340,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "454 g ground turkey, 93% lean",
+        "1 tsp garlic powder",
+        "¾ tsp kosher salt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "ground turkey, 93% lean",
+          "identifier": "food/ground-turkey-93",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 454,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic powder",
+          "identifier": "food/garlic-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.75,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "instant-read thermometer"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Brown the turkey with the rest of the batch (see \"Brown the turkey batch\"), then move this share to a pan over medium heat."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Season with the garlic powder and salt; stir 1 minute."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT12M",
+      "totalTime": "PT17M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot",
+      "mp:batchGroup": "ground-turkey"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/turkey-breast-crumbles",
+      "name": "Lean turkey breast crumbles",
+      "alternateName": "Turkey",
+      "description": "99% lean ground turkey breast with onion powder — the cheeseburger in cheeseburger mac.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 85,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 60,
+        "maxValue": 150
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 340,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "454 g ground turkey breast, 99% lean",
+        "1 tsp onion powder",
+        "½ tsp kosher salt",
+        "¼ tsp black pepper"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "ground turkey breast, 99% lean",
+          "identifier": "food/ground-turkey-99",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 454,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "onion powder",
+          "identifier": "food/onion-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "black pepper",
+          "identifier": "food/black-pepper",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "instant-read thermometer"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Brown the turkey in a nonstick pan over medium-high heat with the onion powder, salt and pepper, breaking it up, until it reaches 165°F / 74°C (about 8 minutes). Add a splash of water if it sticks."
+        }
+      ],
+      "prepTime": "PT2M",
+      "cookTime": "PT10M",
+      "totalTime": "PT12M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/chicken-garlic-skillet",
+      "name": "Garlic skillet chicken bites",
+      "alternateName": "Chicken",
+      "description": "Bite-size chicken breast seared in a nonstick pan with garlic powder.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 106,
+        "unitCode": "GRM"
+      },
+      "mp:portionRange": {
+        "minValue": 80,
+        "maxValue": 160
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 425,
+        "unitCode": "GRM"
+      },
+      "recipeIngredient": [
+        "567 g chicken breast, cut into bite-size pieces",
+        "1 tsp garlic powder",
+        "¾ tsp kosher salt",
+        "¼ tsp black pepper"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "chicken breast",
+          "description": "cut into bite-size pieces",
+          "identifier": "food/chicken-breast",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 567,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic powder",
+          "identifier": "food/garlic-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.75,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "black pepper",
+          "identifier": "food/black-pepper",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "instant-read thermometer"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Season the chicken with the garlic powder, salt and pepper."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cook in a nonstick pan over medium-high heat, turning, until it reaches 165°F / 74°C, 6–8 minutes."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT8M",
+      "totalTime": "PT13M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/penne",
+      "name": "Penne",
+      "alternateName": "penne",
+      "description": "Cooked a minute short of al dente, so it finishes softening when reheated and never goes mushy.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "italian"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.5,
+        "maxValue": 1.5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "8 oz dry pasta, penne"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "dry pasta",
+          "description": "penne",
+          "identifier": "food/pasta-dry",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 8,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Boil in well-salted water 1 minute short of the package's al dente time."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Drain and spread out to cool before refrigerating."
+        }
+      ],
+      "prepTime": "PT2M",
+      "cookTime": "PT15M",
+      "totalTime": "PT17M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/macaroni",
+      "name": "Elbow macaroni",
+      "alternateName": "macaroni",
+      "description": "Cooked a minute short of al dente for reheating.",
+      "recipeCategory": "base",
+      "recipeCuisine": [
+        "italian"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.5,
+        "maxValue": 1.5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "8 oz dry pasta, elbow macaroni"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "dry pasta",
+          "description": "elbow macaroni",
+          "identifier": "food/pasta-dry",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 8,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Boil in well-salted water 1 minute short of the package's al dente time."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Drain and spread out to cool before refrigerating."
+        }
+      ],
+      "prepTime": "PT2M",
+      "cookTime": "PT12M",
+      "totalTime": "PT14M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/cheddar-cottage-sauce",
+      "name": "Cheddar cottage cheese sauce",
+      "alternateName": "cheddar sauce",
+      "description": "Blended cottage cheese melted with extra-sharp cheddar — cheeseburger-mac sauce with far more protein. Thickens when cold.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "italian"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 10,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 6,
+        "maxValue": 14
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2.5,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "2 cups low-fat cottage cheese",
+        "4 oz extra-sharp cheddar, shredded",
+        "1 tsp mustard powder",
+        "½ tsp smoked paprika",
+        "½ tsp garlic powder",
+        "¼ cup 2% milk"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "low-fat cottage cheese",
+          "identifier": "food/cottage-cheese",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "extra-sharp cheddar",
+          "description": "shredded",
+          "identifier": "food/cheddar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 4,
+            "unitCode": "ONZ"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "mustard powder",
+          "identifier": "food/mustard-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "smoked paprika",
+          "identifier": "food/smoked-paprika",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic powder",
+          "identifier": "food/garlic-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "2% milk",
+          "identifier": "food/milk",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G21"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "blender"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Blend the cottage cheese, mustard powder, paprika, garlic powder and milk until completely smooth."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Warm in a pot over low heat. Stir in the cheddar a handful at a time until melted. Don't let it boil."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "To reheat, add 1–2 tbsp water and microwave at medium power, stirring halfway."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT8M",
+      "totalTime": "PT13M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": false,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/cottage-alfredo",
+      "name": "Cottage cheese Alfredo",
+      "alternateName": "Alfredo",
+      "description": "Silky high-protein Alfredo from blended cottage cheese, parmesan, garlic and nutmeg. Thickens when cold.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "italian"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 9,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 6,
+        "maxValue": 12
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2.25,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "2 cups low-fat cottage cheese",
+        "½ cup parmesan, finely grated",
+        "4 cloves garlic",
+        "¼ tsp ground nutmeg",
+        "½ tsp black pepper",
+        "¼ tsp kosher salt",
+        "¼ cup 2% milk"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "low-fat cottage cheese",
+          "identifier": "food/cottage-cheese",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "parmesan, finely grated",
+          "identifier": "food/parmesan",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "garlic",
+          "identifier": "food/garlic",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 4,
+            "unitText": "clove"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "ground nutmeg",
+          "identifier": "food/nutmeg",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "black pepper",
+          "identifier": "food/black-pepper",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "2% milk",
+          "identifier": "food/milk",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G21"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "blender"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Blend everything until completely smooth — any leftover curds will show."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Warm gently over low heat without letting it boil."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "To reheat, add 1–2 tbsp water and microwave at medium power, stirring halfway."
+        }
+      ],
+      "prepTime": "PT5M",
+      "cookTime": "PT5M",
+      "totalTime": "PT10M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": false,
+      "mp:serve": "hot"
+    },
+    {
+      "@type": "Recipe",
       "@id": "combo/chipotle-chicken-bowl",
       "name": "Chipotle Chicken Bowl",
       "description": "Burrito-bowl energy: smoky crema, black beans and tangy onions over rice.",
@@ -5311,6 +6237,138 @@
             "value": 1,
             "unitCode": "G24"
           }
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/turkey-marinara-bowl",
+      "name": "Turkey Marinara Bowl",
+      "description": "Garlicky turkey simmered in homemade marinara over penne, with plenty of broccoli. Warm the turkey in the sauce when you reheat.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "italian",
+      "mp:format": "bowl",
+      "recipeIngredient": [
+        "Penne",
+        "Garlic ground turkey",
+        "Steamed broccoli",
+        "Marinara"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/penne"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/turkey-garlic"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/broccoli-steamed",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/marinara"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/cheeseburger-mac",
+      "name": "Cheeseburger Mac",
+      "description": "Lean turkey, macaroni and broccoli folded into a sharp cheddar sauce. Fold everything together while hot, then portion.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "italian",
+      "mp:format": "bowl",
+      "recipeIngredient": [
+        "Elbow macaroni",
+        "Lean turkey breast crumbles",
+        "Steamed broccoli",
+        "Cheddar cottage cheese sauce"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/macaroni"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/turkey-breast-crumbles"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/broccoli-steamed",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cheddar-cottage-sauce"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/chicken-alfredo",
+      "name": "Chicken Alfredo",
+      "description": "Penne and garlic chicken in a cottage-cheese Alfredo with broccoli. Toss the hot pasta with the sauce off the heat, then fold in chicken and broccoli.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "italian",
+      "mp:format": "bowl",
+      "recipeIngredient": [
+        "Penne",
+        "Garlic skillet chicken bites",
+        "Steamed broccoli",
+        "Cottage cheese Alfredo"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/penne"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/chicken-garlic-skillet"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/broccoli-steamed",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cottage-alfredo"
         }
       ],
       "author": {

@@ -12,6 +12,7 @@ export const LANES: Record<Lane, { label: string; hint: string }> = {
   counter: { label: 'Counter', hint: 'No-cook: sauces, pickles, chopping' },
 }
 const LANE_ORDER: Lane[] = ['oven', 'rice', 'stove', 'micro', 'counter']
+const STOVE_BURNERS = 3
 
 export interface PrepTask {
   id: string
@@ -169,8 +170,14 @@ export function prepPlan(needs: Map<string, ComponentNeed>, lib?: Library): { ta
   )
 
   // Rough wall-clock: hands-on work is serial (one cook), hands-off time overlaps with it.
+  // A stovetop runs several pots at once; other lanes are one appliance each.
   const active = tasks.reduce((s, t) => s + t.activeMin, 0)
-  const longestLane = Math.max(0, ...byLane.map(([, ts]) => ts.reduce((s, t) => s + t.activeMin + t.handsOffMin, 0)))
+  const laneTime = (lane: Lane, ts: PrepTask[]) => {
+    const total = ts.reduce((s, t) => s + t.activeMin + t.handsOffMin, 0)
+    if (lane !== 'stove') return total
+    return Math.max(total / STOVE_BURNERS, ...ts.map((t) => t.activeMin + t.handsOffMin))
+  }
+  const longestLane = Math.max(0, ...byLane.map(([lane, ts]) => laneTime(lane, ts)))
   const estimateMin = Math.round(Math.max(active, longestLane) / 5) * 5 + (tasks.length ? 10 : 0)
   return { tasks, byLane, estimateMin }
 }

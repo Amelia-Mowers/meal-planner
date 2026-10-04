@@ -1832,6 +1832,371 @@
       "densityGPerMl": 0.93
     },
     {
+      "id": "food/onion",
+      "name": "yellow onion",
+      "aliases": [
+        "onion",
+        "brown onion"
+      ],
+      "fdcId": 170000,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 150
+      },
+      "per100g": {
+        "kcal": 40,
+        "protein": 1.1,
+        "fat": 0.1,
+        "carbs": 9.3,
+        "fiber": 1.7
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Onions, raw",
+      "densityGPerMl": 0.676
+    },
+    {
+      "id": "food/tomato-paste",
+      "name": "tomato paste",
+      "aliases": [],
+      "fdcId": 170459,
+      "aisle": "canned",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "can"
+      },
+      "gramsPerUnit": {
+        "can": 170
+      },
+      "note": "6 oz can.",
+      "per100g": {
+        "kcal": 82,
+        "protein": 4.3,
+        "fat": 0.5,
+        "carbs": 18.9,
+        "fiber": 4.1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Tomato products, canned, paste, without salt added (Includes foods for USDA's Food Distribution Program)",
+      "densityGPerMl": 1.116
+    },
+    {
+      "id": "food/crushed-tomatoes",
+      "name": "crushed tomatoes",
+      "aliases": [
+        "canned crushed tomatoes"
+      ],
+      "fdcId": 170051,
+      "densityGPerMl": 1.05,
+      "aisle": "canned",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "can"
+      },
+      "gramsPerUnit": {
+        "can": 794
+      },
+      "note": "28 oz can. Nutrition proxied by USDA canned tomatoes in juice.",
+      "per100g": {
+        "kcal": 16,
+        "protein": 0.8,
+        "fat": 0.3,
+        "carbs": 3.5,
+        "fiber": 1.9
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Tomatoes, red, ripe, canned, packed in tomato juice"
+    },
+    {
+      "id": "food/basil-dried",
+      "name": "dried basil",
+      "aliases": [
+        "basil"
+      ],
+      "fdcId": 171317,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 15
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 233,
+        "protein": 23,
+        "fat": 4.1,
+        "carbs": 47.8,
+        "fiber": 37.7
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, basil, dried",
+      "densityGPerMl": 0.142
+    },
+    {
+      "id": "food/red-pepper-flakes",
+      "name": "red pepper flakes",
+      "aliases": [
+        "crushed red pepper",
+        "chili flakes"
+      ],
+      "fdcId": 170932,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 40
+      },
+      "pantry": true,
+      "note": "Nutrition proxied by USDA cayenne.",
+      "per100g": {
+        "kcal": 318,
+        "protein": 12,
+        "fat": 17.3,
+        "carbs": 56.6,
+        "fiber": 27.2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, pepper, red or cayenne",
+      "densityGPerMl": 0.358
+    },
+    {
+      "id": "food/onion-powder",
+      "name": "onion powder",
+      "aliases": [],
+      "fdcId": 171327,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 60
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 341,
+        "protein": 10.4,
+        "fat": 1,
+        "carbs": 79.1,
+        "fiber": 15.2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, onion powder",
+      "densityGPerMl": 0.467
+    },
+    {
+      "id": "food/mustard-powder",
+      "name": "mustard powder",
+      "aliases": [
+        "dry mustard",
+        "ground mustard"
+      ],
+      "fdcId": 170929,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 50
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 508,
+        "protein": 26.1,
+        "fat": 36.2,
+        "carbs": 28.1,
+        "fiber": 12.2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, mustard seed, ground",
+      "densityGPerMl": 0.426
+    },
+    {
+      "id": "food/nutmeg",
+      "name": "ground nutmeg",
+      "aliases": [
+        "nutmeg"
+      ],
+      "fdcId": 171326,
+      "aisle": "spices",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 30
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 525,
+        "protein": 5.8,
+        "fat": 36.3,
+        "carbs": 49.3,
+        "fiber": 20.8
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spices, nutmeg, ground",
+      "densityGPerMl": 0.473
+    },
+    {
+      "id": "food/pasta-dry",
+      "name": "dry pasta",
+      "aliases": [
+        "penne",
+        "elbow macaroni",
+        "macaroni",
+        "fettuccine",
+        "spaghetti"
+      ],
+      "fdcId": 169736,
+      "aisle": "grains",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "lb"
+      },
+      "per100g": {
+        "kcal": 371,
+        "protein": 13,
+        "fat": 1.5,
+        "carbs": 74.7,
+        "fiber": 3.2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Pasta, dry, enriched",
+      "densityGPerMl": 0.385
+    },
+    {
+      "id": "food/ground-turkey-99",
+      "name": "ground turkey breast, 99% lean",
+      "aliases": [
+        "99/1 ground turkey",
+        "extra-lean ground turkey"
+      ],
+      "fdcId": 172847,
+      "aisle": "meat",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "lb"
+      },
+      "note": "Raw weight.",
+      "per100g": {
+        "kcal": 112,
+        "protein": 23.6,
+        "fat": 2,
+        "carbs": 0,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Turkey, ground, fat free, raw",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/cottage-cheese",
+      "name": "low-fat cottage cheese",
+      "aliases": [
+        "cottage cheese",
+        "2% cottage cheese"
+      ],
+      "fdcId": 172182,
+      "densityGPerMl": 0.95,
+      "aisle": "dairy",
+      "buyUnit": {
+        "value": 16,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 81,
+        "protein": 10.5,
+        "fat": 2.3,
+        "carbs": 4.8,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Cheese, cottage, lowfat, 2% milkfat"
+    },
+    {
+      "id": "food/cheddar",
+      "name": "extra-sharp cheddar",
+      "aliases": [
+        "cheddar",
+        "sharp cheddar"
+      ],
+      "fdcId": 173414,
+      "aisle": "dairy",
+      "buyUnit": {
+        "value": 8,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 403,
+        "protein": 22.9,
+        "fat": 33.3,
+        "carbs": 3.4,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",
+      "densityGPerMl": 0.558
+    },
+    {
+      "id": "food/milk",
+      "name": "2% milk",
+      "aliases": [
+        "milk"
+      ],
+      "fdcId": 171267,
+      "aisle": "dairy",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "quart"
+      },
+      "gramsPerUnit": {
+        "quart": 976
+      },
+      "per100g": {
+        "kcal": 50,
+        "protein": 3.3,
+        "fat": 2,
+        "carbs": 4.8,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",
+      "densityGPerMl": 1.031
+    },
+    {
+      "id": "food/parmesan",
+      "name": "parmesan, finely grated",
+      "aliases": [
+        "parmesan",
+        "parmigiano"
+      ],
+      "fdcId": 171247,
+      "aisle": "dairy",
+      "buyUnit": {
+        "value": 5,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 420,
+        "protein": 28.4,
+        "fat": 27.8,
+        "carbs": 13.9,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Cheese, parmesan, grated",
+      "densityGPerMl": 0.423
+    },
+    {
       "id": "food/feta",
       "name": "feta cheese, crumbled",
       "aliases": [

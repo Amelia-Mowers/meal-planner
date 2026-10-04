@@ -53,7 +53,7 @@
     }
   ],
   "$defs": {
-    "cuisine": { "enum": ["mexican", "mediterranean", "east-asian", "neutral"] },
+    "cuisine": { "enum": ["mexican", "mediterranean", "east-asian", "italian", "neutral"] },
     "format": { "enum": ["bowl", "wrap"] },
     "duration": { "type": "string", "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+S)?)?$" },
     "quantity": {

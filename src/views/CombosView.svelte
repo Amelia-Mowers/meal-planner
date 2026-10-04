@@ -81,7 +81,7 @@
     </div>
     <select class="input sel" bind:value={cuisine} aria-label="Cuisine">
       <option value="all">All cuisines</option>
-      {#each ['mexican', 'mediterranean', 'east-asian'] as c (c)}<option value={c}>{CUISINE_LABEL[c]}</option>{/each}
+      {#each ['mexican', 'mediterranean', 'east-asian', 'italian'] as c (c)}<option value={c}>{CUISINE_LABEL[c]}</option>{/each}
     </select>
     <button class="chip" aria-pressed={onlyHits} onclick={() => (onlyHits = !onlyHits)}>On target</button>
   </div>
