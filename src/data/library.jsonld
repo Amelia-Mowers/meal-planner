@@ -3,7 +3,7 @@
     "@vocab": "https://schema.org/",
     "mp": "https://amelia-mowers.github.io/meal-planner/ns#"
   },
-  "mp:version": "3f9ddcf6",
+  "mp:version": "6323cc2a",
   "@graph": [
     {
       "@type": "Recipe",
@@ -7815,7 +7815,7 @@
       "@type": "Recipe",
       "@id": "combo/smoothie-bowl",
       "name": "Protein Smoothie Bowl",
-      "description": "A thick blueberry-banana smoothie bowl from a freezer pack, topped with chia, granola and peanut butter.",
+      "description": "A thick blueberry-banana smoothie bowl from a freezer pack, topped with chia and granola.",
       "recipeCategory": "combo",
       "recipeCuisine": "neutral",
       "mp:format": "bowl",
@@ -7827,7 +7827,7 @@
         },
         {
           "@type": "HowToStep",
-          "text": "Pour into a bowl and top with the chia, granola and peanut butter."
+          "text": "Pour into a bowl and top with the chia and granola."
         }
       ],
       "recipeIngredient": [
@@ -7835,8 +7835,7 @@
         "Plain Greek yogurt",
         "2% milk",
         "Chia seeds",
-        "High-fiber granola",
-        "Peanut butter"
+        "High-fiber granola"
       ],
       "supply": [
         {
@@ -7863,10 +7862,6 @@
         {
           "@type": "HowToSupply",
           "identifier": "comp/granola"
-        },
-        {
-          "@type": "HowToSupply",
-          "identifier": "comp/peanut-butter"
         }
       ],
       "author": {

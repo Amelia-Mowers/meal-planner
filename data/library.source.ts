@@ -2029,15 +2029,15 @@ export const combos: ComboDef[] = [
   {
     slug: 'smoothie-bowl',
     name: 'Protein Smoothie Bowl',
-    description: 'A thick blueberry-banana smoothie bowl from a freezer pack, topped with chia, granola and peanut butter.',
+    description: 'A thick blueberry-banana smoothie bowl from a freezer pack, topped with chia and granola.',
     format: 'bowl',
     cuisine: 'neutral',
     meal: 'breakfast',
     steps: [
       'Blend a frozen pack with the Greek yogurt and milk until thick, stopping to scrape down the sides.',
-      'Pour into a bowl and top with the chia, granola and peanut butter.',
+      'Pour into a bowl and top with the chia and granola.',
     ],
-    parts: ['smoothie-pack', ['greek-yogurt-plain', 1, 'cup'], 'milk', 'chia', 'granola', 'peanut-butter'],
+    parts: ['smoothie-pack', ['greek-yogurt-plain', 1, 'cup'], 'milk', 'chia', 'granola'],
   },
   {
     slug: 'protein-yogurt-bowl',
