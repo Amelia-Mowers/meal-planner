@@ -63,6 +63,7 @@ for (const c of components) {
     'mp:serve': c.serve,
     ...(c.secondary ? { 'mp:secondary': true } : {}),
     ...(c.batchGroup ? { 'mp:batchGroup': c.batchGroup } : {}),
+    ...(c.meal ? { 'mp:meal': c.meal } : {}),
   }
   if (!doc.keywords) delete doc.keywords
   graph.push(doc)
@@ -78,6 +79,10 @@ for (const c of combos) {
     recipeCategory: 'combo',
     recipeCuisine: c.cuisine,
     'mp:format': c.format,
+    ...(c.meal ? { 'mp:meal': c.meal } : {}),
+    ...(c.assembleAtPrep ? { 'mp:assembleAtPrep': true } : {}),
+    ...(c.steps?.length ? { recipeInstructions: c.steps.map((text) => ({ '@type': 'HowToStep' as const, text })) } : {}),
+    ...(c.prepTime ? { prepTime: minutesIso(c.prepTime) } : {}),
     recipeIngredient: c.parts.map((p) => compNames.get(`comp/${typeof p === 'string' ? p : p[0]}`) ?? '?'),
     supply: c.parts.map((p) =>
       typeof p === 'string'

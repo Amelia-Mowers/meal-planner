@@ -26,6 +26,8 @@
   --role-veg: #3c8a4a;
   --role-sauce: #5058c2;
   --role-topper: #9a4a8a;
+  --role-dish: #2f7a8a;
+  --role-fruit: #c23a5c;
 
   --cz-mexican: #d0492b;
   --cz-mediterranean: #2a7ab0;
@@ -82,6 +84,8 @@
     --role-veg: #78c486;
     --role-sauce: #9aa0f0;
     --role-topper: #d68cc6;
+    --role-dish: #6cc3d3;
+    --role-fruit: #f07a98;
     --cz-mexican: #f07a5c;
     --cz-mediterranean: #6cb1e0;
     --cz-east-asian: #ef7aa2;

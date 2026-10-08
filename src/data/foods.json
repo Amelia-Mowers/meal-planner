@@ -2172,6 +2172,335 @@
       "densityGPerMl": 0.423
     },
     {
+      "id": "food/egg-whites",
+      "name": "liquid egg whites",
+      "aliases": [
+        "egg whites",
+        "carton egg whites"
+      ],
+      "fdcId": 172183,
+      "densityGPerMl": 1.03,
+      "aisle": "dairy",
+      "buyUnit": {
+        "value": 32,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 52,
+        "protein": 10.9,
+        "fat": 0.2,
+        "carbs": 0.7,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Egg, white, raw, fresh"
+    },
+    {
+      "id": "food/oats",
+      "name": "rolled oats",
+      "aliases": [
+        "oats",
+        "old-fashioned oats",
+        "quick oats"
+      ],
+      "fdcId": 173904,
+      "aisle": "breakfast",
+      "buyUnit": {
+        "value": 42,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 379,
+        "protein": 13.2,
+        "fat": 6.5,
+        "carbs": 67.7,
+        "fiber": 10.1
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Cereals, oats, regular and quick, not fortified, dry",
+      "densityGPerMl": 0.342
+    },
+    {
+      "id": "food/whey-protein",
+      "name": "whey protein powder",
+      "aliases": [
+        "protein powder",
+        "whey"
+      ],
+      "fdcId": 173167,
+      "aisle": "breakfast",
+      "buyUnit": {
+        "value": 2,
+        "unitText": "lb"
+      },
+      "gramsPerUnit": {
+        "scoop": 30
+      },
+      "note": "Nutrition from a USDA-listed whey protein powder; check your brand's scoop size.",
+      "per100g": {
+        "kcal": 385,
+        "protein": 66.7,
+        "fat": 5.1,
+        "carbs": 18,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Beverages, ABBOTT, EAS whey protein powder",
+      "densityGPerMl": null
+    },
+    {
+      "id": "food/banana",
+      "name": "bananas",
+      "aliases": [
+        "banana"
+      ],
+      "fdcId": 173944,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "whole"
+      },
+      "gramsPerUnit": {
+        "whole": 118
+      },
+      "per100g": {
+        "kcal": 89,
+        "protein": 1.1,
+        "fat": 0.3,
+        "carbs": 22.8,
+        "fiber": 2.6
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Bananas, raw",
+      "densityGPerMl": 0.951
+    },
+    {
+      "id": "food/baking-powder",
+      "name": "baking powder",
+      "aliases": [],
+      "fdcId": 172804,
+      "aisle": "baking",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "can"
+      },
+      "gramsPerUnit": {
+        "can": 230
+      },
+      "pantry": true,
+      "per100g": {
+        "kcal": 51,
+        "protein": 0.1,
+        "fat": 0,
+        "carbs": 24.1,
+        "fiber": 0.2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Leavening agents, baking powder, double-acting, straight phosphate",
+      "densityGPerMl": 0.933
+    },
+    {
+      "id": "food/raspberries",
+      "name": "raspberries",
+      "aliases": [
+        "fresh raspberries"
+      ],
+      "fdcId": 167755,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 6,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 52,
+        "protein": 1.2,
+        "fat": 0.7,
+        "carbs": 11.9,
+        "fiber": 6.5
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Raspberries, raw",
+      "densityGPerMl": 0.52
+    },
+    {
+      "id": "food/blueberries-frozen",
+      "name": "frozen blueberries",
+      "aliases": [
+        "blueberries",
+        "frozen berries"
+      ],
+      "fdcId": 173950,
+      "aisle": "frozen",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bag"
+      },
+      "gramsPerUnit": {
+        "bag": 454
+      },
+      "per100g": {
+        "kcal": 51,
+        "protein": 0.4,
+        "fat": 0.6,
+        "carbs": 12.2,
+        "fiber": 2.7
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Blueberries, frozen, unsweetened (Includes foods for USDA's Food Distribution Program)",
+      "densityGPerMl": 0.655
+    },
+    {
+      "id": "food/maple-syrup",
+      "name": "maple syrup",
+      "aliases": [
+        "pure maple syrup"
+      ],
+      "fdcId": 169661,
+      "aisle": "breakfast",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "bottle"
+      },
+      "gramsPerUnit": {
+        "bottle": 326
+      },
+      "per100g": {
+        "kcal": 260,
+        "protein": 0,
+        "fat": 0.1,
+        "carbs": 67,
+        "fiber": 0
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Syrups, maple",
+      "densityGPerMl": 1.331
+    },
+    {
+      "id": "food/chia",
+      "name": "chia seeds",
+      "aliases": [
+        "chia"
+      ],
+      "fdcId": 170554,
+      "densityGPerMl": 0.81,
+      "aisle": "breakfast",
+      "buyUnit": {
+        "value": 12,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 486,
+        "protein": 16.5,
+        "fat": 30.7,
+        "carbs": 42.1,
+        "fiber": 34.4
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Seeds, chia seeds, dried"
+    },
+    {
+      "id": "food/almond-milk",
+      "name": "unsweetened almond milk",
+      "aliases": [
+        "almond milk"
+      ],
+      "fdcId": 174832,
+      "densityGPerMl": 1,
+      "aisle": "dairy",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "carton"
+      },
+      "gramsPerUnit": {
+        "carton": 1893
+      },
+      "note": "Half-gallon carton.",
+      "per100g": {
+        "kcal": 15,
+        "protein": 0.4,
+        "fat": 1,
+        "carbs": 1.3,
+        "fiber": 0.2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Beverages, almond milk, unsweetened, shelf stable"
+    },
+    {
+      "id": "food/baby-spinach",
+      "name": "baby spinach",
+      "aliases": [
+        "fresh spinach",
+        "spinach leaves"
+      ],
+      "fdcId": 168462,
+      "aisle": "produce",
+      "buyUnit": {
+        "value": 5,
+        "unitText": "oz"
+      },
+      "per100g": {
+        "kcal": 23,
+        "protein": 2.9,
+        "fat": 0.4,
+        "carbs": 3.6,
+        "fiber": 2.2
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Spinach, raw",
+      "densityGPerMl": 0.127
+    },
+    {
+      "id": "food/granola-high-fiber",
+      "name": "high-fiber granola",
+      "aliases": [
+        "granola"
+      ],
+      "fdcId": null,
+      "nutritionSource": "label",
+      "needsReview": true,
+      "per100g": {
+        "kcal": 400,
+        "protein": 15,
+        "fat": 10,
+        "carbs": 66,
+        "fiber": 20
+      },
+      "densityGPerMl": 0.42,
+      "aisle": "breakfast",
+      "buyUnit": {
+        "value": 12,
+        "unitText": "oz"
+      },
+      "note": "Typical label values for a high-fiber granola; check your brand."
+    },
+    {
+      "id": "food/salsa",
+      "name": "jarred salsa",
+      "aliases": [
+        "salsa",
+        "salsa roja"
+      ],
+      "fdcId": 174524,
+      "aisle": "international",
+      "buyUnit": {
+        "value": 1,
+        "unitText": "jar"
+      },
+      "gramsPerUnit": {
+        "jar": 454
+      },
+      "per100g": {
+        "kcal": 29,
+        "protein": 1.5,
+        "fat": 0.2,
+        "carbs": 6.6,
+        "fiber": 1.9
+      },
+      "nutritionSource": "usda-sr-legacy",
+      "fdcDescription": "Sauce, salsa, ready-to-serve",
+      "densityGPerMl": 1.099
+    },
+    {
       "id": "food/feta",
       "name": "feta cheese, crumbled",
       "aliases": [

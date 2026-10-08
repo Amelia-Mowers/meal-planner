@@ -3,7 +3,7 @@
     "@vocab": "https://schema.org/",
     "mp": "https://amelia-mowers.github.io/meal-planner/ns#"
   },
-  "mp:version": "ebb4a0a1",
+  "mp:version": "3f9ddcf6",
   "@graph": [
     {
       "@type": "Recipe",
@@ -5778,6 +5778,1198 @@
     },
     {
       "@type": "Recipe",
+      "@id": "comp/egg-white-scramble",
+      "name": "Egg white scramble",
+      "alternateName": "Egg whites",
+      "description": "Liquid egg whites scrambled just until set — the filling for breakfast burritos.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.75,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.5,
+        "maxValue": 1.25
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 3.75,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "5 cups liquid egg whites",
+        "1 tsp neutral oil",
+        "½ tsp kosher salt",
+        "¼ tsp black pepper"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "liquid egg whites",
+          "identifier": "food/egg-whites",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "neutral oil",
+          "identifier": "food/neutral-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "kosher salt",
+          "identifier": "food/salt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "black pepper",
+          "identifier": "food/black-pepper",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.25,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Heat the oil in a large nonstick skillet over medium-low heat."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Add the egg whites, salt and pepper. Stir gently until just set, 4–5 minutes."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cool completely before assembling or refrigerating."
+        }
+      ],
+      "prepTime": "PT2M",
+      "cookTime": "PT6M",
+      "totalTime": "PT8M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/greek-yogurt-plain",
+      "name": "Plain Greek yogurt",
+      "alternateName": "Greek yogurt",
+      "description": "Nonfat plain Greek yogurt straight from the tub — about 17 g protein per ¾ cup.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.75,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.25,
+        "maxValue": 1.5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 3.7,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "32 oz plain nonfat Greek yogurt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "plain nonfat Greek yogurt",
+          "identifier": "food/greek-yogurt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 32,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Nothing to do — scoop from the tub."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": false,
+      "mp:serve": "cold",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/whey-scoop",
+      "name": "Whey protein",
+      "alternateName": "Protein powder",
+      "description": "One scoop of whey protein powder.",
+      "recipeCategory": "protein",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitText": "scoop"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitText": "scoop"
+      },
+      "recipeIngredient": [
+        "1 scoop whey protein powder"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "whey protein powder",
+          "identifier": "food/whey-protein",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "scoop"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Nothing to do — scoop from the tub."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": null,
+      "mp:freezable": false,
+      "mp:serve": "cold",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/protein-pancakes",
+      "name": "Protein pancakes",
+      "alternateName": "Pancakes",
+      "description": "Blender oat, banana and whey pancakes. Freeze with parchment between and reheat in the toaster.",
+      "recipeCategory": "dish",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitText": "serving"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 5,
+        "unitText": "serving"
+      },
+      "recipeIngredient": [
+        "2½ cups rolled oats",
+        "5 scoops whey protein powder",
+        "2½ cups liquid egg whites",
+        "2½ bananas",
+        "2½ tsp baking powder",
+        "1¼ tsp ground cinnamon",
+        "1 tsp neutral oil"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "rolled oats",
+          "identifier": "food/oats",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "whey protein powder",
+          "identifier": "food/whey-protein",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 5,
+            "unitText": "scoop"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "liquid egg whites",
+          "identifier": "food/egg-whites",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "bananas",
+          "identifier": "food/banana",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2.5,
+            "unitText": "whole"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "baking powder",
+          "identifier": "food/baking-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2.5,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "ground cinnamon",
+          "identifier": "food/cinnamon",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1.25,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "neutral oil",
+          "identifier": "food/neutral-oil",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "blender"
+        },
+        {
+          "@type": "HowToTool",
+          "name": "stovetop"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Blend the oats, protein powder, egg whites, bananas, baking powder and cinnamon until smooth. Rest 5 minutes."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Heat a nonstick skillet over medium heat and wipe it with the oil."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cook ¼-cup pancakes until the bubbles on top set, about 2 minutes; flip and cook 1 minute more."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cool on a rack. Stack with parchment between and freeze; reheat in the toaster."
+        }
+      ],
+      "prepTime": "PT10M",
+      "cookTime": "PT25M",
+      "totalTime": "PT35M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 3,
+      "mp:freezable": true,
+      "mp:serve": "hot",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/baked-protein-oats",
+      "name": "Baked protein oats",
+      "alternateName": "Baked oats",
+      "description": "Cinnamon-banana oats baked with Greek yogurt, whey and chia in an 8×8 pan, cut into 4 squares.",
+      "recipeCategory": "dish",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitText": "serving"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitText": "serving"
+      },
+      "recipeIngredient": [
+        "2 cups rolled oats",
+        "4 scoops whey protein powder",
+        "3 cups plain nonfat Greek yogurt",
+        "4 tbsp chia seeds",
+        "2 bananas, mashed",
+        "2 cups unsweetened almond milk",
+        "2 tsp baking powder",
+        "1 tsp ground cinnamon"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "rolled oats",
+          "identifier": "food/oats",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "whey protein powder",
+          "identifier": "food/whey-protein",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 4,
+            "unitText": "scoop"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "plain nonfat Greek yogurt",
+          "identifier": "food/greek-yogurt",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 3,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "chia seeds",
+          "identifier": "food/chia",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 4,
+            "unitCode": "G24"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "bananas",
+          "description": "mashed",
+          "identifier": "food/banana",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitText": "whole"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "unsweetened almond milk",
+          "identifier": "food/almond-milk",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "baking powder",
+          "identifier": "food/baking-powder",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G25"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "ground cinnamon",
+          "identifier": "food/cinnamon",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G25"
+          }
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "oven"
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Heat the oven to 350°F / 175°C and line an 8×8-inch pan with parchment."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Mash the bananas in a bowl, then stir in everything else until combined."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Spread in the pan and bake 22 minutes, until set in the center."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cool, then cut into 4 squares."
+        }
+      ],
+      "prepTime": "PT10M",
+      "cookTime": "PT25M",
+      "totalTime": "PT35M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 4,
+      "mp:freezable": true,
+      "mp:serve": "hot",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/smoothie-pack",
+      "name": "Smoothie freezer packs",
+      "alternateName": "Smoothie pack",
+      "description": "Freezer bags of protein powder, blueberries, banana and spinach — blend one with yogurt in the morning.",
+      "recipeCategory": "dish",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitText": "serving"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 5,
+        "unitText": "serving"
+      },
+      "recipeIngredient": [
+        "5 scoops whey protein powder",
+        "5 cups frozen blueberries",
+        "2½ bananas, sliced",
+        "5 cups baby spinach"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "whey protein powder",
+          "identifier": "food/whey-protein",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 5,
+            "unitText": "scoop"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "frozen blueberries",
+          "identifier": "food/blueberries-frozen",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "bananas",
+          "description": "sliced",
+          "identifier": "food/banana",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2.5,
+            "unitText": "whole"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "name": "baby spinach",
+          "identifier": "food/baby-spinach",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 5,
+            "unitCode": "G21"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Line up 5 zip-top freezer bags."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Into each: 1 scoop protein powder, 1 cup frozen blueberries, ½ banana (sliced) and 1 cup baby spinach."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Press out the air, seal and freeze flat."
+        }
+      ],
+      "prepTime": "PT10M",
+      "totalTime": "PT10M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 90,
+      "mp:freezable": true,
+      "mp:serve": "cold",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/raspberries",
+      "name": "Fresh raspberries",
+      "alternateName": "raspberries",
+      "description": "Rinse just before eating so they keep.",
+      "recipeCategory": "fruit",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1.4,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "6 oz raspberries"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "raspberries",
+          "identifier": "food/raspberries",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 6,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Rinse just before eating."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 3,
+      "mp:freezable": false,
+      "mp:serve": "cold",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/blueberries",
+      "name": "Thawed blueberries",
+      "alternateName": "blueberries",
+      "description": "Frozen blueberries thawed overnight in the fridge.",
+      "recipeCategory": "fruit",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2.9,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 bag frozen blueberries"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "frozen blueberries",
+          "identifier": "food/blueberries-frozen",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "bag"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Thaw overnight in a covered container in the fridge."
+        }
+      ],
+      "prepTime": "PT1M",
+      "totalTime": "PT1M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 3,
+      "mp:freezable": true,
+      "mp:serve": "cold",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/salsa",
+      "name": "Jarred salsa",
+      "alternateName": "salsa",
+      "description": "Store-bought red salsa.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "mexican"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 3,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 2,
+        "maxValue": 6
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1.75,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 jar jarred salsa"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "jarred salsa",
+          "identifier": "food/salsa",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "jar"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Open the jar."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 14,
+      "mp:freezable": false,
+      "mp:serve": "cold"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/maple-syrup",
+      "name": "Maple syrup",
+      "alternateName": "maple syrup",
+      "description": "Pure maple syrup.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 0.5,
+        "maxValue": 2
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 bottle maple syrup"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "maple syrup",
+          "identifier": "food/maple-syrup",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "bottle"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Nothing to do."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": null,
+      "mp:freezable": false,
+      "mp:serve": "either",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/milk",
+      "name": "2% milk",
+      "alternateName": "milk",
+      "description": "For loosening smoothie bowls.",
+      "recipeCategory": "sauce",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.25,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 4,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "1 quart 2% milk"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "2% milk",
+          "identifier": "food/milk",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitText": "quart"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Nothing to do."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": false,
+      "mp:serve": "cold",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/cheddar-shredded",
+      "name": "Shredded cheddar",
+      "alternateName": "cheddar",
+      "description": "Extra-sharp cheddar, freshly shredded so it melts well.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.25,
+        "unitCode": "G21"
+      },
+      "mp:portionRange": {
+        "minValue": 0.125,
+        "maxValue": 0.5
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 2,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "8 oz extra-sharp cheddar"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "extra-sharp cheddar",
+          "identifier": "food/cheddar",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 8,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Shred the block on a box grater."
+        }
+      ],
+      "prepTime": "PT3M",
+      "totalTime": "PT3M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": 7,
+      "mp:freezable": true,
+      "mp:serve": "either"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/chia",
+      "name": "Chia seeds",
+      "alternateName": "chia",
+      "description": "A tablespoon adds about 4 g fiber.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G24"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 28,
+        "unitCode": "G24"
+      },
+      "recipeIngredient": [
+        "12 oz chia seeds"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "chia seeds",
+          "identifier": "food/chia",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 12,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Nothing to do."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": null,
+      "mp:freezable": false,
+      "mp:serve": "either",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/granola",
+      "name": "High-fiber granola",
+      "alternateName": "granola",
+      "description": "A crunchy topping; pick one with at least 5 g fiber per serving.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 0.25,
+        "unitCode": "G21"
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 3.4,
+        "unitCode": "G21"
+      },
+      "recipeIngredient": [
+        "12 oz high-fiber granola"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "high-fiber granola",
+          "identifier": "food/granola-high-fiber",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 12,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Nothing to do — keep it sealed so it stays crisp."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": true,
+      "mp:fridgeDays": null,
+      "mp:freezable": false,
+      "mp:serve": "either",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
+      "@id": "comp/peanut-butter",
+      "name": "Peanut butter",
+      "alternateName": "peanut butter",
+      "description": "Creamy peanut butter, by the tablespoon.",
+      "recipeCategory": "topper",
+      "recipeCuisine": [
+        "neutral"
+      ],
+      "mp:formats": [
+        "bowl",
+        "wrap",
+        "plate"
+      ],
+      "mp:portion": {
+        "@type": "QuantitativeValue",
+        "value": 1,
+        "unitCode": "G24"
+      },
+      "mp:portionRange": {
+        "minValue": 0.5,
+        "maxValue": 2
+      },
+      "recipeYield": {
+        "@type": "QuantitativeValue",
+        "value": 28,
+        "unitCode": "G24"
+      },
+      "recipeIngredient": [
+        "16 oz creamy peanut butter"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "creamy peanut butter",
+          "identifier": "food/peanut-butter",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 16,
+            "unitCode": "ONZ"
+          }
+        }
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Nothing to do."
+        }
+      ],
+      "prepTime": "PT0M",
+      "totalTime": "PT0M",
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false,
+      "mp:needsReview": false,
+      "mp:fridgeDays": null,
+      "mp:freezable": false,
+      "mp:serve": "either",
+      "mp:meal": "breakfast"
+    },
+    {
+      "@type": "Recipe",
       "@id": "combo/chipotle-chicken-bowl",
       "name": "Chipotle Chicken Bowl",
       "description": "Burrito-bowl energy: smoky crema, black beans and tangy onions over rice.",
@@ -6421,6 +7613,320 @@
         {
           "@type": "HowToSupply",
           "identifier": "comp/cottage-alfredo"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/egg-white-burrito",
+      "name": "Egg White, Spinach & Black Bean Burrito",
+      "description": "Freezer breakfast burritos: egg whites, spinach, black beans, cheddar and salsa in a high-fiber tortilla, with Greek yogurt for dipping.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "mexican",
+      "mp:format": "wrap",
+      "mp:meal": "breakfast",
+      "mp:assembleAtPrep": true,
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Warm the tortillas in a dry skillet so they fold without cracking."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Fill each with the egg whites, spinach, beans, cheddar and salsa. Fold in the sides and roll tightly."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Cool completely, wrap each in foil and freeze."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Portion the Greek yogurt into small containers for dipping and refrigerate."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "To eat: unwrap, wrap in a paper towel and microwave 2 minutes. Dip in the yogurt."
+        }
+      ],
+      "prepTime": "PT15M",
+      "recipeIngredient": [
+        "High-protein tortilla",
+        "Egg white scramble",
+        "Frozen spinach, squeezed",
+        "Lime-cumin black beans",
+        "Shredded cheddar",
+        "Jarred salsa",
+        "Plain Greek yogurt"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/tortilla-high-protein"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/egg-white-scramble"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/spinach-frozen",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.67,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/black-beans",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 90,
+            "unitCode": "GRM"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/cheddar-shredded"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/salsa"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/greek-yogurt-plain",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 2,
+            "unitCode": "G24"
+          }
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/protein-pancake-plate",
+      "name": "Protein Pancakes with Yogurt & Raspberries",
+      "description": "Toasted protein pancakes topped with Greek yogurt, raspberries and a little maple syrup.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "neutral",
+      "mp:format": "plate",
+      "mp:meal": "breakfast",
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Toast the frozen pancakes until hot."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Top with the yogurt, raspberries and maple syrup."
+        }
+      ],
+      "recipeIngredient": [
+        "Protein pancakes",
+        "Plain Greek yogurt",
+        "Fresh raspberries",
+        "Maple syrup"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/protein-pancakes"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/greek-yogurt-plain",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 0.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/raspberries"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/maple-syrup"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/baked-oats-plate",
+      "name": "Baked Protein Oats with Peanut Butter",
+      "description": "A warm square of cinnamon-banana baked oats spread with peanut butter.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "neutral",
+      "mp:format": "plate",
+      "mp:meal": "breakfast",
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Warm a square in the microwave for 60 seconds."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Spread with the peanut butter."
+        }
+      ],
+      "recipeIngredient": [
+        "Baked protein oats",
+        "Peanut butter"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/baked-protein-oats"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/peanut-butter"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/smoothie-bowl",
+      "name": "Protein Smoothie Bowl",
+      "description": "A thick blueberry-banana smoothie bowl from a freezer pack, topped with chia, granola and peanut butter.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "neutral",
+      "mp:format": "bowl",
+      "mp:meal": "breakfast",
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Blend a frozen pack with the Greek yogurt and milk until thick, stopping to scrape down the sides."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Pour into a bowl and top with the chia, granola and peanut butter."
+        }
+      ],
+      "recipeIngredient": [
+        "Smoothie freezer packs",
+        "Plain Greek yogurt",
+        "2% milk",
+        "Chia seeds",
+        "High-fiber granola",
+        "Peanut butter"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/smoothie-pack"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/greek-yogurt-plain",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/milk"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/chia"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/granola"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/peanut-butter"
+        }
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Meal Planner starter library (AI-generated)"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mp:tested": false
+    },
+    {
+      "@type": "Recipe",
+      "@id": "combo/protein-yogurt-bowl",
+      "name": "Protein Yogurt Bowl",
+      "description": "No-blender breakfast: Greek yogurt with protein powder stirred in, blueberries, chia and granola. Two minutes.",
+      "recipeCategory": "combo",
+      "recipeCuisine": "neutral",
+      "mp:format": "bowl",
+      "mp:meal": "breakfast",
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Stir the protein powder into the yogurt until smooth."
+        },
+        {
+          "@type": "HowToStep",
+          "text": "Top with the blueberries, chia and granola."
+        }
+      ],
+      "recipeIngredient": [
+        "Plain Greek yogurt",
+        "Whey protein",
+        "Thawed blueberries",
+        "Chia seeds",
+        "High-fiber granola"
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/greek-yogurt-plain",
+          "requiredQuantity": {
+            "@type": "QuantitativeValue",
+            "value": 1.5,
+            "unitCode": "G21"
+          }
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/whey-scoop"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/blueberries"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/chia"
+        },
+        {
+          "@type": "HowToSupply",
+          "identifier": "comp/granola"
         }
       ],
       "author": {

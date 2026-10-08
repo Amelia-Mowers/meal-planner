@@ -50,6 +50,18 @@ export const STARTER_PLANS: StarterPlan[] = [
     ],
   },
   {
+    id: 'breakfast',
+    name: 'Breakfast prep',
+    blurb: 'Freezer burritos, protein pancakes, baked oats & smoothie packs',
+    emoji: '🥞',
+    combos: [
+      ['combo/egg-white-burrito', 1],
+      ['combo/protein-pancake-plate', 1],
+      ['combo/baked-oats-plate', 1],
+      ['combo/smoothie-bowl', 1],
+    ],
+  },
+  {
     id: 'tour',
     name: 'World tour',
     blurb: 'One Mexican, one Greek, one Asian',

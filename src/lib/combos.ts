@@ -1,10 +1,11 @@
 import { partsNutrition, targetDistance, type NutritionResult } from './nutrition'
 import { slug } from './library'
-import type { Combo, ComboPart, Component, Format, Library, Role, Targets } from './types'
+import { MAIN_ROLES, type Combo, type ComboPart, type Component, type Format, type Library, type Role, type Targets } from './types'
 import { ratio, type Qty } from './units'
 
+/** Formats generated combos can take (plates are curated breakfasts only). */
 export const FORMATS: Format[] = ['bowl', 'wrap']
-const ROLE_ORDER: Record<Role, number> = { base: 0, protein: 1, veg: 2, sauce: 3, topper: 4 }
+const ROLE_ORDER: Record<Role, number> = { dish: 0, base: 0, protein: 1, veg: 2, fruit: 2, sauce: 3, topper: 4 }
 const MAX_VEG = 4
 
 // ───────────── Flavor compatibility ─────────────
@@ -58,7 +59,11 @@ function makeGenerated(lib: Library, format: Format, parts: ComboPart[]): Combo 
     id: genId(format, parts),
     name: sauce ? `${name} with ${sauce.shortName}` : name,
     description: '',
+    meal: 'main',
     format,
+    steps: [],
+    assembleAtPrep: false,
+    prepMin: 0,
     cuisine: profile[0] ?? 'neutral',
     parts,
     curated: false,
@@ -92,7 +97,7 @@ export function suggest(
   targets: Targets,
   format: Format | 'all' = 'all',
 ): { curated: Suggestion[]; generated: Suggestion[]; almost: Suggestion[] } {
-  const formats = format === 'all' ? FORMATS : [format]
+  const formats: Format[] = format === 'all' ? ['bowl', 'wrap', 'plate'] : [format]
   const curated: Suggestion[] = []
   const almost: Suggestion[] = []
   const curatedKeys = new Set<string>()
@@ -112,8 +117,11 @@ export function suggest(
   almost.sort((a, b) => a.distance - b.distance)
 
   const generated: Suggestion[] = []
-  const set = [...prepSet].map((id) => lib.components.get(id)).filter((c): c is Component => !!c)
-  for (const f of formats) {
+  // Generated suggestions are lunch/dinner bowls & wraps: leave breakfast-only parts out.
+  const set = [...prepSet]
+    .map((id) => lib.components.get(id))
+    .filter((c): c is Component => !!c && c.meal !== 'breakfast' && MAIN_ROLES.includes(c.role))
+  for (const f of formats.filter((x) => FORMATS.includes(x))) {
     for (const s of generate(lib, set, f, targets)) {
       if (curatedKeys.has(partsKey(f, s.combo.parts))) continue
       generated.push(s)

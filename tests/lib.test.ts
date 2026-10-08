@@ -192,6 +192,34 @@ describe('handoff', () => {
   })
 })
 
+describe('breakfast', () => {
+  it('never mixes breakfast-only components into generated lunch/dinner combos', () => {
+    const menu = [
+      { comboId: 'combo/egg-white-burrito', servings: 5 },
+      { comboId: 'combo/smoothie-bowl', servings: 5 },
+      { comboId: 'combo/chipotle-chicken-bowl', servings: 4 },
+    ]
+    const set = new Set([...componentNeeds(lib, menu).keys()])
+    const { generated } = suggest(lib, set, targets)
+    for (const s of generated)
+      for (const p of s.combo.parts) expect(lib.components.get(p.componentId)!.meal, p.componentId).not.toBe('breakfast')
+  })
+  it('adds an assembly task for burritos after their parts are cooked', () => {
+    const menu = [{ comboId: 'combo/egg-white-burrito', servings: 5 }]
+    const plan = prepPlan(componentNeeds(lib, menu), lib, menu)
+    const t = plan.tasks.find((x) => x.id === 'assemble/combo/egg-white-burrito')!
+    expect(t.lane).toBe('counter')
+    expect(t.ingredients[0].items.find((i) => i.name === 'High-protein tortilla')!.amount).toBe('5')
+    expect(plan.byLane.find(([l]) => l === 'counter')![1].at(-1)!.id).toBe(t.id)
+  })
+  it('scales batch dishes by servings', () => {
+    const needs = componentNeeds(lib, [{ comboId: 'combo/protein-pancake-plate', servings: 5 }])
+    expect(needs.get('comp/protein-pancakes')!.batches).toBe(1)
+    const items = shoppingList(lib, needs)
+    expect(items.find((i) => i.foodId === 'food/banana')!.buy).toBe('3')
+  })
+})
+
 describe('periods', () => {
   it('computes ranges, next period and status', () => {
     const p = { id: 'x', start: '2026-09-28', days: 4, mealsPerDay: 2 }

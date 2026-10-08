@@ -1,11 +1,12 @@
 import type { ComponentNeed } from './shopping'
-import type { Component, Food, Library, Supply } from './types'
+import { resolveCombo } from './combos'
+import type { Component, Food, Library, MenuItem, Supply } from './types'
 import { dimOf, formatNumber, formatQty, humanize, toGrams, type Qty } from './units'
 
 export type Lane = 'oven' | 'stove' | 'rice' | 'micro' | 'counter'
 
 export const LANES: Record<Lane, { label: string; hint: string }> = {
-  oven: { label: 'Oven', hint: '425°F / 220°C' },
+  oven: { label: 'Oven', hint: 'Roasting & baking' },
   rice: { label: 'Rice cooker', hint: 'Set and forget' },
   stove: { label: 'Stovetop', hint: 'Burners' },
   micro: { label: 'Microwave', hint: 'Quick steams & thaws' },
@@ -107,7 +108,7 @@ function priority(c: Component, lane: Lane): number {
 
 export const batchText = (b: number) => (b === 1 ? '1 batch' : b < 1 ? `${formatNumber(b)} batch` : `${formatNumber(b)} batches`)
 
-export function prepPlan(needs: Map<string, ComponentNeed>, lib?: Library): { tasks: PrepTask[]; byLane: [Lane, PrepTask[]][]; estimateMin: number } {
+export function prepPlan(needs: Map<string, ComponentNeed>, lib?: Library, menu: MenuItem[] = []): { tasks: PrepTask[]; byLane: [Lane, PrepTask[]][]; estimateMin: number } {
   const tasks: PrepTask[] = []
   const groups = new Map<string, ComponentNeed[]>()
   const foods = lib?.foods ?? new Map<string, Food>()
@@ -181,6 +182,36 @@ export function prepPlan(needs: Map<string, ComponentNeed>, lib?: Library): { ta
       priority: -99,
       fridgeDays: Math.min(...cs.map((c) => c.fridgeDays ?? 99)),
       freezable: cs.every((c) => c.freezable),
+    })
+  }
+
+  // Combos put together on prep day (e.g. freezer burritos) — after their parts are cooked.
+  for (const item of menu) {
+    const combo = lib && item.servings > 0 ? resolveCombo(lib, item.comboId) : null
+    if (!combo?.assembleAtPrep) continue
+    const parts = combo.parts
+      .map((p) => ({ c: lib!.components.get(p.componentId), q: item.portions?.[p.componentId] ?? p.qty }))
+      .filter((x): x is { c: Component; q: Qty | undefined } => !!x.c)
+    tasks.push({
+      id: `assemble/${combo.id}`,
+      lane: 'counter',
+      title: `Assemble ${combo.name}`,
+      detail: `${item.servings} servings`,
+      components: parts.map((x) => x.c),
+      activeMin: Math.max(combo.prepMin, 2 * item.servings),
+      handsOffMin: 0,
+      ingredients: [
+        {
+          items: parts.map(({ c, q }) => ({
+            amount: formatQty(scaleQty(q ?? c.portion, item.servings)),
+            name: c.name,
+          })),
+        },
+      ],
+      steps: combo.steps,
+      priority: 50,
+      fridgeDays: Math.min(...parts.map((x) => x.c.fridgeDays ?? 99)),
+      freezable: parts.every((x) => x.c.freezable),
     })
   }
 

@@ -6,6 +6,8 @@ export const ROLE_LABEL: Record<Role, string> = {
   veg: 'Veg',
   sauce: 'Sauce',
   topper: 'Topper',
+  dish: 'Dish',
+  fruit: 'Fruit',
 }
 export const ROLE_PLURAL: Record<Role, string> = {
   protein: 'Proteins',
@@ -13,6 +15,8 @@ export const ROLE_PLURAL: Record<Role, string> = {
   veg: 'Veg',
   sauce: 'Sauces',
   topper: 'Toppers',
+  dish: 'Dishes',
+  fruit: 'Fruit',
 }
 export const CUISINE_LABEL: Record<string, string> = {
   mexican: 'Mexican',
@@ -36,3 +40,5 @@ export function minutes(m: number): string {
 export function plural(n: number, one: string, many = one + 's') {
   return `${n} ${n === 1 ? one : many}`
 }
+
+export const FORMAT_LABEL: Record<string, string> = { bowl: 'Bowl', wrap: 'Wrap', plate: 'Plate' }

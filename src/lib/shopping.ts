@@ -17,6 +17,7 @@ export const AISLES: Record<string, { label: string; order: number }> = {
   spices: { label: 'Spices', order: 11 },
   baking: { label: 'Baking', order: 12 },
   snacks: { label: 'Nuts & snacks', order: 13 },
+  breakfast: { label: 'Cereal & breakfast', order: 6.5 },
   frozen: { label: 'Frozen', order: 14 },
 }
 export const aisleLabel = (a: string) => AISLES[a]?.label ?? a.charAt(0).toUpperCase() + a.slice(1)

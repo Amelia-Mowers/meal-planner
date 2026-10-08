@@ -155,6 +155,14 @@
   <Sheet bind:open={detailOpen} title={detailCombo.name} subtitle="{Math.round(n.kcal)} kcal · {Math.round(n.protein)} g protein" wide>
     <div class="stack">
       <ComboCard combo={detailCombo} />
+      {#if detailCombo.steps.length}
+        <section class="stack" style:--gap=".4rem">
+          <h3>{detailCombo.assembleAtPrep ? 'Assemble on prep day' : 'To serve'}</h3>
+          <ol class="serve-steps small">
+            {#each detailCombo.steps as st, i (i)}<li>{st}</li>{/each}
+          </ol>
+        </section>
+      {/if}
       <label class="row small" style:gap=".45rem">
         <input
           type="checkbox"
@@ -359,5 +367,12 @@
   }
   .mono {
     font-family: var(--mono);
+  }
+  .serve-steps {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.35rem;
+    color: var(--ink-2);
   }
 </style>

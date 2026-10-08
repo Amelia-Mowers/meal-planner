@@ -1,11 +1,15 @@
 import type { QuantitativeValue, Qty } from './units'
 
-export type Role = 'protein' | 'base' | 'veg' | 'sauce' | 'topper'
-export type Format = 'bowl' | 'wrap'
+export type Role = 'protein' | 'base' | 'veg' | 'sauce' | 'topper' | 'dish' | 'fruit'
+export type Format = 'bowl' | 'wrap' | 'plate'
+/** Main meals (lunch/dinner bowls & wraps) or breakfast. */
+export type Meal = 'main' | 'breakfast'
 export type Serve = 'hot' | 'cold' | 'either'
 export type Source = 'bundled' | 'private'
 
-export const ROLES: Role[] = ['protein', 'base', 'veg', 'sauce', 'topper']
+export const ROLES: Role[] = ['dish', 'protein', 'base', 'veg', 'fruit', 'sauce', 'topper']
+/** Roles a lunch/dinner bowl or wrap is built from. */
+export const MAIN_ROLES: Role[] = ['protein', 'base', 'veg', 'sauce', 'topper']
 export const CUISINES = ['mexican', 'mediterranean', 'east-asian', 'italian', 'neutral'] as const
 
 export interface Nutrients {
@@ -64,6 +68,8 @@ export interface RecipeDoc {
   isBasedOn?: string | { '@type'?: string; name?: string; url?: string }
   'mp:formats'?: Format[]
   'mp:format'?: Format
+  'mp:meal'?: Meal
+  'mp:assembleAtPrep'?: boolean
   'mp:portion'?: QuantitativeValue
   'mp:portionRange'?: { minValue: number; maxValue: number }
   'mp:tested'?: boolean
@@ -111,6 +117,8 @@ export interface Component {
   keywords: string[]
   secondary: boolean
   batchGroup?: string
+  /** Breakfast-only components never appear in generated lunch/dinner combos. */
+  meal?: Meal
   tested: boolean
   needsReview: boolean
   license?: string
@@ -129,7 +137,12 @@ export interface Combo {
   id: string
   name: string
   description: string
+  meal: Meal
   format: Format
+  /** How to put it together (at prep time if assembleAtPrep, else when serving). */
+  steps: string[]
+  assembleAtPrep: boolean
+  prepMin: number
   cuisine: string
   parts: ComboPart[]
   curated: boolean

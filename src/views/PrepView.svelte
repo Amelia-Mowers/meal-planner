@@ -9,7 +9,7 @@
 
   const ICON = { oven: Flame, rice: CookingPot, stove: ChefHat, micro: Microwave, counter: Utensils } satisfies Record<Lane, unknown>
 
-  const plan = $derived(prepPlan(app.needs, app.lib))
+  const plan = $derived(prepPlan(app.needs, app.lib, app.menuWithPortions))
   const doneSet = $derived(new Set(app.prepDone))
   const done = $derived(plan.tasks.filter((t) => doneSet.has(t.id)).length)
   const eat = $derived(eatOrder(app.needs))
@@ -52,7 +52,7 @@
       <ol class="kickoff card">
         <li class="small">
           <strong>First:</strong>
-          {[hasOven && 'heat the oven to 425°F / 220°C', hasRice && 'start the rice'].filter(Boolean).join(' and ')}. Everything else
+          {[hasOven && 'heat the oven (each task gives the temperature)', hasRice && 'start the rice'].filter(Boolean).join(' and ')}. Everything else
           fits around it.
         </li>
       </ol>

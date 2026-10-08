@@ -10,7 +10,7 @@
     "@id": { "type": "string", "pattern": "^(comp|combo)/[a-z0-9][a-z0-9-]*$" },
     "name": { "type": "string", "minLength": 1 },
     "description": { "type": "string" },
-    "recipeCategory": { "enum": ["protein", "base", "veg", "sauce", "topper", "combo"] },
+    "recipeCategory": { "enum": ["protein", "base", "veg", "sauce", "topper", "dish", "fruit", "combo"] },
     "recipeCuisine": {
       "oneOf": [
         { "$ref": "#/$defs/cuisine" },
@@ -43,7 +43,9 @@
     "mp:freezable": { "type": "boolean" },
     "mp:serve": { "enum": ["hot", "cold", "either"] },
     "mp:secondary": { "type": "boolean" },
-    "mp:batchGroup": { "type": "string" }
+    "mp:batchGroup": { "type": "string" },
+    "mp:meal": { "enum": ["main", "breakfast"] },
+    "mp:assembleAtPrep": { "type": "boolean" }
   },
   "allOf": [
     {
@@ -54,7 +56,7 @@
   ],
   "$defs": {
     "cuisine": { "enum": ["mexican", "mediterranean", "east-asian", "italian", "neutral"] },
-    "format": { "enum": ["bowl", "wrap"] },
+    "format": { "enum": ["bowl", "wrap", "plate"] },
     "duration": { "type": "string", "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+S)?)?$" },
     "quantity": {
       "type": "object",

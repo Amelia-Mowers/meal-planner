@@ -52,6 +52,8 @@ const ALIASES: Record<string, string> = {
   cloves: 'clove', cans: 'can', bags: 'bag', jars: 'jar', bunches: 'bunch', heads: 'head',
   blocks: 'block', bottles: 'bottle', boxes: 'box', tubs: 'tub', packages: 'package', pkg: 'package',
   dozen: 'dozen',
+  servings: 'serving', portion: 'serving', portions: 'serving',
+  scoops: 'scoop', cartons: 'carton', quarts: 'quart',
 }
 
 export function normUnit(u: string | undefined | null): string {
@@ -139,6 +141,7 @@ const LABEL: Record<string, [string, string]> = {
   bunch: ['bunch', 'bunches'], head: ['head', 'heads'], block: ['block', 'blocks'],
   bottle: ['bottle', 'bottles'], box: ['box', 'boxes'], tub: ['tub', 'tubs'],
   package: ['package', 'packages'], dozen: ['dozen', 'dozen'],
+  serving: ['serving', 'servings'], scoop: ['scoop', 'scoops'], carton: ['carton', 'cartons'], quart: ['quart', 'quarts'],
 }
 
 export function unitLabel(unit: string, value = 1): string {

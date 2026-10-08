@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Check, ChevronDown, Plus, Recycle, SlidersHorizontal, Sparkles, Star, Target, Trash2, Wrench } from '@lucide/svelte'
   import { fitBasePortion, flexPart, nutritionOf, sliderStep } from '../lib/combos'
-  import { cuisineShort, plural } from '../lib/format'
+  import { cuisineShort, FORMAT_LABEL, plural } from '../lib/format'
   import { app } from '../lib/store.svelte'
   import { toasts } from '../lib/toast.svelte'
   import type { Combo } from '../lib/types'
@@ -55,7 +55,8 @@
   <header>
     <div class="titles">
       <div class="row wrap meta">
-        <span class="badge">{combo.format === 'bowl' ? 'Bowl' : 'Wrap'}</span>
+        {#if combo.meal === 'breakfast'}<span class="badge breakfast">Breakfast</span>{/if}
+        <span class="badge">{FORMAT_LABEL[combo.format]}</span>
         <span class="badge cz" style:--c="var(--cz-{combo.cuisine}, var(--cz-neutral))">{cuisineShort(combo.cuisine)}</span>
         {#if combo.curated}
           <span class="badge accent" title="Hand-picked combination"><Star size={11} /> Curated</span>
@@ -184,6 +185,10 @@
   .cz {
     background: color-mix(in srgb, var(--c) 14%, transparent);
     color: var(--c);
+  }
+  .breakfast {
+    background: color-mix(in srgb, var(--role-dish) 14%, transparent);
+    color: var(--role-dish);
   }
   .desc {
     display: -webkit-box;

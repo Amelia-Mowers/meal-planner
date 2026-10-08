@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Check, ChevronRight, Lock, Search, TriangleAlert } from '@lucide/svelte'
-  import { cuisineShort, plural, ROLE_PLURAL } from '../lib/format'
+  import { cuisineShort, FORMAT_LABEL, plural, ROLE_PLURAL } from '../lib/format'
   import { componentNutrition, partsNutrition } from '../lib/nutrition'
   import { app } from '../lib/store.svelte'
   import { ROLES, type Role } from '../lib/types'
@@ -108,7 +108,7 @@
           <button class="rowbtn" onclick={() => (ui.detail = c.id)}>
             <span class="main">
               <span class="nm">{c.name} {#if app.isTested(c.id)}<Check size={13} class="ok-ic" />{/if}</span>
-              <span class="tiny muted">{c.format === 'bowl' ? 'Bowl' : 'Wrap'} · {cuisineShort(c.cuisine)} · {Math.round(n.n.kcal)} kcal · {Math.round(n.n.protein)} g protein</span>
+              <span class="tiny muted">{c.meal === 'breakfast' ? 'Breakfast · ' : ''}{FORMAT_LABEL[c.format]} · {cuisineShort(c.cuisine)} · {Math.round(n.n.kcal)} kcal · {Math.round(n.n.protein)} g protein</span>
             </span>
             <TargetBadge n={n.n} targets={app.targets} />
             <ChevronRight size={16} class="chev" />

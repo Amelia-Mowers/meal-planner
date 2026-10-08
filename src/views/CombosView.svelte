@@ -17,9 +17,11 @@
   let format = $state<Format | 'all'>('all')
   let cuisine = $state('all')
   let onlyHits = $state(false)
+  let meal = $state<'all' | 'main' | 'breakfast'>('all')
 
   const target = $derived(app.period ? mealsTarget(app.period) : 0)
   const keep = (c: Combo) =>
+    (meal === 'all' || c.meal === meal) &&
     (format === 'all' || c.format === format) &&
     (cuisine === 'all' || c.cuisine === cuisine) &&
     (!onlyHits || hitsTarget(nutritionOf(app.lib, c, app.portions[c.id]).n, app.targets)) &&
@@ -28,7 +30,7 @@
   const curated = $derived([...app.lib.combos.values()].filter(keep))
   /** Mix-and-match combos that reuse this period's prep set. */
   const pairs = $derived.by(() => {
-    if (!app.prepSetIds.size) return []
+    if (!app.prepSetIds.size || meal === 'breakfast') return []
     const inMenu = new Set(app.menu.map((m) => m.comboId))
     const s = suggest(app.lib, app.prepSetIds, app.targets, format)
     return s.generated.map((g) => g.combo).filter((c) => !inMenu.has(c.id) && keep(c))
@@ -74,8 +76,13 @@
   </section>
 
   <div class="filters row wrap">
+    <div class="segmented" role="group" aria-label="Meal">
+      {#each [['all', 'All meals'], ['main', 'Lunch & dinner'], ['breakfast', 'Breakfast']] as [v, l] (v)}
+        <button aria-pressed={meal === v} onclick={() => (meal = v as typeof meal)}>{l}</button>
+      {/each}
+    </div>
     <div class="segmented" role="group" aria-label="Format">
-      {#each [['all', 'All'], ['bowl', 'Bowls'], ['wrap', 'Wraps']] as [v, l] (v)}
+      {#each [['all', 'All'], ['bowl', 'Bowls'], ['wrap', 'Wraps'], ['plate', 'Plates']] as [v, l] (v)}
         <button aria-pressed={format === v} onclick={() => (format = v as typeof format)}>{l}</button>
       {/each}
     </div>

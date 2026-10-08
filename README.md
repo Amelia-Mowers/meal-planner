@@ -7,6 +7,7 @@ or any number of days, for however many people), pick bowl and wrap combos for i
 
 - derives the **prep set** — which components to batch-cook and how much — with adjustable quantities
 - suggests combos that reuse what you're already prepping, or build your own
+- includes breakfasts (freezer burritos, protein pancakes, baked oats, smoothie packs, yogurt bowls)
 - shows calories and protein per combo against a target (default 600 kcal, ≥40 g protein), with a
   portion slider on the carb to hit it
 - builds a merged, aisle-grouped shopping list rounded up to store packages

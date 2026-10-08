@@ -106,8 +106,13 @@ for (const combo of lib.combos.values()) {
   const cs = combo.parts.map((p) => lib.components.get(p.componentId))
   combo.parts.forEach((p, i) => !cs[i] && err(`${combo.id}: unknown component ${p.componentId}`))
   const ok = cs.filter((c) => !!c)
-  for (const r of roles) if (!ok.some((c) => c.role === r)) err(`${combo.id}: no ${r}`)
-  if (ok.filter((c) => c.role === 'base').length > 1) err(`${combo.id}: more than one base`)
+  // Lunch/dinner combos follow the bowl/wrap template; breakfasts are free-form.
+  if (combo.meal === 'main') {
+    for (const r of roles) if (!ok.some((c) => c.role === r)) err(`${combo.id}: no ${r}`)
+    if (ok.filter((c) => c.role === 'base').length > 1) err(`${combo.id}: more than one base`)
+    for (const c of ok) if (c.meal === 'breakfast') err(`${combo.id}: uses breakfast-only ${c.id}`)
+  }
+  if (combo.assembleAtPrep && !combo.steps.length) err(`${combo.id}: assembleAtPrep needs steps`)
   for (const c of ok) if (!c.formats.includes(combo.format)) err(`${combo.id}: ${c.id} doesn't support ${combo.format}`)
   if (sharedProfile(ok) === null) err(`${combo.id}: flavor profiles clash`)
   for (const p of combo.parts) {

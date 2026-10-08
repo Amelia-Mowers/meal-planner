@@ -1,10 +1,11 @@
 <script lang="ts">
   import { Check, Recycle } from '@lucide/svelte'
-  import { genId, nutritionOf, resolveCombo, sharedProfile } from '../lib/combos'
+  import { genId, resolveCombo, sharedProfile } from '../lib/combos'
+  import { partsNutrition } from '../lib/nutrition'
   import { ROLE_PLURAL } from '../lib/format'
   import { app } from '../lib/store.svelte'
   import { toasts } from '../lib/toast.svelte'
-  import { ROLES, type Component, type Format, type Role } from '../lib/types'
+  import { MAIN_ROLES as ROLES, type Component, type Format, type Role } from '../lib/types'
   import { ui } from '../lib/ui.svelte'
   import CuisineDots from './CuisineDots.svelte'
   import MacroBar from './MacroBar.svelte'
@@ -17,18 +18,20 @@
   const REQUIRED: Role[] = ['base', 'protein', 'veg', 'sauce']
 
   let format = $state<Format>('bowl')
-  let picks = $state<Record<Role, string[]>>({ base: [], protein: [], veg: [], sauce: [], topper: [] })
+  let picks = $state<Record<string, string[]>>({ base: [], protein: [], veg: [], sauce: [], topper: [] })
   let servings = $state(2)
   $effect(() => {
     if (ui.builderOpen) servings = app.defaultServings
   })
 
-  const all = $derived([...app.lib.components.values()].filter((c) => !app.onlyTested || app.isTested(c.id)))
+  const all = $derived(
+    [...app.lib.components.values()].filter((c) => c.meal !== 'breakfast' && (!app.onlyTested || app.isTested(c.id))),
+  )
   const chosen = $derived(ROLES.flatMap((r) => picks[r]).map((id) => app.lib.components.get(id)!).filter(Boolean))
   const ready = $derived(REQUIRED.every((r) => picks[r].length > 0))
   const parts = $derived(chosen.map((c) => ({ componentId: c.id })))
   const combo = $derived(ready ? resolveCombo(app.lib, genId(format, parts)) : null)
-  const nut = $derived(nutritionOf(app.lib, { id: 'draft', name: '', description: '', format, cuisine: 'neutral', parts, curated: false, tested: false, source: 'bundled' }))
+  const nut = $derived(partsNutrition(app.lib, parts))
 
   /** Would adding c keep the combo's flavors compatible and fit the format? */
   function fits(c: Component): boolean {
@@ -53,7 +56,7 @@
     picks = { base: [], protein: [], veg: [], sauce: [], topper: [] }
     ui.builderOpen = false
   }
-  const hint: Record<Role, string> = {
+  const hint: Partial<Record<Role, string>> = {
     base: 'pick one',
     protein: 'one, or two to pair a main with beans or eggs',
     veg: `up to ${MAX_VEG}`,
