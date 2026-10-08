@@ -26,14 +26,24 @@ export const aisleOrder = (a: string) => AISLES[a]?.order ?? 50
 /** Batch granularity: recipes scale in quarter batches. */
 const BATCH_STEP = 0.25
 
+/** Nothing to cook or prep: bought ready to use (jarred salsa, peanut butter, granola...). */
+const isStoreBought = (c: Component) => c.prepMin === 0 && c.cookMin === 0
+
 /**
- * Smallest sensible batch. Long-keeping things (pickles, jars, shelf-stable toppers) are made
- * or bought whole; sauces don't go below half a batch.
+ * How many batches of a component to make for `amount` (in yield units).
+ * Store-bought items use exactly what the meals need (the shopping list rounds up to whole
+ * jars/packages anyway). Homemade pickles are made a full batch at a time since they keep for
+ * weeks; sauces don't go below half a batch; everything else scales in quarter batches.
  */
-function minBatches(c: Component): number {
-  if (c.fridgeDays == null || c.fridgeDays >= 14) return 1
-  if (c.role === 'sauce') return 0.5
-  return BATCH_STEP
+function batchesFor(c: Component, amount: number): number {
+  const exact = amount / c.yield.value
+  if (isStoreBought(c)) return exact
+  // Recipes counted in servings or pieces (5 smoothie packs, 12 eggs) round to whole ones.
+  const step = dimOf(c.yield.unit) === 'count' ? 1 / c.yield.value : BATCH_STEP
+  const stepped = Math.ceil(exact / step - 1e-9) * step
+  if (c.keywords.includes('pickled')) return Math.max(1, stepped)
+  if (c.role === 'sauce') return Math.max(0.5, stepped)
+  return Math.max(Math.min(BATCH_STEP, step), stepped)
 }
 
 export interface ComponentNeed {
@@ -79,8 +89,7 @@ export function componentNeeds(lib: Library, menu: MenuItem[], adjust: Record<st
     }
   }
   for (const n of needs.values()) {
-    const exact = Math.ceil(n.amount / n.component.yield.value / BATCH_STEP - 1e-9) * BATCH_STEP
-    n.autoBatches = n.batches = Math.max(minBatches(n.component), exact)
+    n.autoBatches = n.batches = batchesFor(n.component, n.amount)
   }
   for (const [id, b] of Object.entries(adjust)) {
     const c = lib.components.get(id)
@@ -139,11 +148,13 @@ export function shoppingList(lib: Library, needs: Map<string, ComponentNeed>): S
         a.grams += g
         a.hasGrams = true
       } else a.loose.set(q.unit, (a.loose.get(q.unit) ?? 0) + q.value)
-      // Same-dimension sum for display: mass in g, volume in ml, counts by unit
-      const d = dimOf(q.unit)
-      const key = d === 'count' ? q.unit : d
-      const base = d === 'mass' ? 'g' : d === 'volume' ? 'ml' : q.unit
-      a.byDim.set(key, (a.byDim.get(key) ?? 0) + (convert(q, base) ?? 0))
+      // "Uses" text: what you measure out. For a ready-to-use item that's the recipe amount
+      // (4 tbsp peanut butter), not a fraction of the jar it's sold in.
+      const shown = isStoreBought(c) && c.supplies.length === 1 ? { value: c.yield.value * batches, unit: c.yield.unit } : q
+      const d = dimOf(shown.unit)
+      const key = d === 'count' ? shown.unit : d
+      const base = d === 'mass' ? 'g' : d === 'volume' ? 'ml' : shown.unit
+      a.byDim.set(key, (a.byDim.get(key) ?? 0) + (convert(shown, base) ?? 0))
       a.usedBy.add(c.name)
       acc.set(s.foodId, a)
     }

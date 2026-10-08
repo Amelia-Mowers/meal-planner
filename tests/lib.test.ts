@@ -220,6 +220,26 @@ describe('breakfast', () => {
   })
 })
 
+describe('store-bought items', () => {
+  it('count what the meals use, not a whole jar', () => {
+    const needs = componentNeeds(lib, [{ comboId: 'combo/baked-oats-plate', servings: 4 }])
+    expect(needs.get('comp/peanut-butter')!.batches).toBeCloseTo(4 / 28, 5)
+    const pb = shoppingList(lib, needs).find((i) => i.foodId === 'food/peanut-butter')!
+    expect(pb.need).toBe('¼ cup')
+    expect(pb.buy).toBe('1 × 16 oz')
+  })
+  it('round serving-counted recipes to whole servings', () => {
+    const needs = componentNeeds(lib, [{ comboId: 'combo/smoothie-bowl', servings: 3 }])
+    expect(needs.get('comp/smoothie-pack')!.batches * 5).toBeCloseTo(3, 5)
+    const whey = shoppingList(lib, needs).find((i) => i.foodId === 'food/whey-protein')!
+    expect(whey.need).toBe('3 scoops')
+  })
+  it('still make homemade pickles a full batch', () => {
+    const needs = componentNeeds(lib, [{ comboId: 'combo/chipotle-chicken-bowl', servings: 1 }])
+    expect(needs.get('comp/pickled-red-onion')!.batches).toBe(1)
+  })
+})
+
 describe('periods', () => {
   it('computes ranges, next period and status', () => {
     const p = { id: 'x', start: '2026-09-28', days: 4, mealsPerDay: 2 }
