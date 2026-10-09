@@ -3,7 +3,7 @@
     "@vocab": "https://schema.org/",
     "mp": "https://amelia-mowers.github.io/meal-planner/ns#"
   },
-  "mp:version": "6323cc2a",
+  "mp:version": "49f3f20e",
   "@graph": [
     {
       "@type": "Recipe",
@@ -6164,7 +6164,7 @@
       "@id": "comp/baked-protein-oats",
       "name": "Baked protein oats",
       "alternateName": "Baked oats",
-      "description": "Cinnamon-banana oats baked with Greek yogurt, whey and chia in an 8×8 pan, cut into 4 squares.",
+      "description": "Cinnamon-banana oats baked with Greek yogurt, whey and chia in an 8×12 pan, cut into 6 squares.",
       "recipeCategory": "dish",
       "recipeCuisine": [
         "neutral"
@@ -6179,7 +6179,7 @@
       },
       "recipeYield": {
         "@type": "QuantitativeValue",
-        "value": 4,
+        "value": 6,
         "unitText": "serving"
       },
       "recipeIngredient": [
@@ -6284,7 +6284,7 @@
       "recipeInstructions": [
         {
           "@type": "HowToStep",
-          "text": "Heat the oven to 350°F / 175°C and line an 8×8-inch pan with parchment."
+          "text": "Heat the oven to 350°F / 175°C and line an 8×12-inch pan with parchment."
         },
         {
           "@type": "HowToStep",
@@ -6292,11 +6292,11 @@
         },
         {
           "@type": "HowToStep",
-          "text": "Spread in the pan and bake 22 minutes, until set in the center."
+          "text": "Spread in the pan and bake 20 minutes, until set in the center."
         },
         {
           "@type": "HowToStep",
-          "text": "Cool, then cut into 4 squares."
+          "text": "Cool, then cut into 6 squares."
         }
       ],
       "prepTime": "PT10M",
